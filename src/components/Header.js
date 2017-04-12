@@ -21,7 +21,6 @@ const styles = {
   },
   headerIntro:{
   	color:'#D50000',
-  	fontFamily: 'Orbitron',
   	fontSize: 22,
   	lineHeight: '74px',
   	width: 390,
