@@ -29,11 +29,11 @@ const styles = {
 const Sidebar = () => (
   <div style={styles.sidebarContainer}>
   	<ul style={styles.list}>
-        <li style={styles.sidebarEntry} > This User's Recipes </li>
-        <li style={styles.sidebarEntry} > OpenSource Recipes </li>
-        <li style={styles.sidebarEntry} > Popular Recipes </li>
-        <li style={styles.sidebarEntry} > Favorite Recipes </li>
-        <li style={styles.sidebarEntry} > This User's Pantry </li>
+        <li style={styles.sidebarEntry} > This User's Methods </li>
+        <li style={styles.sidebarEntry} > OpenSource Methods </li>
+        <li style={styles.sidebarEntry} > Popular Methods </li>
+        <li style={styles.sidebarEntry} > Favorite Methods </li>
+        <li style={styles.sidebarEntry} > Nutrient Repository </li>
     </ul>
   </div>
 )

@@ -54,7 +54,8 @@ class RecipeForm extends React.Component {
 				</select>
 				Recipe execution results in <input type="text" placeholder="Amount"></input>
       			<input type="text" placeholder="Unit of measurement to be applied to result"></input>
-      		<StepAdder/>
+      			<StepAdder/>
+      			<button>Input this Food Method</button>
       		</form>
         </div>
       </div>
