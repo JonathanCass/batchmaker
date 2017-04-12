@@ -6,7 +6,7 @@ const styles = {
   	height: 64,
   	display: 'flex',
   	justifyContent: 'space-between',
-  	background: '#263238'
+  	background: 'linear-gradient( #78909C, black)'
   },
   headerRight:{
   	display:'flex',
@@ -20,7 +20,7 @@ const styles = {
   	color: '#d50000'
   },
   headerIntro:{
-  	color:'#009688',
+  	color:'#D50000',
   	fontFamily: 'Orbitron',
   	fontSize: 22,
   	lineHeight: '74px',
