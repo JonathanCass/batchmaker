@@ -13,7 +13,7 @@ const styles={
 		color: 'white',
 		width: 700,
 		height: 1220,
-		padding: '50px 30px 30px 30px',
+		padding: 30,
 		background: 'black',
 		margin: '70px auto',
 		borderRadius: 20,
@@ -40,17 +40,28 @@ const styles={
 	row:{
 		width: 650,
 		height: 170,
-		padding:' 10px 0 ',
 		marginBottom: 50
+	},
+	recipeAndName:{
+		borderRadius: 5,
+		width: 150,
+		height: 160,
+		display: 'inline-block',
+		marginRight: 12,
 	},
 	recipe:{
 		borderRadius: 5,
 		width: 150,
 		height: 150,
-		marginRight: 12,
-		background: 'grey',
-		display: 'inline-block'
-	}
+		margin: 0
+	},
+	recipeName:{
+		paddingTop: 10,
+		textAlign: 'center',
+		fontSize: 14,
+		width: 150,
+		height: 10,
+	},
 }
 class AllRecipesGrid extends React.Component {
   /*constructor(props) {
@@ -66,20 +77,33 @@ class AllRecipesGrid extends React.Component {
         <div style={styles.gridProper}>
         	<div style={styles.catHeader}>This User's Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
-        		<div style={styles.recipe}></div><div style={styles.recipe}></div><div style={styles.recipe}></div><div style={styles.recipe}></div>
-        	</div>
+				{this.props.recipes.map(recipe=>(
+        			<div style={styles.recipeAndName}>
+        				<img key={'recipe' + recipe.id} src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
+        			</div>	
+        		))}        	</div>
         	<div style={styles.catHeader}>Open Source Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
-        		
+        		{this.props.recipes.map(recipe=>(
+        			<div style={styles.recipeAndName}>
+        				<img key={'recipe' + recipe.id} src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
+        			</div>	
+        		))}
         	</div>
         	<div style={styles.catHeader}>Popular Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
-        		<div style={styles.recipe}></div><div style={styles.recipe}></div><div style={styles.recipe}></div><div style={styles.recipe}></div>
-        	</div>
+				{this.props.recipes.map(recipe=>(
+        			<div style={styles.recipeAndName}>
+        				<img key={'recipe' + recipe.id} src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
+        			</div>	
+        		))}        	</div>
         	<div style={styles.catHeader}>Favorite Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
-        		<div style={styles.recipe}></div><div style={styles.recipe}></div><div style={styles.recipe}></div><div style={styles.recipe}></div>
-        	</div>
+				{this.props.recipes.map(recipe=>(
+        			<div style={styles.recipeAndName}>
+        				<img key={'recipe' + recipe.id} src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
+        			</div>	
+        		))}        	</div>
         </div>
       </div>
     )
