@@ -1,11 +1,12 @@
 import React from 'react'
+import {getData} from '../api/recipe'
+import {connect} from 'react-redux'
 
 const styles={
 	gridContainer:{
 		height: 1370,
 		width: 1220,
 		background: 'radial-gradient(circle, #ee0979, #ff6a00)',
-		//background: '#FF9100',
 		display: 'inline-block',
 	},
 	gridProper:{
@@ -40,10 +41,10 @@ const styles={
 		width: 650,
 		height: 170,
 		padding:' 10px 0 ',
-		marginBottom: '50'
+		marginBottom: 50
 	},
 	recipe:{
-		borderRadius: '5',
+		borderRadius: 5,
 		width: 150,
 		height: 150,
 		marginRight: 12,
@@ -55,8 +56,11 @@ class AllRecipesGrid extends React.Component {
   /*constructor(props) {
     super(props)
   }*/
-
+  componentWillMount(){
+  	getData()
+  }
   render() {
+  	console.log(this.props)
     return (
       <div style={styles.gridContainer}>
         <div style={styles.gridProper}>
@@ -66,7 +70,7 @@ class AllRecipesGrid extends React.Component {
         	</div>
         	<div style={styles.catHeader}>Open Source Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
-        		<div style={styles.recipe}></div><div style={styles.recipe}></div><div style={styles.recipe}></div><div style={styles.recipe}></div>
+        		
         	</div>
         	<div style={styles.catHeader}>Popular Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
@@ -82,4 +86,8 @@ class AllRecipesGrid extends React.Component {
   }
 }
 
-export default AllRecipesGrid
+function mapStateToProps(appState){
+	return { recipes : appState.recipes}
+}
+
+export default connect(mapStateToProps)(AllRecipesGrid)
