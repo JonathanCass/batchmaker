@@ -1,4 +1,8 @@
+/*jshint -W065 */
+
 import React from 'react'
+import {getData} from '../api/recipe'
+import {connect} from 'react-redux'
 
 const styles ={
 	recipeContainer:{
@@ -44,25 +48,25 @@ const styles ={
 		borderRadius: 5,
 		border: 'solid 2px white',
 		display: 'inline-block',
-		paddingLeft: 20,
+		paddingLeft: 10,
 		verticalAlign: 'text-bottom'
 	},
 	boxLabel:{
 		height: 40,
-		fontSize: 16,
+		fontSize: 14,
 		lineHeight: '60px',
 		color: '#03A9F4'
 			
 	},
 	boxValue:{
 		height: 50,
-		fontSize: 20,
+		fontSize: 18,
 		color: '#FF5722',
 		lineHeight: '30px'
 	},
 	ingredientBox:{
 		width: 640,
-		height: 362,
+		height: 242,
 		border: 'solid 2px white',
 		borderRadius: 5
 	},
@@ -97,6 +101,7 @@ const styles ={
 		height: 60,
 		display:'inline-block',
 		color: '#FF5722',
+		lineHeight: '60px'
 	},
 	adjustButton:{
 		width: 120,
@@ -105,41 +110,37 @@ const styles ={
 }
 
 class RecipeView extends React.Component {
-  /*constructor(props) {
+  constructor(props) {
     super(props)
-  }*/
-
+    this.state = { id : Number(this.props.match.params.recipeId) - 1}
+  }
+  componentWillMount(){
+  	getData()
+  }
   render() {
+  	console.log('this.props.recipes[0]' , this.props.recipes[0] && this.props.recipes[this.state.id].name)
     return (
       <div style={styles.recipeContainer}>
         <div style={styles.recipeProper}>
-        	<div style={styles.recipteTitle}>recipe.title</div>
-        	<div style={styles.recipeBy}>recipe.by</div>
+        	<div style={styles.recipteTitle}>{this.props.recipes[0] && this.props.recipes[this.state.id].name}</div>
+        	<div style={styles.recipeBy}> by {this.props.recipes[0] && this.props.recipes[this.state.id].by}</div>
         	<img style={styles.recipeImage} src="" alt=""/>
         	
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Recipe Type</div><div style={styles.boxValue}>recipe.type</div>
+        		<div style={styles.boxLabel}>Recipe Type</div><div style={styles.boxValue}>{this.props.recipes[0] && this.props.recipes[this.state.id].type}</div>
         	</div>
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Prep Time</div><div style={styles.boxValue}>recipe.prepTime</div>
+        		<div style={styles.boxLabel}>Prep Time</div><div style={styles.boxValue}>{parseInt((this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)/60) === 0 ? "" : parseInt((this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)/60) + "Hrs"} {(this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)%60}Mins</div>
         	</div>
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Cook Time</div><div style={styles.boxValue}>recipe.cookTime</div>
+        		<div style={styles.boxLabel}>Cook Time</div><div style={styles.boxValue}>{parseInt((this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)/60) === 0 ? "" : parseInt((this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)/60) + "Hrs"} {(this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)%60}Mins</div>
         	</div>
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Cook Temp</div><div style={styles.boxValue}>recipe.cookTemp</div>
+        		<div style={styles.boxLabel}>Cook Temp</div><div style={styles.boxValue}>{this.props.recipes[0] && this.props.recipes[this.state.id].cookTemp} °F</div>
         	</div>
 
         	<div style={styles.ingredientBox}>
         		<div style={styles.adjustLine}>recipe.servingAmount recipe.servingType<button style={styles.adjustButton}>Adjust</button></div>
-        		<div style={styles.ingredientLine}>
-        			<div style={styles.amount}>allocations.numberOf allocations.unitOf</div>
-        			<div style={styles.ingredient}>allocations.what</div>
-        		</div>
-        		<div style={styles.ingredientLine}>
-        			<div style={styles.amount}>allocations.numberOf allocations.unitOf</div>
-        			<div style={styles.ingredient}>allocations.what</div>
-        		</div>
         		<div style={styles.ingredientLine}>
         			<div style={styles.amount}>allocations.numberOf allocations.unitOf</div>
         			<div style={styles.ingredient}>allocations.what</div>
@@ -159,4 +160,8 @@ class RecipeView extends React.Component {
   }
 }
 
-export default RecipeView
+function mapStateToProps(appState){
+	return { recipes : appState.recipes}
+}
+
+export default connect(mapStateToProps)(RecipeView)
