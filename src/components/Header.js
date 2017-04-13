@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const styles = {
   headerContainer:{
@@ -25,6 +26,10 @@ const styles = {
   	lineHeight: '74px',
   	width: 390,
   	paddingLeft: 15
+  },
+  title:{
+    textDecoration: 'none',
+    color: '#FAFAFA',
   }
 }
 
@@ -40,10 +45,10 @@ class Header extends React.Component {
         	<div style={styles.headerIntro}> Begin food production, organic.</div>
         </div>
         <div style={styles.appTitle}>
-        	<h1>BATCH CONSTRUCTOR</h1>
+        	<Link to="/" style={styles.title}><h1 >BATCH CONSTRUCTOR</h1></Link>
         </div>
         <div style={styles.headerRight}>
-        	<i style={styles.icon} className="material-icons">note_add</i>
+        	<Link to="/RecipeForm/" ><i style={styles.icon} className="material-icons">note_add</i></Link>
         	<i style={styles.icon} className="material-icons">settings</i>
         	<i style={styles.icon} className="material-icons">face</i>
         </div>
