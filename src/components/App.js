@@ -3,6 +3,7 @@ import Header from "./Header"
 import Sidebar from "./Sidebar"
 import RecipeForm from './RecipeForm'
 import AllRecipesGrid from './AllRecipesGrid'
+import RecipeView from './RecipeView'
 import {Provider} from 'react-redux'
 import store from '../store'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
@@ -18,6 +19,7 @@ export default React.createClass({
 		      	<Sidebar/>
 		      	<Route exact={true} path='/' component={AllRecipesGrid} />
           		<Route path='/RecipeForm/' component={RecipeForm} />
+          		<Route path='/RecipeView/:recipeId' component={RecipeView} />
 		    </div>
 	    </Router>
 	    </Provider>

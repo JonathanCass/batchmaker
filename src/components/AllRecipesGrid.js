@@ -1,6 +1,7 @@
 import React from 'react'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 const styles={
 	gridContainer:{
@@ -61,6 +62,7 @@ const styles={
 		fontSize: 14,
 		width: 150,
 		height: 10,
+		color: 'white'
 	},
 }
 class AllRecipesGrid extends React.Component {
@@ -78,31 +80,39 @@ class AllRecipesGrid extends React.Component {
         	<div style={styles.catHeader}>This User's Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
-        			<div style={styles.recipeAndName}>
-        				<img key={'recipe' + recipe.id} src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
-        			</div>	
+        			<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
+        				<div style={styles.recipeAndName}>
+        					<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
+        				</div>
+        			</Link>
         		))}        	</div>
         	<div style={styles.catHeader}>Open Source Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
         		{this.props.recipes.map(recipe=>(
-        			<div style={styles.recipeAndName}>
-        				<img key={'recipe' + recipe.id} src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
-        			</div>	
+        			<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
+	        			<div style={styles.recipeAndName}>
+	        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
+	        			</div>
+	        		</Link>	
         		))}
         	</div>
         	<div style={styles.catHeader}>Popular Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
-        			<div style={styles.recipeAndName}>
-        				<img key={'recipe' + recipe.id} src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
-        			</div>	
+					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
+	        			<div style={styles.recipeAndName}>
+	        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
+	        			</div>
+	        		</Link>	
         		))}        	</div>
         	<div style={styles.catHeader}>Favorite Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
-        			<div style={styles.recipeAndName}>
-        				<img key={'recipe' + recipe.id} src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
-        			</div>	
+					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
+	        			<div style={styles.recipeAndName}>
+	        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
+	        			</div>
+	        		</Link>	
         		))}        	</div>
         </div>
       </div>
