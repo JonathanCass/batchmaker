@@ -9,6 +9,8 @@
 			"prepTime" : 140,
 			"cookTime" : 55,
 			"cookTemp" : 450,
+			"servingAmount" : 2,
+			"servingType" : "bowls",
 			"public" : true
 		},
 		{
@@ -20,6 +22,8 @@
 			"prepTime" : 60,
 			"cookTime" : 110,
 			"cookTemp" : 450,
+			"servingAmount" : 6,
+			"servingType" : "blobs",
 			"public" : true
 		},
 		{
@@ -31,6 +35,8 @@
 			"prepTime" : 140,
 			"cookTime" : 55,
 			"cookTemp" : 450,
+			"servingAmount" : 2,
+			"servingType" : "bowls",
 			"public" : true
 		},
 		{
@@ -42,6 +48,8 @@
 			"prepTime" : 60,
 			"cookTime" : 110,
 			"cookTemp" : 450,
+			"servingAmount" : 2,
+			"servingType" : "blobs",
 			"public" : true
 		}
 	],

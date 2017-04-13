@@ -6,7 +6,6 @@ const styles ={
 		height: 1370,
 		width: 1220,
 		background: 'radial-gradient(circle, #ee0979, #ff6a00)',
-		//background: '#FF9100',
 		display: 'inline-block',
 	},
 	formProper:{
