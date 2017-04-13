@@ -19,7 +19,7 @@
 			"prepTime" : 60,
 			"cookTime" : 110,
 			"cookTemp" : 450
-		},
+		}
 	],
 	"steps":[
 		{
@@ -45,7 +45,7 @@
 			"order" : 2,
 			"recipeId" : 1,
 			"directions" : "Chop and stir mortal!" 
-		},
+		}
 	],
 	"allocations":[
 		{
@@ -79,6 +79,6 @@
 			"unitOf" : "fl oz",
 			"what" : "Lemon Juice"
 
-		},
+		}
 	]
 }
