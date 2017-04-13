@@ -1,0 +1,84 @@
+{
+	"recipes":[
+		{
+			"id": 1,
+			"name": "Example Recipe",
+			"by" : "Master Control Protocol",
+			"photoUrl" : "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
+			"type" : "breakfast",
+			"prepTime" : 140,
+			"cookTime" : 55,
+			"cookTemp" : 450
+		},
+		{
+			"id": 2,
+			"name": "Example Recipe 2",
+			"by" : "Master Control Protocol",
+			"photoUrl" : "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
+			"type" : "lunch",
+			"prepTime" : 60,
+			"cookTime" : 110,
+			"cookTemp" : 450
+		},
+	],
+	"steps":[
+		{
+			"id" : 1,
+			"order" : 1,
+			"recipeId" : 1,
+			"directions" : "Roast this mixture!" 
+		},
+		{
+			"id" : 2,
+			"order" : 2,
+			"recipeId" : 1,
+			"directions" : "Mix the ashes meatbag!" 
+		},
+		{
+			"id" : 3,
+			"order" : 1,
+			"recipeId" : 2,
+			"directions" : "Torch this mess!" 
+		},
+		{
+			"id" : 4,
+			"order" : 2,
+			"recipeId" : 1,
+			"directions" : "Chop and stir mortal!" 
+		},
+	],
+	"allocations":[
+		{
+			"id": 1,
+			"stepId": 1,
+			"numberOf": 4,
+			"unitOf" : "Cups",
+			"what" : "Pureed Chicken Flesh"
+
+		},
+		{
+			"id": 2,
+			"stepId": 2,
+			"numberOf": 3,
+			"unitOf" : "Tbsp.",
+			"what" : "Salt"
+
+		},
+		{
+			"id": 3,
+			"stepId": 3,
+			"numberOf": 1,
+			"unitOf" : "Pound",
+			"what" : "Potatoes"
+
+		},
+		{
+			"id": 4,
+			"stepId": 10,
+			"numberOf": 4,
+			"unitOf" : "fl oz",
+			"what" : "Lemon Juice"
+
+		},
+	]
+}

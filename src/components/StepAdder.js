@@ -21,7 +21,7 @@ const styles={
 		height: 50
 	},
 	directions:{
-		width: 700,
+		width: 640,
 		height: 150,
 		borderRadius: 5
 	},

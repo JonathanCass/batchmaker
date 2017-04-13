@@ -6,7 +6,7 @@ const styles = {
 		display: 'inline-block',
 		float: 'left',
 		width: 220,
-		height: 1820,
+		height: 1370,
 		background: 'linear-gradient( #030304, #0A0C0D)'	
 	},
   	sidebarEntry:{

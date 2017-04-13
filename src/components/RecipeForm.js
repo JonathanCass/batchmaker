@@ -2,8 +2,10 @@ import React from 'react'
 import StepAdder from './StepAdder'
 const styles ={
 	formContainer:{
-		height: 1756,
+		height: 1370,
 		width: 1220,
+		background: 'radial-gradient(circle, #ee0979, #ff6a00)',
+		//background: '#FF9100',
 		display: 'inline-block',
 	},
 	formProper:{
