@@ -13,3 +13,11 @@ body {
 h1 {
 	color: #FAFAFA;
 }
+input, button, textarea, img {
+	border-radius: 5px;
+	margin: 10px;
+}
+select {
+	position:relative;
+	right: 10px;
+}
