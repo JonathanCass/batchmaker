@@ -8,39 +8,74 @@ const styles = {
 		height: 276,
 		border: 'solid 2px white',
 		borderRadius: 5,
+		overflow: 'scroll'
 	},
 	aStep:{
 		width: 640,
 		height: 138,
 	},
 	stepNumber:{
-		width: 640,
+		width: 636,
 		height: 30,
 		fontSize:22,
 		border: '1px solid #009688',
-  		borderWidth: ' 0 0 1px 0',
+  		borderWidth: ' 0 0 2px 0',
   		marginTop: 15,
   		paddingLeft: 10
 	},
 	directions:{
-		width: 480,
+		width: 400,
 		height: 90,
 		paddingLeft: 10,
-		marginTop: 15
+		marginTop: 15,
+		float: 'left'
 	},
 	allocations:{
-		width: 160,
-		height: 90
+		marginTop:20,
+		width: 240,
+		height: 140,
+		display: 'inline-block',
+		overflow: 'scroll',
 	},
-	allocationEntry1:{
-		width: 160,
-		height: 90,
+	entryAmount:{
+		width: 90,
+		height: 35,
+		float: 'left',
+		border: '1px solid #009688',
+  		borderWidth: ' 1px 1px 0 0',
+  		lineHeight: '35px',
+  		paddingRight: 10,
+  		textAlign: 'right'
 	},
-	allocationEntry1:{
-		width: 160,
-		height: 90,
+	entryWhat:{
+		width: 150,
+		height: 35,
+		float: 'right',
 		border: '1px solid #009688',
   		borderWidth: ' 1px 0 0 0',
+  		lineHeight: '35px',
+  		paddingLeft: 10
+	},
+	entryAmountNoBorder:{
+		width: 90,
+		height: 35,
+		float: 'left',
+		border: '1px solid #009688',
+  		borderWidth: ' 0 1px 0 0',
+  		lineHeight: '35px',
+  		paddingRight: 10,
+  		textAlign: 'right'
+	},
+	entryWhatNoBorder:{
+		width: 150,
+		height: 35,
+		float: 'right',
+  		lineHeight: '35px',
+  		paddingLeft: 10
+	},
+	allocationEntry:{
+		width: 240,
+		height: 35,
 	},
 	displayNone:{
 		display: 'none'
@@ -59,9 +94,17 @@ class Step extends React.Component {
     	return (
       		<div style={styles.stepContainer}>
         		{this.props.steps.map(step=>(
-        			<div style={ step.recipeId == this.props.recipeId ? styles.aStep : styles.displayNone}>
+        			<div key={'step' + step.id} style={ Number(step.recipeId) === Number(this.props.recipeId) ? styles.aStep : styles.displayNone}>
         				<div style={styles.stepNumber}>Step {step.order}</div>
         				<div style={styles.directions}>{step.directions}</div>
+        				<div style={styles.allocations}>
+        					{this.props.allocations.map((allocation, i)=>(
+        						<div key={'allocation'+ allocation.id} style={allocation.recipeId == this.props.recipeId ? styles.allocationEntry : styles.displayNone}>
+        							<div style={ i === 0 ? styles.entryAmountNoBorder : styles.entryAmount}> {allocation.numberOf + " "} {allocation.unitOf} </div>
+        							<div style={ i === 0 ? styles.entryWhatNoBorder : styles.entryWhat}> {allocation.what} </div>
+        						</div>
+        					))}
+        				</div>
         			</div>
         		))}
       		</div>
