@@ -1,5 +1,7 @@
 import React from 'react'
-import addIngredient from '../api/recipe'
+//import {addIngredient} from '../api/recipe'
+import data from '../../db.json'
+//import axios from 'axios'
 
 const styles={
 	stepContainer:{
@@ -21,15 +23,6 @@ const styles={
 		width: 60,
 		height: 50
 	},
-	directions:{
-		width: 640,
-		height: 150,
-		borderRadius: 5
-	},
-	addStep:{
-		width: 220,
-		height: 50
-	}
 }
 
 class StepAdder extends React.Component {
@@ -46,15 +39,17 @@ class StepAdder extends React.Component {
   	}
   	addIngredient = (e) => {
   		e.preventDefault()
-        addIngredient({ 
-        	numberOf: this.state.numberOf,
-        	unitOf: this.state.unitOf,
-        	what: this.state.what
-
-        })
+		const dataObj = {
+			"id" : data.allocations.length + 1,
+			"recipeId" : data.recipes.length + 1,
+			"stepId": data.steps.length + 1,
+			"numberOf": this.state.numberOf,
+			"unitOf" : this.state.unitOf,
+			"what" : this.state.what
+		}
+		data.allocations.push(dataObj)
   	}
   render() {
-  	console.log(" StepAdder this.state", this.state)
     return (
       <div style={styles.stepContainer}>
         	<input type="text" onChange={this.handleChange} name="numberOf" style={styles.amount} placeholder="Amount"></input>
@@ -71,8 +66,6 @@ class StepAdder extends React.Component {
 			</select>
 			<input type="text" onChange={this.handleChange} name="what" style={styles.ingredient} placeholder="Ingredient"></input>
 			<button onClick={this.addIngredient} style={styles.addIngredient}>+</button>
-			<textarea onChange={this.handleChange} style={styles.directions} name="directions" defaultValue="Input procedure for this production phase."></textarea>
-        	<button style={styles.addStep}>Add This Step</button>
       </div>
     )
   }

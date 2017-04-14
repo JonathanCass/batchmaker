@@ -1,5 +1,6 @@
 import React from 'react'
 import StepAdder from './StepAdder'
+import data from '../../db.json'
 
 const styles ={
 	formContainer:{
@@ -60,7 +61,7 @@ const styles ={
 		height: 50
 	},
 	saveRecipe:{
-		width: 250,
+		width: 640,
 		height: 60
 	},
 	infoHeader:{
@@ -78,13 +79,23 @@ const styles ={
 	},
 	radioButtons:{
 		color: '#03A9F4'
+	},
+	directions:{
+		width: 640,
+		height: 150,
+		borderRadius: 5
+	},
+	addStep:{
+		width: 220,
+		height: 50,
+		display: 'block'
 	}
 }
 class RecipeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	name:'', by:'',photoUrl:'',type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true
+    	name:'', by:'',photoUrl:'',type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, order: 1, directions: ''
     	}
   	}
   	handleChange = (e) => {
@@ -92,8 +103,41 @@ class RecipeForm extends React.Component {
         	[e.target.name] : e.target.value
         })
   	}
+  	addStep = (e) => {
+  		e.preventDefault()
+		let dataObj = {
+			"id" : data.steps.length + 1,
+			"recipeId" : data.recipes.length + 1,
+			"order" : this.state.order,
+			"directions" : this.state.directions
+		}
+		data.steps.push(dataObj)
+		this.setState({
+			order : this.state.order + 1
+		})
+  	}
+  	addRecipe = (e) => {
+  		e.preventDefault()
+		console.log("data.recipes", data.recipes)
+		let dataObj2 = {
+			"id" : data.recipes.length + 1,
+			"name": this.state.name,
+			"by" : this.state.by,
+			"photoUrl" : this.state.photoUrl,
+			"type" : this.state.type,
+			"prepTime" : this.state.prepTime,
+			"cookTime" : this.state.cookTime,
+			"cookTemp" : this.state.cookTemp,
+			"servingAmount" : this.state.servingAmount,
+			"servingType" : this.state.servingType,
+			"public" : true
+		}
+		data.recipes.push(dataObj2)
+		this.setState({
+			order : 0
+		})
+  	}
   render() {
-  	console.log(" RecipeForm this.state", this.state)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
@@ -124,7 +168,9 @@ class RecipeForm extends React.Component {
 				<span style={styles.producesLabel}>Recipe produces</span><input type="text" name="servingAmount" onChange={this.handleChange} style={styles.amount} placeholder="Amount"></input>
       			<input type="text" name="servingType" onChange={this.handleChange} style={styles.measurement} placeholder="Unit of measurement to be applied to result"></input>
       			<StepAdder/>
-      			<button style={styles.saveRecipe}>Input this Food Method</button>
+      			<textarea onChange={this.handleChange} style={styles.directions} name="directions" defaultValue="Input procedure for this production phase."></textarea>
+        		<button style={styles.addStep} onClick={this.addStep}>Add This Step</button>
+      			<button style={styles.saveRecipe} onClick={this.addRecipe}>Input this Food Method</button>
       		</form>
         </div>
       </div>

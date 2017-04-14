@@ -1,6 +1,5 @@
 import store from '../store'
 import axios from 'axios'
-import data from '../../db.json'
 
 export function getData() {
 	axios.get('http://localhost:3001/db').then(res=>{
@@ -12,12 +11,14 @@ export function getData() {
 }
 
 export function addIngredient(ingInfo) {
-	axios.post('http://localhost:3001/db/allocations', {
-		"recipeId" : data.recipes.length() + 1,
-		"stepId": data.steps.length() + 1,
+	axios.post('http://localhost:3001/', {
+		Test : "Fails"
+		/*
+		"recipeId" : data.recipes.length + 1,
+		"stepId": data.steps.length + 1,
 		"numberOf": ingInfo.numberOf,
 		"unitOf" : ingInfo.unitOf,
-		"what" : ingInfo.what
+		"what" : ingInfo.what*/
 	})
 }
 
