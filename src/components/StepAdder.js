@@ -43,8 +43,8 @@ class StepAdder extends React.Component {
         	<input type="text" style={styles.amount} placeholder="Amount"></input>
         	<select style={styles.unit}>
 				<option value="">Unit</option>
-				<option value="tsp">Tsp.</option>
-				<option value="tbsp">Tbsp.</option>
+				<option value="tsp">Tsp</option>
+				<option value="tbsp">Tbsp</option>
 				<option value="cup">Cup</option>
 				<option value="pound">Pound</option>
 				<option value="floz">fl oz</option>

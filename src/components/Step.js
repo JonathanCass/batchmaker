@@ -21,7 +21,8 @@ const styles = {
 		border: '1px solid #009688',
   		borderWidth: ' 0 0 2px 0',
   		marginTop: 15,
-  		paddingLeft: 10
+  		paddingLeft: 10,
+  		color: 'red'
 	},
 	directions:{
 		width: 400,
@@ -41,37 +42,42 @@ const styles = {
 		width: 90,
 		height: 35,
 		float: 'left',
-		border: '1px solid #009688',
+		border: '1px solid red',
   		borderWidth: ' 1px 1px 0 0',
   		lineHeight: '35px',
   		paddingRight: 10,
-  		textAlign: 'right'
+  		textAlign: 'right',
+  		color: '#03A9F4'
 	},
 	entryWhat:{
 		width: 150,
 		height: 35,
 		float: 'right',
-		border: '1px solid #009688',
+		border: '1px solid red',
   		borderWidth: ' 1px 0 0 0',
-  		lineHeight: '35px',
-  		paddingLeft: 10
+  		padding: '5px 0 0 10px',
+  		fontSize: 14,
+  		color: '#EF4116'
 	},
 	entryAmountNoBorder:{
 		width: 90,
 		height: 35,
 		float: 'left',
-		border: '1px solid #009688',
+		border: '1px solid red',
   		borderWidth: ' 0 1px 0 0',
   		lineHeight: '35px',
   		paddingRight: 10,
-  		textAlign: 'right'
+  		textAlign: 'right',
+  		color: '#03A9F4'
 	},
 	entryWhatNoBorder:{
 		width: 150,
 		height: 35,
 		float: 'right',
-  		lineHeight: '35px',
-  		paddingLeft: 10
+  		paddingLeft: 10,
+  		fontSize: 14,
+  		padding: '5px 0 0 10px',
+  		color: '#EF4116'
 	},
 	allocationEntry:{
 		width: 240,
@@ -98,10 +104,10 @@ class Step extends React.Component {
         				<div style={styles.stepNumber}>Step {step.order}</div>
         				<div style={styles.directions}>{step.directions}</div>
         				<div style={styles.allocations}>
-        					{this.props.allocations.map((allocation, i)=>(
+        					{this.props.allocations.map(allocation=>(
         						<div key={'allocation'+ allocation.id} style={allocation.recipeId == this.props.recipeId ? styles.allocationEntry : styles.displayNone}>
-        							<div style={ i === 0 ? styles.entryAmountNoBorder : styles.entryAmount}> {allocation.numberOf + " "} {allocation.unitOf} </div>
-        							<div style={ i === 0 ? styles.entryWhatNoBorder : styles.entryWhat}> {allocation.what} </div>
+        							<div style={ this.props.steps[allocation.stepId -1].order == 1 ? styles.entryAmountNoBorder : styles.entryAmount}> {allocation.numberOf + " "} {allocation.unitOf} </div>
+        							<div style={ this.props.steps[allocation.stepId -1].order == 1 ? styles.entryWhatNoBorder : styles.entryWhat}> {allocation.what} </div>
         						</div>
         					))}
         				</div>

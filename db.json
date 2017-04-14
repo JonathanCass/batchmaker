@@ -117,7 +117,7 @@
 			"recipeId" : 1,
 			"stepId": 2,
 			"numberOf": 3,
-			"unitOf" : "Tbsp.",
+			"unitOf" : "Tbsp",
 			"what" : "Salt"
 		},
 		{
@@ -149,7 +149,7 @@
 			"recipeId" : 3,
 			"stepId": 6,
 			"numberOf": 3,
-			"unitOf" : "Tbsp.",
+			"unitOf" : "Tbsp",
 			"what" : "Salt"
 		},
 		{
