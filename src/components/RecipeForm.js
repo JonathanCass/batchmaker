@@ -85,15 +85,15 @@ class RecipeForm extends React.Component {
     super(props)
     this.state={
     	name:'', by:'',photoUrl:'',type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true
-    }
-  }
-  handleChange = (e) => {
+    	}
+  	}
+  	handleChange = (e) => {
         this.setState({
         	[e.target.name] : e.target.value
         })
-    }
+  	}
   render() {
-  	console.log("this.state", this.state)
+  	console.log(" RecipeForm this.state", this.state)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>

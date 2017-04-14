@@ -32,15 +32,23 @@ const styles={
 }
 
 class StepAdder extends React.Component {
-  /*constructor(props) {
-    super(props)
-  }*/
-
+  	constructor(props) {
+    	super(props)
+    	this.state={
+    		numberOf:0, unitOf:'',what:'',directions:''
+    	}
+  	}
+  	handleChange = (e) => {
+        this.setState({
+        	[e.target.name] : e.target.value
+        })
+  	}
   render() {
+  	console.log(" StepAdder this.state", this.state)
     return (
       <div style={styles.stepContainer}>
-        	<input type="text" style={styles.amount} placeholder="Amount"></input>
-        	<select style={styles.unit}>
+        	<input type="text" onChange={this.handleChange} name="numberOf" style={styles.amount} placeholder="Amount"></input>
+        	<select onChange={this.handleChange} name="unitOf" style={styles.unit}>
 				<option value="">Unit</option>
 				<option value="tsp">Tsp</option>
 				<option value="tbsp">Tbsp</option>
@@ -51,9 +59,9 @@ class StepAdder extends React.Component {
 				<option value="quart">Quart</option>
 				<option value="gallon">Gallon</option>
 			</select>
-			<input type="text" style={styles.ingredient} placeholder="Ingredient"></input>
+			<input type="text" onChange={this.handleChange} name="what" style={styles.ingredient} placeholder="Ingredient"></input>
 			<button style={styles.addIngredient}>+</button>
-			<textarea style={styles.directions} defaultValue="Input procedure for this production phase."></textarea>
+			<textarea onChange={this.handleChange} style={styles.directions} name="directions" defaultValue="Input procedure for this production phase."></textarea>
         	<button style={styles.addStep}>Add This Step</button>
       </div>
     )
