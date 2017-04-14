@@ -116,13 +116,19 @@ const styles ={
 	adjustButton:{
 		width: 120,
 		height: 40,
+		fontSize:20
 	},
+	displayNone:{
+		display: 'none'
+	}
 }
 
 class RecipeView extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { id : Number(this.props.match.params.recipeId) - 1}
+    this.state = { 
+    	id : Number(this.props.match.params.recipeId) - 1
+    }
   }
   componentWillMount(){
   	getData()
@@ -148,17 +154,16 @@ class RecipeView extends React.Component {
         		<div style={styles.boxLabel}>Cook Temp</div><div style={styles.boxValue}>{this.props.recipes[0] && this.props.recipes[this.state.id].cookTemp} °F</div>
         	</div>
 
-        	
         	<div style={styles.ingredientBox}>
         		<div style={styles.adjustLine}>
         			{this.props.recipes[0] && this.props.recipes[this.state.id].servingAmount + " "} {this.props.recipes[0] && this.props.recipes[this.state.id].servingType}<button style={styles.adjustButton}>Adjust</button>
         		</div>
         		<div style={styles.mapBox}>	
 			        {this.props.allocations.map(allocation=>(
-			        	<div key={'allocation' + allocation.id}style={styles.ingredientLine}>
-			        		<div style={styles.amount}>{allocation.numberOf} {allocation.unitOf}</div>
-			        		<div style={styles.ingredient}>{allocation.what}</div>
-			        	</div>
+				        	<div key={'allocation' + allocation.id}style={Number(allocation.recipeId) === Number(this.props.match.params.recipeId) ? styles.ingredientLine : styles.displayNone}>
+				        		<div style={styles.amount}>{allocation.numberOf} {allocation.unitOf}</div>
+				        		<div style={styles.ingredient}>{allocation.what}</div>
+				        	</div>
 			        ))}
 			    </div>
         	</div>

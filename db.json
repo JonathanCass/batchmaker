@@ -106,30 +106,31 @@
 	"allocations":[
 		{
 			"id": 1,
+			"recipeId" : 1,
 			"stepId": 1,
 			"numberOf": 4,
 			"unitOf" : "Cups",
 			"what" : "Pureed Chicken Flesh"
-
 		},
 		{
 			"id": 2,
+			"recipeId" : 1,
 			"stepId": 2,
 			"numberOf": 3,
 			"unitOf" : "Tbsp.",
 			"what" : "Salt"
-
 		},
 		{
 			"id": 3,
+			"recipeId" : 2,
 			"stepId": 3,
 			"numberOf": 1,
 			"unitOf" : "Pound",
 			"what" : "Potatoes"
-
 		},
 		{
 			"id": 4,
+			"recipeId" : 2,
 			"stepId": 4,
 			"numberOf": 10,
 			"unitOf" : "fl oz",
@@ -137,30 +138,31 @@
 		},
 		{
 			"id": 5,
+			"recipeId" : 3,
 			"stepId": 5,
 			"numberOf": 4,
 			"unitOf" : "Cups",
 			"what" : "Pureed Chicken Flesh"
-
 		},
 		{
 			"id": 6,
+			"recipeId" : 3,
 			"stepId": 6,
 			"numberOf": 3,
 			"unitOf" : "Tbsp.",
 			"what" : "Salt"
-
 		},
 		{
 			"id": 7,
+			"recipeId" : 4,
 			"stepId": 7,
 			"numberOf": 1,
 			"unitOf" : "Pound",
 			"what" : "Potatoes"
-
 		},
 		{
 			"id": 8,
+			"recipeId" : 4,
 			"stepId": 8,
 			"numberOf": 10,
 			"unitOf" : "fl oz",
