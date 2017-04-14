@@ -49,7 +49,7 @@
 			"cookTime" : 110,
 			"cookTemp" : 450,
 			"servingAmount" : 2,
-			"servingType" : "blobs",
+			"servingType" : "bloc",
 			"public" : true
 		}
 	],

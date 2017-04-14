@@ -15,7 +15,7 @@ const styles ={
 		height: 1220,
 		padding: 30,
 		background: 'black',
-		margin: '70px auto',
+		margin: '40px auto',
 		borderRadius: 20,
 		boxShadow: '15px 15px 10px 0px rgba(211,19,19,1)'
 	},
@@ -101,6 +101,7 @@ const styles ={
 		lineHeight:'60px',
 		border: 'solid 1px white',
 		borderWidth: ' 0 1px 1px 0',
+		paddingRight: 10
 	},
 	ingredient:{
 		width: 480,
@@ -110,6 +111,7 @@ const styles ={
 		lineHeight: '60px',
 		border: 'solid 1px white',
 		borderWidth: ' 0 0 1px 1px',
+		paddingLeft: 10
 	},
 	adjustButton:{
 		width: 120,
@@ -126,13 +128,12 @@ class RecipeView extends React.Component {
   	getData()
   }
   render() {
-  	console.log('this.props.allocations' , this.props.allocations[0] && this.props.allocations)
     return (
       <div style={styles.recipeContainer}>
         <div style={styles.recipeProper}>
         	<div style={styles.recipteTitle}>{this.props.recipes[0] && this.props.recipes[this.state.id].name}</div>
         	<div style={styles.recipeBy}> by {this.props.recipes[0] && this.props.recipes[this.state.id].by}</div>
-        	<img style={styles.recipeImage} src="" alt=""/>
+        	<img style={styles.recipeImage} src={this.props.recipes[0] && this.props.recipes[this.state.id].photoUrl} alt=""/>
         	
         	<div style={styles.typeTimeTemp}>
         		<div style={styles.boxLabel}>Recipe Type</div><div style={styles.boxValue}>{this.props.recipes[0] && this.props.recipes[this.state.id].type}</div>

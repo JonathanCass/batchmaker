@@ -16,7 +16,7 @@ const styles={
 		height: 1220,
 		padding: 30,
 		background: 'black',
-		margin: '70px auto',
+		margin: '40px auto',
 		borderRadius: 20,
 		boxShadow: '15px 15px 10px 0px rgba(211,19,19,1)'
 	},
