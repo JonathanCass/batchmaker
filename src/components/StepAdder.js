@@ -1,4 +1,5 @@
 import React from 'react'
+import addIngredient from '../api/recipe'
 
 const styles={
 	stepContainer:{
@@ -43,6 +44,15 @@ class StepAdder extends React.Component {
         	[e.target.name] : e.target.value
         })
   	}
+  	addIngredient = (e) => {
+  		e.preventDefault()
+        addIngredient({ 
+        	numberOf: this.state.numberOf,
+        	unitOf: this.state.unitOf,
+        	what: this.state.what
+
+        })
+  	}
   render() {
   	console.log(" StepAdder this.state", this.state)
     return (
@@ -60,7 +70,7 @@ class StepAdder extends React.Component {
 				<option value="gallon">Gallon</option>
 			</select>
 			<input type="text" onChange={this.handleChange} name="what" style={styles.ingredient} placeholder="Ingredient"></input>
-			<button style={styles.addIngredient}>+</button>
+			<button onClick={this.addIngredient} style={styles.addIngredient}>+</button>
 			<textarea onChange={this.handleChange} style={styles.directions} name="directions" defaultValue="Input procedure for this production phase."></textarea>
         	<button style={styles.addStep}>Add This Step</button>
       </div>
