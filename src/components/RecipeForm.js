@@ -98,14 +98,14 @@ class RecipeForm extends React.Component {
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
       		<form><div style={styles.infoHeader}>Standard Recipe Information</div>
-      			<img src="" alt="ADD VISUAL" style={styles.addPhoto}/><input type="text" name="photUrl" style={styles.addUrl} placeholder="Add Url of an Image"></input>
-      			<input type="text" style={styles.recipeBy} name="name" placeholder="Recipe Name"></input>
-      			<input type="text" style={styles.recipeBy} name="by" placeholder="By"></input>
+      			<img src={this.state.photoUrl} alt="ADD VISUAL" style={styles.addPhoto}/><input type="text" name="photoUrl" onChange={this.handleChange} style={styles.addUrl} placeholder="Add Url of an Image"></input>
+      			<input type="text" style={styles.recipeBy} name="name" onChange={this.handleChange} placeholder="Recipe Name"></input>
+      			<input type="text" style={styles.recipeBy} name="by" onChange={this.handleChange} placeholder="By"></input>
       			<div>
       				<input type="radio" name="access" value="public"></input><span style={styles.radioButtons}>Unrestricted Access </span>
       				<input type="radio" name="access" value="private"></input><span style={styles.radioButtons}>This User Access Only </span>
       			</div>
-      			<select name="type" style={styles.recipeType}>
+      			<select name="type" onChange={this.handleChange} style={styles.recipeType}>
 				  <option value="">Recipe Type</option>
 				  <option value="breakfast">Breakfast</option>
 				  <option value="lunch">Lunch</option>
@@ -113,16 +113,16 @@ class RecipeForm extends React.Component {
 				  <option value="dessert">Dessert</option>
 				</select>
 				<div>
-					<input type="text" name="prepTime" style={styles.prepTimeTemp} placeholder="Prep Time"></input>
-					<input type="text" name="cookTime" style={styles.prepTimeTemp} placeholder="Cook Time"></input>
-					<input type="text" name="cookTemp" style={styles.prepTimeTemp} placeholder="Cook Temp"></input>
+					<input type="text" name="prepTime" onChange={this.handleChange} style={styles.prepTimeTemp} placeholder="Prep Time"></input>
+					<input type="text" name="cookTime" onChange={this.handleChange} style={styles.prepTimeTemp} placeholder="Cook Time"></input>
+					<input type="text" name="cookTemp" onChange={this.handleChange} style={styles.prepTimeTemp} placeholder="Cook Temp"></input>
 					<select style={styles.degrees}>
 						<option value="f">F°</option>
 						<option value="c">C°</option>
 					</select>
 				</div>
-				<span style={styles.producesLabel}>Recipe produces</span><input type="text" name="servingAmount" style={styles.amount} placeholder="Amount"></input>
-      			<input type="text" name="servingType" style={styles.measurement} placeholder="Unit of measurement to be applied to result"></input>
+				<span style={styles.producesLabel}>Recipe produces</span><input type="text" name="servingAmount" onChange={this.handleChange} style={styles.amount} placeholder="Amount"></input>
+      			<input type="text" name="servingType" onChange={this.handleChange} style={styles.measurement} placeholder="Unit of measurement to be applied to result"></input>
       			<StepAdder/>
       			<button style={styles.saveRecipe}>Input this Food Method</button>
       		</form>
