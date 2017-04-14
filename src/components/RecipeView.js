@@ -1,4 +1,5 @@
 import React from 'react'
+import Step from './Step'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
 
@@ -34,9 +35,9 @@ const styles ={
 		textAlign: 'center'
 	},
 	recipeImage:{
-		margin: '25px 0',
-		width: 640,
-		height: 400,
+		margin: '30px 100px',
+		width: 440,
+		height: 300,
 		background: 'grey',
 		borderRadius: 20
 	},
@@ -118,6 +119,13 @@ const styles ={
 		height: 40,
 		fontSize:20
 	},
+	editRecipe:{
+		width: 160,
+		height: 40,
+		fontSize:20,
+		float: 'right',
+		margin: ' 20px 0 0 0 '
+	},
 	displayNone:{
 		display: 'none'
 	}
@@ -167,6 +175,8 @@ class RecipeView extends React.Component {
 			        ))}
 			    </div>
         	</div>
+        	<Step/>
+        	<button style={styles.editRecipe}>Edit This Recipe</button>
         </div>
       </div>
     )
