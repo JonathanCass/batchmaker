@@ -153,10 +153,10 @@ class RecipeView extends React.Component {
         		<div style={styles.boxLabel}>Recipe Type</div><div style={styles.boxValue}>{this.props.recipes[0] && this.props.recipes[this.state.id].type}</div>
         	</div>
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Prep Time</div><div style={styles.boxValue}>{parseInt((this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)/60) === 0 ? "" : parseInt((this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)/60) + "Hrs"} {(this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)%60}Mins</div>
+        		<div style={styles.boxLabel}>Prep Time</div><div style={styles.boxValue}>{parseInt(((this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)/60),10) === 0 ? "" : parseInt(((this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)/60),10) + "Hrs"} {(this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)%60}Mins</div>
         	</div>
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Cook Time</div><div style={styles.boxValue}>{parseInt((this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)/60) === 0 ? "" : parseInt((this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)/60) + "Hrs"} {(this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)%60}Mins</div>
+        		<div style={styles.boxLabel}>Cook Time</div><div style={styles.boxValue}>{parseInt(((this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)/60),10) === 0 ? "" : parseInt(((this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)/60),10) + "Hrs"} {(this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)%60}Mins</div>
         	</div>
         	<div style={styles.typeTimeTemp}>
         		<div style={styles.boxLabel}>Cook Temp</div><div style={styles.boxValue}>{this.props.recipes[0] && this.props.recipes[this.state.id].cookTemp} °F</div>

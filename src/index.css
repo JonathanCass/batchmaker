@@ -10,7 +10,7 @@ body {
 	font-family: sans-serif;
 	font-family: 'Orbitron', sans-serif;
 }
-input, button, textarea, img {
+input, button, textarea, img{
 	border-radius: 5px;
 	margin: 10px;
 }

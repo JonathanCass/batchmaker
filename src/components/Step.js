@@ -89,14 +89,10 @@ const styles = {
 
 }
 class Step extends React.Component {
-  	constructor(props) {
-    	super(props)
-  	}
 	componentWillMount(){
 		getData()
 	}
   	render() {
-  		console.log(this.props)
     	return (
       		<div style={styles.stepContainer}>
         		{this.props.steps.map(step=>(
@@ -105,9 +101,9 @@ class Step extends React.Component {
         				<div style={styles.directions}>{step.directions}</div>
         				<div style={styles.allocations}>
         					{this.props.allocations.map(allocation=>(
-        						<div key={'allocation'+ allocation.id} style={allocation.recipeId == this.props.recipeId ? styles.allocationEntry : styles.displayNone}>
-        							<div style={ this.props.steps[allocation.stepId -1].order == 1 ? styles.entryAmountNoBorder : styles.entryAmount}> {allocation.numberOf + " "} {allocation.unitOf} </div>
-        							<div style={ this.props.steps[allocation.stepId -1].order == 1 ? styles.entryWhatNoBorder : styles.entryWhat}> {allocation.what} </div>
+        						<div key={'allocation'+ allocation.id} style={Number(allocation.recipeId) === Number(this.props.recipeId) ? styles.allocationEntry : styles.displayNone}>
+        							<div style={ Number(this.props.steps[allocation.stepId -1].order) === 1 ? styles.entryAmountNoBorder : styles.entryAmount}> {allocation.numberOf + " "} {allocation.unitOf} </div>
+        							<div style={ Number(this.props.steps[allocation.stepId -1].order) === 1 ? styles.entryWhatNoBorder : styles.entryWhat}> {allocation.what} </div>
         						</div>
         					))}
         				</div>

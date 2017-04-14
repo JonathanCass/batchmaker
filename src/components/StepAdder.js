@@ -2,18 +2,18 @@ import React from 'react'
 
 const styles={
 	stepContainer:{
-		color: 'white'
+		color: 'white',
 	},
 	amount:{
-		width: 90,
+		width: 80,
 		height: 50
 	},
 	unit:{
-		width: 125,
+		width: 110,
 		height: 50
 	},
 	ingredient:{
-		width: 380,
+		width: 350,
 		height: 50
 	},
 	addIngredient:{
@@ -39,7 +39,6 @@ class StepAdder extends React.Component {
   render() {
     return (
       <div style={styles.stepContainer}>
-        <form>
         	<input type="text" style={styles.amount} placeholder="Amount"></input>
         	<select style={styles.unit}>
 				<option value="">Unit</option>
@@ -54,9 +53,8 @@ class StepAdder extends React.Component {
 			</select>
 			<input type="text" style={styles.ingredient} placeholder="Ingredient"></input>
 			<button style={styles.addIngredient}>+</button>
-			<textarea style={styles.directions} placeholder="">Input procedure for this production phase. </textarea>
+			<textarea style={styles.directions} defaultValue="Input procedure for this production phase."></textarea>
         	<button style={styles.addStep}>Add This Step</button>
-        </form>
       </div>
     )
   }
