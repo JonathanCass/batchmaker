@@ -175,7 +175,7 @@ class RecipeView extends React.Component {
 			        ))}
 			    </div>
         	</div>
-        	<Step/>
+        	<Step recipeId={this.props.match.params.recipeId} />
         	<button style={styles.editRecipe}>Edit This Recipe</button>
         </div>
       </div>
