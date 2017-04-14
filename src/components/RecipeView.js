@@ -1,5 +1,3 @@
-/*jshint -W065 */
-
 import React from 'react'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
@@ -66,20 +64,27 @@ const styles ={
 	},
 	ingredientBox:{
 		width: 640,
-		height: 242,
+		height: 276,
 		border: 'solid 2px white',
-		borderRadius: 5
+		borderRadius: 5,
 	},
 	adjustLine:{
-		width: 638,
+		width: 636,
 		height: 60,
 		border: 'solid 2px white',
 		borderWidth: ' 0 0 2px 0',
-		lineHeight: '58px',
-		fontSize: 20,
+		lineHeight: '60px',
+		fontSize: 24,
 		display: 'flex',
 		justifyContent: 'space-between',
-		paddingLeft: 20
+		paddingLeft: 10,
+		borderRadius: 5,
+		color: 'red'
+	},
+	mapBox:{
+		width: 638,
+		height: 212,
+		overflow:'scroll',
 	},
 	ingredientLine:{
 		width: 638,
@@ -90,23 +95,26 @@ const styles ={
 	amount:{
 		width: 160,
 		height: 60,
-		border: 'solid 2px white',
-		borderWidth: ' 0 2px 0 0',
 		textAlign: 'right',
 		display:'inline-block',
-		color: '#03A9F4'
+		color: '#03A9F4',
+		lineHeight:'60px',
+		border: 'solid 1px white',
+		borderWidth: ' 0 1px 1px 0',
 	},
 	ingredient:{
 		width: 480,
 		height: 60,
 		display:'inline-block',
 		color: '#FF5722',
-		lineHeight: '60px'
+		lineHeight: '60px',
+		border: 'solid 1px white',
+		borderWidth: ' 0 0 1px 1px',
 	},
 	adjustButton:{
 		width: 120,
 		height: 40,
-	}
+	},
 }
 
 class RecipeView extends React.Component {
@@ -118,7 +126,7 @@ class RecipeView extends React.Component {
   	getData()
   }
   render() {
-  	console.log('this.props.recipes[0]' , this.props.recipes[0] && this.props.recipes[this.state.id].name)
+  	console.log('this.props.allocations' , this.props.allocations[0] && this.props.allocations)
     return (
       <div style={styles.recipeContainer}>
         <div style={styles.recipeProper}>
@@ -139,20 +147,19 @@ class RecipeView extends React.Component {
         		<div style={styles.boxLabel}>Cook Temp</div><div style={styles.boxValue}>{this.props.recipes[0] && this.props.recipes[this.state.id].cookTemp} °F</div>
         	</div>
 
+        	
         	<div style={styles.ingredientBox}>
-        		<div style={styles.adjustLine}>recipe.servingAmount recipe.servingType<button style={styles.adjustButton}>Adjust</button></div>
-        		<div style={styles.ingredientLine}>
-        			<div style={styles.amount}>allocations.numberOf allocations.unitOf</div>
-        			<div style={styles.ingredient}>allocations.what</div>
+        		<div style={styles.adjustLine}>
+        			{this.props.recipes[0] && this.props.recipes[this.state.id].servingAmount + " "} {this.props.recipes[0] && this.props.recipes[this.state.id].servingType}<button style={styles.adjustButton}>Adjust</button>
         		</div>
-        		<div style={styles.ingredientLine}>
-        			<div style={styles.amount}>allocations.numberOf allocations.unitOf</div>
-        			<div style={styles.ingredient}>allocations.what</div>
-        		</div>
-        		<div style={styles.ingredientLine}>
-        			<div style={styles.amount}>allocations.numberOf allocations.unitOf</div>
-        			<div style={styles.ingredient}>allocations.what</div>
-        		</div>
+        		<div style={styles.mapBox}>	
+			        {this.props.allocations.map(allocation=>(
+			        	<div key={'allocation' + allocation.id}style={styles.ingredientLine}>
+			        		<div style={styles.amount}>{allocation.numberOf} {allocation.unitOf}</div>
+			        		<div style={styles.ingredient}>{allocation.what}</div>
+			        	</div>
+			        ))}
+			    </div>
         	</div>
         </div>
       </div>
@@ -161,7 +168,7 @@ class RecipeView extends React.Component {
 }
 
 function mapStateToProps(appState){
-	return { recipes : appState.recipes}
+	return { recipes : appState.recipes, allocations: appState.allocations}
 }
 
 export default connect(mapStateToProps)(RecipeView)
