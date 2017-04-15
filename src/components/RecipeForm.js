@@ -1,9 +1,8 @@
 import React from 'react'
 import StepAdder from './StepAdder'
-import {addStep} from '../api/recipe'
-import {addRecipe} from '../api/recipe'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
+import data from '../../db.json'
 
 const styles ={
 	formContainer:{
@@ -65,8 +64,8 @@ const styles ={
 		height: 50
 	},
 	saveRecipe:{
-		width: 640,
-		height: 60
+		width: 330,
+		height: 50
 	},
 	infoHeader:{
 		width: 660,
@@ -99,7 +98,7 @@ class RecipeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	name:'', by:'',photoUrl:'',type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, order: 1, directions: ''
+    	name:'', by:'',photoUrl:'',type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.allocations.length + 2, stepIdIndex: data.steps.length + 2, recipeIdIndex: data.recipes.length + 2, confirmButton: false
     	}
   	}
   	componentWillMount(){
@@ -116,15 +115,39 @@ class RecipeForm extends React.Component {
 		if(this.props.steps[this.props.steps.length-1].recipeId > this.props.recipes.length){
 			order = (Number(this.props.steps[this.props.steps.length-1].order) + 1)
 		}
-		addStep(order, this.state.directions)
+		var stepObj = {
+      		"id": this.state.stepIdIndex,
+      		"order": order,
+     	 	"recipeId": this.state.recipeId,
+    	  	"directions": this.state.directions  
+		}
+		
+		this.setState({
+			stepArray : [...this.state.stepArray, stepObj],
+        	stepIdIndex : this.state.stepIdIndex + 1
+
+        })
 		
   	}
   	addRecipe = (e) => {
   		e.preventDefault()
-  		addRecipe(this.state.name, this.state.by, this.state.photoUrl, this.state.type, this.state.prepTime, this.state.cookTime, this.state.cookTemp, this.state.servingAmount, this.state.servingType, this.state.public)
-		this.setState({
-			order : 0
-		})
+  		var recipeObj = {
+  			"id": this.state.recipeId,
+		    "name": this.state.name,
+		    "by": this.state.by,
+		    "photoUrl": this.state.photoUrl,
+		    "type": this.state.type,
+		    "prepTime": this.state.prepTime,
+		    "cookTime": this.state.cookTime,
+	    	"cookTemp": this.state.cookTemp,
+		    "servingAmount": this.state.servingAmount,
+		    "servingType": this.state.servingType,
+		    "public": this.state.public
+  		}
+  		this.setState({
+  			recipeObject : recipeObj,
+  			confirmButton : true
+  		})
   	}
   render() {
     return (
@@ -156,7 +179,7 @@ class RecipeForm extends React.Component {
 				</div>
 				<span style={styles.producesLabel}>Recipe produces</span><input type="text" name="servingAmount" onChange={this.handleChange} style={styles.amount} placeholder="Amount"></input>
       			<input type="text" name="servingType" onChange={this.handleChange} style={styles.measurement} placeholder="Unit of measurement to be applied to result"></input>
-      			<StepAdder/>
+      			<StepAdder recipeObject={this.state.recipeObject} stepArray={this.state.stepArray} confirmButton={this.state.confirmButton} recipeIdIndex={this.state.recipeIdIndex} ingredientIdIndex={this.state.ingredientIdIndex}/>
       			<textarea onChange={this.handleChange} style={styles.directions} name="directions" defaultValue="Input procedure for this production phase."></textarea>
         		<button style={styles.addStep} onClick={this.addStep}>Add This Step</button>
       			<button style={styles.saveRecipe} onClick={this.addRecipe}>Input this Food Method</button>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {addIngredient} from '../api/recipe'
+import {addRecipe} from '../api/recipe'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
 
@@ -33,6 +33,15 @@ const styles={
 	},
 	displayNone:{
 		display: 'none'
+	},
+	confirmButton:{
+		width: 640,
+		height: 220,
+		position: 'relative',
+		background: 'red',
+		color: 'white',
+		fontSize: 30,
+		display: 'float'
 	}
 }
 
@@ -40,7 +49,7 @@ class StepAdder extends React.Component {
   	constructor(props) {
     	super(props)
     	this.state={
-    		numberOf:0, unitOf:'',what:'',directions:''
+    		numberOf:0, unitOf:'',what:'',directions:'',ingredientArray:[], stepIdIndex: this.props.stepIdIndex
     	}
   	}
   	componentWillMount(){
@@ -53,9 +62,27 @@ class StepAdder extends React.Component {
   	}
   	addIngredient = (e) => {
   		e.preventDefault()
-  		addIngredient(this.state.numberOf, this.state.unitOf, this.state.what)
+  		var ingredientObj = {
+      		"id": this.state.ingredientIdIndex,
+      		"recipeId": this.props.recipeIdIndex,
+     		"stepId": this.props.stepIdIndex,
+     		"numberOf": this.state.numberOf,
+     		"unitOf": this.state.unitOf,
+     		"what": this.state.what  
+		}
+		
+		this.setState({
+			ingredientArray : [...this.state.ingredientArray, ingredientObj],
+        	stepIdIndex : this.state.stepIdIndex + 1
+        })
+  	}
+  	addRecipe = (e) => {
+  		e.preventDefault()
+  		addRecipe(this.props.recipeObject, this.props.stepArray, this.state.ingredientArray)
   	}
   render() {
+  	console.log("this.state", this.state)
+  	console.log("this.props", this.props)
     return (	
       	<div style={styles.stepContainer}>
       		{this.props.allocations.map(item=>(
@@ -80,6 +107,7 @@ class StepAdder extends React.Component {
 			</select>
 			<input type="text" onChange={this.handleChange} name="what" style={styles.ingredient} placeholder="Ingredient"></input>
 			<button onClick={this.addIngredient} style={styles.addIngredient}>+</button>
+			<button onClick={this.addRecipe} style={this.props.confirmButton == true ? styles.confirmButton : styles.displayNone}>Confirm Recipe</button>
       </div>
     )
   }
