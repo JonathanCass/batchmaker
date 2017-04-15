@@ -73,7 +73,6 @@ class AllRecipesGrid extends React.Component {
   	getData()
   }
   render() {
-  	console.log(this.props)
     return (
       <div style={styles.gridContainer}>
         <div style={styles.gridProper}>

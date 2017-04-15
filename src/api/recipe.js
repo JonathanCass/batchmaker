@@ -21,7 +21,7 @@ export function addIngredient(numberOf, unitOf, what){
 }
 export function addStep(order, directions){
     axios.post('http://localhost:3001/steps',{
-      "order": 1,
+      "order": order,
       "recipeId": data.recipes.length + 1,
       "directions": directions
     })

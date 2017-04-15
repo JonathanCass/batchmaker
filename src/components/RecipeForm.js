@@ -2,6 +2,7 @@ import React from 'react'
 import StepAdder from './StepAdder'
 import {addStep} from '../api/recipe'
 import {addRecipe} from '../api/recipe'
+import data from '../../db.json'
 
 const styles ={
 	formContainer:{
@@ -106,18 +107,13 @@ class RecipeForm extends React.Component {
   	}
   	addStep = (e) => {
   		e.preventDefault()
-		addStep(this.state.order, this.state.directions)
-		/*let dataObj = {
-			"id" : data.steps.length + 1,
-			"recipeId" : data.recipes.length + 1,
-			"order" : this.state.order,
-			"directions" : this.state.directions
+		var order = 1		
+		if(data.steps[data.steps.length-1].recipeId > data.recipes.length){
+			order = (Number(data.steps[data.steps.length-1].order) + 1)
+			alert(data.steps[data.steps.length-1].order)
 		}
-		data.steps.push(dataObj)*/
-		this.setState({
-			order : ((Number(this.state.order) + 1))
-		})
-			console.log(this.state.order)
+		addStep(order, this.state.directions)
+		
   	}
   	addRecipe = (e) => {
   		e.preventDefault()
