@@ -1,7 +1,5 @@
 import React from 'react'
-//import {addIngredient} from '../api/recipe'
-import data from '../../db.json'
-//import axios from 'axios'
+import {addIngredient} from '../api/recipe'
 
 const styles={
 	stepContainer:{
@@ -9,7 +7,7 @@ const styles={
 	},
 	amount:{
 		width: 80,
-		height: 50
+		height: 50,
 	},
 	unit:{
 		width: 110,
@@ -23,6 +21,12 @@ const styles={
 		width: 60,
 		height: 50
 	},
+	stepDisplay:{
+		disply: 'flex'
+	},
+	displayNone:{
+		display: 'none'
+	}
 }
 
 class StepAdder extends React.Component {
@@ -39,15 +43,7 @@ class StepAdder extends React.Component {
   	}
   	addIngredient = (e) => {
   		e.preventDefault()
-		const dataObj = {
-			"id" : data.allocations.length + 1,
-			"recipeId" : data.recipes.length + 1,
-			"stepId": data.steps.length + 1,
-			"numberOf": this.state.numberOf,
-			"unitOf" : this.state.unitOf,
-			"what" : this.state.what
-		}
-		data.allocations.push(dataObj)
+  		addIngredient(this.state.numberOf, this.state.unitOf, this.state.what)
   	}
   render() {
     return (

@@ -1,6 +1,7 @@
 import React from 'react'
 import StepAdder from './StepAdder'
-import data from '../../db.json'
+import {addStep} from '../api/recipe'
+import {addRecipe} from '../api/recipe'
 
 const styles ={
 	formContainer:{
@@ -105,40 +106,27 @@ class RecipeForm extends React.Component {
   	}
   	addStep = (e) => {
   		e.preventDefault()
-		let dataObj = {
+		addStep(this.state.order, this.state.directions)
+		/*let dataObj = {
 			"id" : data.steps.length + 1,
 			"recipeId" : data.recipes.length + 1,
 			"order" : this.state.order,
 			"directions" : this.state.directions
 		}
-		data.steps.push(dataObj)
+		data.steps.push(dataObj)*/
 		this.setState({
-			order : this.state.order + 1
+			order : ((Number(this.state.order) + 1))
 		})
+			console.log(this.state.order)
   	}
   	addRecipe = (e) => {
   		e.preventDefault()
-		console.log("data.recipes", data.recipes)
-		let dataObj2 = {
-			"id" : data.recipes.length + 1,
-			"name": this.state.name,
-			"by" : this.state.by,
-			"photoUrl" : this.state.photoUrl,
-			"type" : this.state.type,
-			"prepTime" : this.state.prepTime,
-			"cookTime" : this.state.cookTime,
-			"cookTemp" : this.state.cookTemp,
-			"servingAmount" : this.state.servingAmount,
-			"servingType" : this.state.servingType,
-			"public" : true
-		}
-		data.recipes.push(dataObj2)
+  		addRecipe(this.state.name, this.state.by, this.state.photoUrl, this.state.type, this.state.prepTime, this.state.cookTime, this.state.cookTemp, this.state.servingAmount, this.state.servingType, this.state.public)
 		this.setState({
 			order : 0
 		})
   	}
   render() {
-  	console.log("this.state", this.state)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
