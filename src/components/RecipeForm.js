@@ -138,6 +138,7 @@ class RecipeForm extends React.Component {
 		})
   	}
   render() {
+  	console.log("this.state", this.state)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
@@ -146,8 +147,8 @@ class RecipeForm extends React.Component {
       			<input type="text" style={styles.recipeBy} name="name" onChange={this.handleChange} placeholder="Recipe Name"></input>
       			<input type="text" style={styles.recipeBy} name="by" onChange={this.handleChange} placeholder="By"></input>
       			<div>
-      				<input type="radio" name="access" value="public"></input><span style={styles.radioButtons}>Unrestricted Access </span>
-      				<input type="radio" name="access" value="private"></input><span style={styles.radioButtons}>This User Access Only </span>
+      				<input type="radio" name="public" onChange={this.handleChange} value={true}></input><span style={styles.radioButtons}>Unrestricted Access </span>
+      				<input type="radio" name="public" onChange={this.handleChange} value={false}></input><span style={styles.radioButtons}>This User Access Only </span>
       			</div>
       			<select name="type" onChange={this.handleChange} style={styles.recipeType}>
 				  <option value="">Recipe Type</option>
