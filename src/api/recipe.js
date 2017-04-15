@@ -10,13 +10,13 @@ export function getData() {
 	})
 }	
 export function addRecipe(recipeObject, stepArray, ingredientArray){
-    axios.post('http://localhost:3001/db',{
-      recipes: recipeObject  
+    axios.post('http://localhost:3001/recipes',{
+      recipes : recipeObject  
     })
-    axios.post('http://localhost:3001/db',{
-      steps: [...stepArray]
+    axios.post('http://localhost:3001/steps',{
+      steps : [...stepArray]
     })
-    axios.post('http://localhost:3001/db',{
-     allocations: [...ingredientArray] 
+    axios.post('http://localhost:3001/allocations',{
+      allocations : [...ingredientArray]
     })
 }

@@ -41,7 +41,8 @@ const styles={
 		background: 'red',
 		color: 'white',
 		fontSize: 30,
-		display: 'float'
+		display: 'block',
+
 	}
 }
 
@@ -49,7 +50,7 @@ class StepAdder extends React.Component {
   	constructor(props) {
     	super(props)
     	this.state={
-    		numberOf:0, unitOf:'',what:'',directions:'',ingredientArray:[], stepIdIndex: this.props.stepIdIndex
+    		numberOf:0, unitOf:'',what:'',directions:'',ingredientArray:[], stepIdIndex: this.props.stepIdIndex, ingredientIdIndex: this.props.ingredientIdIndex
     	}
   	}
   	componentWillMount(){
@@ -73,7 +74,7 @@ class StepAdder extends React.Component {
 		
 		this.setState({
 			ingredientArray : [...this.state.ingredientArray, ingredientObj],
-        	stepIdIndex : this.state.stepIdIndex + 1
+        	ingredientIdIndex : this.state.ingredientIdIndex + 1
         })
   	}
   	addRecipe = (e) => {
@@ -85,7 +86,7 @@ class StepAdder extends React.Component {
   	console.log("this.props", this.props)
     return (	
       	<div style={styles.stepContainer}>
-      		{this.props.allocations.map(item=>(
+      		{this.state.ingredientArray.map(item=>(
       			<div key={'allocation'+item.id} style={Number(item.recipeId) === Number(this.props.recipes.length + 1) ? styles.stepDisplay : styles.displayNone }>
       				<input style={styles.amount} value={item.numberOf} readOnly></input>
 	      			<input style={styles.unitDisplay} value={item.unitOf} readOnly></input>
@@ -107,7 +108,7 @@ class StepAdder extends React.Component {
 			</select>
 			<input type="text" onChange={this.handleChange} name="what" style={styles.ingredient} placeholder="Ingredient"></input>
 			<button onClick={this.addIngredient} style={styles.addIngredient}>+</button>
-			<button onClick={this.addRecipe} style={this.props.confirmButton == true ? styles.confirmButton : styles.displayNone}>Confirm Recipe</button>
+			<button onClick={this.addRecipe} style={this.props.confirmButton === true ? styles.confirmButton : styles.displayNone  }>Confirm Recipe</button>
       </div>
     )
   }
