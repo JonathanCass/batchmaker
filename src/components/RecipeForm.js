@@ -98,7 +98,7 @@ class RecipeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	name:'', by:'',photoUrl:'',type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.allocations.length + 2, stepIdIndex: data.steps.length + 2, recipeIdIndex: data.recipes.length + 2, confirmButton: false
+    	name:'', by:'',photoUrl:'',type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length + 1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
     	}
   	}
   	componentWillMount(){
@@ -132,7 +132,7 @@ class RecipeForm extends React.Component {
   	addRecipe = (e) => {
   		e.preventDefault()
   		var recipeObj = {
-  			"id": this.state.recipeId,
+  			"id": this.state.recipeIdIndex,
 		    "name": this.state.name,
 		    "by": this.state.by,
 		    "photoUrl": this.state.photoUrl,
@@ -150,6 +150,7 @@ class RecipeForm extends React.Component {
   		})
   	}
   render() {
+  	console.log("RecipeForm this.props" , this.props)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
@@ -180,7 +181,7 @@ class RecipeForm extends React.Component {
 				<span style={styles.producesLabel}>Recipe produces</span><input type="text" name="servingAmount" onChange={this.handleChange} style={styles.amount} placeholder="Amount"></input>
       			<input type="text" name="servingType" onChange={this.handleChange} style={styles.measurement} placeholder="Unit of measurement to be applied to result"></input>
       			<StepAdder recipeObject={this.state.recipeObject} stepArray={this.state.stepArray} confirmButton={this.state.confirmButton} recipeIdIndex={this.state.recipeIdIndex} ingredientIdIndex={this.state.ingredientIdIndex} stepIdIndex={this.state.stepIdIndex}/>
-      			<textarea onChange={this.handleChange} style={styles.directions} name="directions" defaultValue="Input procedure for this production phase."></textarea>
+      			<textarea onChange={this.handleChange} style={styles.directions} name="directions" placeholder="Input procedure for this production phase."></textarea>
         		<button style={styles.addStep} onClick={this.addStep}>Add This Step</button>
       			<button style={styles.saveRecipe} onClick={this.addRecipe}>Input this Food Method</button>
       		</form>

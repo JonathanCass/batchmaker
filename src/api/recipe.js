@@ -1,8 +1,9 @@
 import store from '../store'
 import axios from 'axios'
+import data from '../../db.json'
 
 export function getData() {
-	axios.get('http://localhost:3001/db').then(res=>{
+	axios.get('http://localhost:3001/batchmaker').then(res=>{
 		store.dispatch({
 			type: 'GET_DATA',
 			data: res.data
@@ -10,13 +11,9 @@ export function getData() {
 	})
 }	
 export function addRecipe(recipeObject, stepArray, ingredientArray){
-    axios.post('http://localhost:3001/recipes',{
-      recipes : recipeObject  
-    })
-    axios.post('http://localhost:3001/steps',{
-      steps : [...stepArray]
-    })
-    axios.post('http://localhost:3001/allocations',{
-      allocations : [...ingredientArray]
+    axios.post('http://localhost:3001/batchmaker',{
+      recipes: [...data.batchmaker.recipes, recipeObject],
+      steps: [...data.batchmaker.steps, ...stepArray],
+      allocations: [...data.batchmaker.allocations, ...ingredientArray] 
     })
 }
