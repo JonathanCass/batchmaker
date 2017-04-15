@@ -102,7 +102,7 @@ class Step extends React.Component {
         				<div style={styles.allocations}>
         					{this.props.allocations.map(allocation=>(
         						<div key={'allocation'+ allocation.id} style={Number(allocation.recipeId) === Number(this.props.recipeId) && Number(allocation.stepId) === Number(step.id) ? styles.allocationEntry : styles.displayNone}>
-        							<div style={ Number(allocation.stepId) === Number(this.props.steps[allocation.stepId-1].id) ? styles.entryAmount : styles.entryAmountNoBorder}> {allocation.numberOf + " "} {allocation.unitOf} </div>
+        							<div style={ Number(allocation.stepId) === Number(this.props.steps[allocation.stepId-1].id) ? styles.entryAmount : styles.entryAmountNoBorder}> {allocation.numberOf * this.props.adjustDisplay + " "} {allocation.unitOf} </div>
         							<div style={ Number(allocation.stepId) === Number(this.props.steps[allocation.stepId-1].id) ? styles.entryWhat : styles.entryWhatNoBorder}> {allocation.what} </div>
         						</div>
         					))}
