@@ -52,7 +52,6 @@ class StepAdder extends React.Component {
   		addIngredient(this.state.numberOf, this.state.unitOf, this.state.what)
   	}
   render() {
-  	console.log("data.allocations", data.allocations)
     return (	
       	<div style={styles.stepContainer}>
       		{data.allocations.map(item=>(

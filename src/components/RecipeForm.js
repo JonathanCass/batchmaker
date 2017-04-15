@@ -110,7 +110,6 @@ class RecipeForm extends React.Component {
 		var order = 1		
 		if(data.steps[data.steps.length-1].recipeId > data.recipes.length){
 			order = (Number(data.steps[data.steps.length-1].order) + 1)
-			alert(data.steps[data.steps.length-1].order)
 		}
 		addStep(order, this.state.directions)
 		
