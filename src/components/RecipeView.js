@@ -119,6 +119,14 @@ const styles ={
 		height: 40,
 		fontSize:20
 	},
+	adjustInput:{
+		width: 120,
+		height: 40,
+		fontSize:14,
+		position: 'relative',
+		top: -2,
+		right: -15
+	},
 	editRecipe:{
 		width: 160,
 		height: 40,
@@ -135,9 +143,21 @@ class RecipeView extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
-    	id : Number(this.props.match.params.recipeId) - 1
+    	id : Number(this.props.match.params.recipeId) - 1, adjustParam: 1, adjustDisplay: 1, adjustRed: 0
     }
   }
+  handleChange = (e) => {
+        this.setState({
+        	[e.target.name] : e.target.value
+        })
+  }
+  addAdjust = (e) => {
+  		e.preventDefault()
+  		this.setState({
+  			adjustDisplay : this.state.adjustParam / this.props.recipes[this.state.id].servingAmount,
+  			adjustRed: this.state.adjustParam
+  		})
+  	}
   componentWillMount(){
   	getData()
   }
@@ -164,12 +184,12 @@ class RecipeView extends React.Component {
 
         	<div style={styles.ingredientBox}>
         		<div style={styles.adjustLine}>
-        			{this.props.recipes[0] && this.props.recipes[this.state.id].servingAmount + " "} {this.props.recipes[0] && this.props.recipes[this.state.id].servingType}<button style={styles.adjustButton}>Adjust</button>
+        			{this.props.recipes[0] && this.props.recipes[this.state.id].servingAmount * this.state.adjustDisplay + " "} {this.props.recipes[0] && this.props.recipes[this.state.id].servingType}<div><input type="text" name="adjustParam" onChange={this.handleChange} placeholder="New Serving Size" style={styles.adjustInput}></input><button onClick={this.addAdjust} style={styles.adjustButton}>Adjust</button></div>
         		</div>
         		<div style={styles.mapBox}>	
 			        {this.props.allocations.map(allocation=>(
 				        	<div key={'allocation' + allocation.id}style={Number(allocation.recipeId) === Number(this.props.match.params.recipeId)  ? styles.ingredientLine : styles.displayNone}>
-				        		<div style={styles.amount}>{allocation.numberOf} {allocation.unitOf}</div>
+				        		<div style={styles.amount}>{allocation.numberOf * this.state.adjustDisplay} {allocation.unitOf}</div>
 				        		<div style={styles.ingredient}>{allocation.what}</div>
 				        	</div>
 			        ))}

@@ -21,6 +21,7 @@ const styles ={
 		margin: '40px auto',
 		borderRadius: 20,
 		boxShadow: '15px 15px 10px 0px rgba(211,19,19,1)',
+		overflow: 'scroll'
 	},
 	addPhoto:{
 		background:'grey',
