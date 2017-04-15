@@ -167,7 +167,7 @@ class RecipeForm extends React.Component {
 }
 
 function mapStateToProps(appState){
-	return { steps : appState.steps, recipess: appState.recipes}
+	return { steps : appState.steps, recipes: appState.recipes}
 }
 
 export default connect(mapStateToProps)(RecipeForm)

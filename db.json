@@ -25,6 +25,19 @@
       "servingAmount": 6,
       "servingType": "blobs",
       "public": true
+    },
+    {
+      "name": "Break Down",
+      "by": "Imminenet",
+      "photoUrl": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+      "type": "dinner",
+      "prepTime": "1",
+      "cookTime": "2",
+      "cookTemp": "3",
+      "servingAmount": "4",
+      "servingType": "dogs",
+      "public": "true",
+      "id": 3
     }
   ],
   "steps": [
@@ -51,6 +64,18 @@
       "order": 2,
       "recipeId": 2,
       "directions": "Chop and stir mortal!"
+    },
+    {
+      "order": 1,
+      "recipeId": 3,
+      "directions": "Input procedure for this production phase.1",
+      "id": 5
+    },
+    {
+      "order": 2,
+      "recipeId": 3,
+      "directions": "Input procedure for this production phase.2",
+      "id": 6
     }
   ],
   "allocations": [
@@ -90,9 +115,33 @@
       "recipeId": 3,
       "stepId": 5,
       "numberOf": "10",
-      "unitOf": "pound",
+      "unitOf": "tbsp",
       "what": "Test",
       "id": 5
+    },
+    {
+      "recipeId": 3,
+      "stepId": 5,
+      "numberOf": "20",
+      "unitOf": "cup",
+      "what": "Test 2 ",
+      "id": 6
+    },
+    {
+      "recipeId": 3,
+      "stepId": 5,
+      "numberOf": "30 ",
+      "unitOf": "floz",
+      "what": "Test 3",
+      "id": 7
+    },
+    {
+      "recipeId": 3,
+      "stepId": 6,
+      "numberOf": "1",
+      "unitOf": "pound",
+      "what": "Test 4",
+      "id": 8
     }
   ]
 }

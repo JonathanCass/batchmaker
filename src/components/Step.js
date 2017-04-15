@@ -43,7 +43,7 @@ const styles = {
 		height: 35,
 		float: 'left',
 		border: '1px solid red',
-  		borderWidth: ' 1px 1px 0 0',
+  		borderWidth: ' 0 1px 1px 0',
   		lineHeight: '35px',
   		paddingRight: 10,
   		textAlign: 'right',
@@ -54,7 +54,7 @@ const styles = {
 		height: 35,
 		float: 'right',
 		border: '1px solid red',
-  		borderWidth: ' 1px 0 0 0',
+  		borderWidth: ' 0 0 1px 0',
   		padding: '5px 0 0 10px',
   		fontSize: 14,
   		color: '#EF4116'
@@ -101,9 +101,9 @@ class Step extends React.Component {
         				<div style={styles.directions}>{step.directions}</div>
         				<div style={styles.allocations}>
         					{this.props.allocations.map(allocation=>(
-        						<div key={'allocation'+ allocation.id} style={Number(allocation.recipeId) === Number(this.props.recipeId) ? styles.allocationEntry : styles.displayNone}>
-        							<div style={ Number(this.props.steps[allocation.stepId -1].order) === 1 ? styles.entryAmountNoBorder : styles.entryAmount}> {allocation.numberOf + " "} {allocation.unitOf} </div>
-        							<div style={ Number(this.props.steps[allocation.stepId -1].order) === 1 ? styles.entryWhatNoBorder : styles.entryWhat}> {allocation.what} </div>
+        						<div key={'allocation'+ allocation.id} style={Number(allocation.recipeId) === Number(this.props.recipeId) && Number(allocation.stepId) === Number(step.id) ? styles.allocationEntry : styles.displayNone}>
+        							<div style={ Number(allocation.stepId) === Number(this.props.steps[allocation.stepId-1].id) ? styles.entryAmount : styles.entryAmountNoBorder}> {allocation.numberOf + " "} {allocation.unitOf} </div>
+        							<div style={ Number(allocation.stepId) === Number(this.props.steps[allocation.stepId-1].id) ? styles.entryWhat : styles.entryWhatNoBorder}> {allocation.what} </div>
         						</div>
         					))}
         				</div>

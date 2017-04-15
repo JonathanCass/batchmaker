@@ -168,7 +168,7 @@ class RecipeView extends React.Component {
         		</div>
         		<div style={styles.mapBox}>	
 			        {this.props.allocations.map(allocation=>(
-				        	<div key={'allocation' + allocation.id}style={Number(allocation.recipeId) === Number(this.props.match.params.recipeId) ? styles.ingredientLine : styles.displayNone}>
+				        	<div key={'allocation' + allocation.id}style={Number(allocation.recipeId) === Number(this.props.match.params.recipeId)  ? styles.ingredientLine : styles.displayNone}>
 				        		<div style={styles.amount}>{allocation.numberOf} {allocation.unitOf}</div>
 				        		<div style={styles.ingredient}>{allocation.what}</div>
 				        	</div>
