@@ -1,5 +1,6 @@
 import React from 'react'
 import {addIngredient} from '../api/recipe'
+import data from '../../db.json'
 
 const styles={
 	stepContainer:{
@@ -12,6 +13,11 @@ const styles={
 	unit:{
 		width: 110,
 		height: 50
+	},
+	unitDisplay:{
+		width: 110,
+		height: 50,
+		margin: '10px 10px 10px -10px'
 	},
 	ingredient:{
 		width: 350,
@@ -46,8 +52,17 @@ class StepAdder extends React.Component {
   		addIngredient(this.state.numberOf, this.state.unitOf, this.state.what)
   	}
   render() {
-    return (
-      <div style={styles.stepContainer}>
+  	console.log("data.allocations", data.allocations)
+    return (	
+      	<div style={styles.stepContainer}>
+      		{data.allocations.map(item=>(
+      			<div key={'allocation'+item.id} style={Number(item.recipeId) === Number(data.recipes.length + 1) ? styles.stepDisplay : styles.displayNone }>
+      				<input style={styles.amount} value={item.numberOf} readOnly></input>
+	      			<input style={styles.unitDisplay} value={item.unitOf} readOnly></input>
+	      			<input style={styles.ingredient} value={item.what} readOnly></input>
+	      			<button style={styles.addIngredient}>-</button>
+	      		</div>
+	    	))}
         	<input type="text" onChange={this.handleChange} name="numberOf" style={styles.amount} placeholder="Amount"></input>
         	<select onChange={this.handleChange} name="unitOf" style={styles.unit}>
 				<option value="">Unit</option>
