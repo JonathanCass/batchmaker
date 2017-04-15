@@ -2,7 +2,8 @@ import React from 'react'
 import StepAdder from './StepAdder'
 import {addStep} from '../api/recipe'
 import {addRecipe} from '../api/recipe'
-import data from '../../db.json'
+import {getData} from '../api/recipe'
+import {connect} from 'react-redux'
 
 const styles ={
 	formContainer:{
@@ -100,6 +101,9 @@ class RecipeForm extends React.Component {
     	name:'', by:'',photoUrl:'',type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, order: 1, directions: ''
     	}
   	}
+  	componentWillMount(){
+  	getData()
+  }
   	handleChange = (e) => {
         this.setState({
         	[e.target.name] : e.target.value
@@ -108,8 +112,8 @@ class RecipeForm extends React.Component {
   	addStep = (e) => {
   		e.preventDefault()
 		var order = 1		
-		if(data.steps[data.steps.length-1].recipeId > data.recipes.length){
-			order = (Number(data.steps[data.steps.length-1].order) + 1)
+		if(this.props.steps[this.props.steps.length-1].recipeId > this.props.recipes.length){
+			order = (Number(this.props.steps[this.props.steps.length-1].order) + 1)
 		}
 		addStep(order, this.state.directions)
 		
@@ -162,4 +166,8 @@ class RecipeForm extends React.Component {
   }
 }
 
-export default RecipeForm
+function mapStateToProps(appState){
+	return { steps : appState.steps, recipess: appState.recipes}
+}
+
+export default connect(mapStateToProps)(RecipeForm)

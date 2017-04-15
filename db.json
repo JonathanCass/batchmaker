@@ -85,6 +85,14 @@
       "numberOf": 10,
       "unitOf": "fl oz",
       "what": "Lemon Juice"
+    },
+    {
+      "recipeId": 3,
+      "stepId": 5,
+      "numberOf": "10",
+      "unitOf": "pound",
+      "what": "Test",
+      "id": 5
     }
   ]
 }

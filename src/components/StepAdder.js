@@ -1,6 +1,7 @@
 import React from 'react'
 import {addIngredient} from '../api/recipe'
-import data from '../../db.json'
+import {getData} from '../api/recipe'
+import {connect} from 'react-redux'
 
 const styles={
 	stepContainer:{
@@ -42,6 +43,9 @@ class StepAdder extends React.Component {
     		numberOf:0, unitOf:'',what:'',directions:''
     	}
   	}
+  	componentWillMount(){
+  	getData()
+  }
   	handleChange = (e) => {
         this.setState({
         	[e.target.name] : e.target.value
@@ -54,8 +58,8 @@ class StepAdder extends React.Component {
   render() {
     return (	
       	<div style={styles.stepContainer}>
-      		{data.allocations.map(item=>(
-      			<div key={'allocation'+item.id} style={Number(item.recipeId) === Number(data.recipes.length + 1) ? styles.stepDisplay : styles.displayNone }>
+      		{this.props.allocations.map(item=>(
+      			<div key={'allocation'+item.id} style={Number(item.recipeId) === Number(this.props.recipes.length + 1) ? styles.stepDisplay : styles.displayNone }>
       				<input style={styles.amount} value={item.numberOf} readOnly></input>
 	      			<input style={styles.unitDisplay} value={item.unitOf} readOnly></input>
 	      			<input style={styles.ingredient} value={item.what} readOnly></input>
@@ -81,4 +85,8 @@ class StepAdder extends React.Component {
   }
 }
 
-export default StepAdder
+function mapStateToProps(appState){
+	return { recipes : appState.recipes, allocations: appState.allocations}
+}
+
+export default connect(mapStateToProps)(StepAdder)
