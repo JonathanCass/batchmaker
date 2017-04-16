@@ -81,6 +81,14 @@ class StepAdder extends React.Component {
 
         })
   	}
+  	removeIngredient = (e) => {
+  		e.preventDefault()
+  		var newArray = this.state.ingredientArray
+  		newArray.splice(e.target.value,1)
+  		this.setState({
+  			ingredientArray : newArray
+  		})
+  	}
   	addRecipe = (e) => {
   		e.preventDefault()
   		addRecipe(this.props.recipeObject, this.props.stepArray, this.state.ingredientArray)
@@ -93,7 +101,7 @@ class StepAdder extends React.Component {
       				<input style={styles.amount} value={item.numberOf} readOnly></input>
 	      			<input style={styles.unitDisplay} value={item.unitOf} readOnly></input>
 	      			<input style={styles.ingredient} value={item.what} readOnly></input>
-	      			<button style={styles.addIngredient}>-</button>
+	      			<button value={this.state.ingedientIdIndex} onClick={this.removeIngredient} style={styles.addIngredient}>-</button>
 	      		</div>
 	    	))}
         	<input type="text" onChange={this.handleChange} name="numberOf" style={styles.amount} placeholder="Amount"></input>

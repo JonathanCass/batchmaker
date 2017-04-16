@@ -150,7 +150,6 @@ class RecipeForm extends React.Component {
   		})
   	}
   render() {
-  	console.log("RecipeForm this.props" , this.props)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
