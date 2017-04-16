@@ -18,13 +18,26 @@
         "id": 2,
         "name": "Hotdogs",
         "by": 2,
-        "photoUrl": "http://www.bakepol.pl/midcom-serveattachmentguid-1e1c51cc95f7c54c51c11e1b441998b4d9e8b1f8b1f/hot_dog-002.jpg",
+        "photoUrl": "https://lh5.ggpht.com/q6kAMKshlE87x4IWKzg3eLWrp_6dVXzf2o_KOhf9u_iatzCl8gJ3t1tkBqg12k6ug39Ov3i61G3UlryCDUfX=s400",
         "type": "lunch",
         "prepTime": 5,
         "cookTime": 10,
         "cookTemp": 450,
         "servingAmount": 8,
         "servingType": "hotdogs",
+        "public": true
+      },
+      {
+        "id": 3,
+        "name": "Steaks",
+        "by": 3,
+        "photoUrl": "http://www.officialpsds.com/images/thumbs/Juicy-Steak-psd23238.png",
+        "type": "Dinner",
+        "prepTime": 10,
+        "cookTime": 30,
+        "cookTemp": 500,
+        "servingAmount": 4,
+        "servingType": "Steaks",
         "public": true
       }
     ],
@@ -57,13 +70,13 @@
         "id": 5,
         "order": 1,
         "recipeId": 3,
-        "directions": "Shape ground beef into patties and cook for 10 minutes."
+        "directions": "Sprinkle oil on steaks and grill until medium rare."
       },
       {
         "id": 6,
-        "order": 1,
+        "order": 2,
         "recipeId": 3,
-        "directions": "Place Ketchup Lettuce Cheese and pickles on the burgers and serve them up."
+        "directions": "Plate the steaks and season with salt and pepper to tase."
       },
 
       {
@@ -162,6 +175,38 @@
         "stepId": 4,
         "numberOf": "10",
         "unitOf": "fl oz",
+        "what": "Mustard"
+      },
+      {
+        "id": 10,
+        "recipeId": 3,
+        "stepId": 5,
+        "numberOf": "3",
+        "unitOf": "pound",
+        "what": "Strip Steak"
+      },
+      {
+        "id": 11,
+        "recipeId": 3,
+        "stepId": 5,
+        "numberOf": "4",
+        "unitOf": "tbsp",
+        "what": "Olive oil"
+      },
+      {
+        "id": 12,
+        "recipeId": 3,
+        "stepId": 6,
+        "numberOf": 4,
+        "unitOf": "tsp",
+        "what": "Kosher Salt"
+      },
+      {
+        "id": 13,
+        "recipeId": 3,
+        "stepId": 6,
+        "numberOf": "3",
+        "unitOf": "Black Pepper",
         "what": "Mustard"
       }
     ],
