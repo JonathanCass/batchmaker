@@ -108,7 +108,7 @@ class RecipeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	name:'', by: data.batchmaker.users[this.props.user].id ,photoUrl: "" ,type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length + 1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
+    	name:'', handle: this.props.user, by: this.props.user ,photoUrl: "" ,type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length + 1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
     	}
   	}
   	componentWillMount(){
@@ -160,12 +160,12 @@ class RecipeForm extends React.Component {
   		})
   	}
   render() {
-  	console.log(this.props)
+  	console.log("this.props on RecipeForm " , this.props)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
       		<form><div style={styles.infoHeader}>Standard Recipe Information</div>
-      		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.props.recipes[0] && this.props.users[this.state.by].handle} </span></div>
+      		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.props.user} </span></div>
       			<img src={this.state.photoUrl} alt="ADD VISUAL" style={styles.addPhoto}/><input type="text" name="photoUrl" onChange={this.handleChange} style={styles.addUrl} placeholder="Add Url of an Image"></input>
       			<input type="text" style={styles.recipeName} name="name"  onChange={this.handleChange} placeholder="Recipe Name"></input>
       			<div>
