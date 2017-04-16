@@ -17,3 +17,9 @@ export function addRecipe(recipeObject, stepArray, ingredientArray){
       allocations: [...data.batchmaker.allocations, ...ingredientArray] 
     })
 }
+export function login(login){
+	store.dispatch({
+		type: 'LOGIN',
+		login: login
+	})
+}

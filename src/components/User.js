@@ -1,5 +1,7 @@
 import React from 'react'
 import data from '../../db.json'
+import {login} from '../api/recipe'
+import {connect} from 'react-redux'
 
 const styles={
 	userContainer:{
@@ -23,13 +25,15 @@ const styles={
 		width: 200,
 	},
 	category:{
-		margin: '30px 0 20px 0',
-		height: 50,
+		margin: '0 0 20px 0',
+		height: 70,
+		paddingTop: 20,
 		width: 640,
 		fontSize: 30,
 		border: 'solid 2px #009688',
 		borderWidth: '0 0 2px 0',
-		color: '#FF5722'
+		color: '#FF5722',
+		clear: 'left'
 	},
 	title:{
 		fontSize: 50
@@ -46,6 +50,28 @@ const styles={
 		background: '#D50000',
 		fontSize: 18,
 		color: 'white',
+	},
+	displayNone:{
+		display: 'none'
+	},
+	loggedIn:{
+		fontSize: 26,
+		float: 'left',
+		margin: '20px 0 0 20px',
+		width: 400,
+		height: 80,
+	},
+	avatar:{
+		width: 100,
+		height: 100,
+		display: 'inline-block',
+		background: 'white',
+		borderRadius: 15,
+		border: '2px solid #009688',
+		float: 'left'
+	},
+	userHandle:{
+		color: '#D50000'
 	}
 }
 class User extends React.Component {
@@ -64,6 +90,7 @@ class User extends React.Component {
   		e.preventDefault()
   		data.batchmaker.users.forEach(function(user){
   			if(user.login === this.state.login && user.password === this.state.password){
+  				login(user.id)
   				alert("Succesfully Logged In As " + user.handle)
   			}
   		}.bind(this))
@@ -88,6 +115,10 @@ class User extends React.Component {
       				<span style={styles.label}>Log In</span><input type="text" style={styles.input} name="login" value={this.state.login} onChange={this.handleChange} ></input>
       				<span style={styles.label}>Password</span><input type="password" style={styles.input} name="password" value={this.state.password} onChange={this.handleChange} ></input>
       				<button style={styles.submit} onClick={this.handleLogin}>Log In</button>
+      				<div>
+      				    <img style={styles.avatar} src={data.batchmaker.users[this.props.user].avatarUrl} alt={data.batchmaker.users[this.props.user].handle} />
+      					<div style={ this.props.user === -1 ? styles.displayNone : styles.loggedIn}>Logged in as <span style={styles.userHandle}>{data.batchmaker.users[this.props.user].handle}</span></div>
+      				</div>
       			</div>
       		</form>
       		<div style={styles.category}>New users create an account below}</div>
@@ -105,4 +136,12 @@ class User extends React.Component {
   }
 }
 
-export default User
+function mapStateToProps(appState){
+	return { user : appState.user}
+}
+
+export default connect(mapStateToProps)(User)
+
+
+
+

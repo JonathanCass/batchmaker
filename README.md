@@ -9,10 +9,13 @@ Can add new recipe.
 
 Recipe viewer with 4 categories. User's private recipes, Public recipes, User's favortie recipes and most popular recipes.  
 When adding ingredients previously added ingredients are displayed and can be removed before commiting the step.  
+Ability to log in. Logging in requires correct login and password. Default login is set as guest. Confirmation upon login displays  
+current user's handle and avatar.  
 
 Soon to be added.
 
-Ability to log in as an existing user or add a new one.  
-User's will have passwords and favorite recipes.  
+Ability to add a new user.  
+Ability on settings tab to change user's avatar.   
+User's will have favorite recipes.  
 Visual overhaul of all buttons and inputs.  
  
