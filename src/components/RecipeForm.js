@@ -160,11 +160,12 @@ class RecipeForm extends React.Component {
   		})
   	}
   render() {
+  	console.log(this.props)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
       		<form><div style={styles.infoHeader}>Standard Recipe Information</div>
-      		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.state.by}</span></div>
+      		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.props.recipes[0] && this.props.users[this.state.by].handle} </span></div>
       			<img src={this.state.photoUrl} alt="ADD VISUAL" style={styles.addPhoto}/><input type="text" name="photoUrl" onChange={this.handleChange} style={styles.addUrl} placeholder="Add Url of an Image"></input>
       			<input type="text" style={styles.recipeName} name="name"  onChange={this.handleChange} placeholder="Recipe Name"></input>
       			<div>
@@ -201,7 +202,7 @@ class RecipeForm extends React.Component {
 }
 
 function mapStateToProps(appState){
-	return { steps : appState.steps, recipes: appState.recipes, user: appState.user}
+	return { steps : appState.steps, recipes: appState.recipes, users: appState.users, user: appState.user}
 }
 
 export default connect(mapStateToProps)(RecipeForm)

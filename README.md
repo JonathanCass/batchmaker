@@ -19,4 +19,5 @@ Ability to add a new user.
 Ability on settings tab to change user's avatar and handle.   
 User's will have favorite recipes.  
 Visual overhaul of all buttons and inputs.  
+
  

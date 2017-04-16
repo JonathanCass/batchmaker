@@ -26,45 +26,6 @@
         "servingAmount": 8,
         "servingType": "hotdogs",
         "public": true
-      },
-      {
-        "id": 3,
-        "name": "Steak",
-        "by": 3,
-        "photoUrl": "http://www.funkyspacemonkey.com/wp-content/uploads/2012/03/food-iphone-app-icons-11-FSMdotCOM.jpg",
-        "type": "dinner",
-        "prepTime": "20",
-        "cookTime": "15",
-        "cookTemp": "500",
-        "servingAmount": "6",
-        "servingType": "Steaks",
-        "public": "true"
-      },
-      {
-        "id": 4,
-        "name": "Cake",
-        "by": 4,
-        "photoUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
-        "type": "lunch",
-        "prepTime": 60,
-        "cookTime": 60,
-        "cookTemp": 450,
-        "servingAmount": 20,
-        "servingType": "pieces",
-        "public": true
-      },
-      {
-        "id": 5,
-        "name": "Soylent Green",
-        "by": 5,
-        "photoUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
-        "type": "lunch",
-        "prepTime": 1,
-        "cookTime": 120,
-        "cookTemp": 550,
-        "servingAmount": 20,
-        "servingType": "cubes",
-        "public": true
       }
     ],
     "steps": [
