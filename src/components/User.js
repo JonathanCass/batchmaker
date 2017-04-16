@@ -1,4 +1,5 @@
 import React from 'react'
+import data from '../../db.json'
 
 const styles={
 	userContainer:{
@@ -26,7 +27,7 @@ const styles={
 		height: 50,
 		width: 640,
 		fontSize: 30,
-		border: 'solid 2px red',
+		border: 'solid 2px #009688',
 		borderWidth: '0 0 2px 0',
 		color: '#FF5722'
 	},
@@ -35,19 +36,51 @@ const styles={
 	},
 	label:{
 		color: '#02A4EC',
-		width: 120,
+		width: 115,
 		display:'inline-block',
 		textAlign: 'right'
+	},
+	submit:{
+		height: 40,
+		width: 80,
+		background: '#D50000',
+		fontSize: 18,
+		color: 'white',
 	}
 }
 class User extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	login: "", password: "", avatarUrl:"", handle:""
+    	login: "", password: "", avatarUrl:"", handle:"", loginFailed: true
     }
   }
   handleChange = (e) => {
+        this.setState({
+        	[e.target.name] : e.target.value
+        })
+  	}
+  	handleLogin = (e) => {
+  		e.preventDefault()
+  		data.batchmaker.users.forEach(function(user){
+  			if(user.login === this.state.login && user.password === this.state.password){
+
+  				alert("Succesfully Logged In As " + user.handle)
+  				this.setState({
+  					loginFailed: false
+  				})
+  			}
+  		}.bind(this))
+  		if(this.state.loginFailed){
+  			alert("Login Failed, Incorrect password or login id.")
+  		}
+        this.setState({
+        	login: "",
+        	password:"",
+        	loginFailed: true
+        })
+  	}
+  	handleCreate = (e) => {
         this.setState({
         	[e.target.name] : e.target.value
         })
@@ -62,6 +95,7 @@ class User extends React.Component {
       			<div>
       				<span style={styles.label}>Log In</span><input type="text" style={styles.input} name="login" onChange={this.handleChange} ></input>
       				<span style={styles.label}>Password</span><input type="password" style={styles.input} name="password" onChange={this.handleChange} ></input>
+      				<button style={styles.submit} onClick={this.handleLogin}>Log In</button>
       			</div>
       		</form>
       		<div style={styles.category}>New users create an account below}</div>

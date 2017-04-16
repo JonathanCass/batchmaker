@@ -181,6 +181,13 @@
         "handle" : "Dessert Dave",
         "favorites" : [1],    
         "avatarUrl" : "http://images.media-allrecipes.com/userphotos/250x250/00/70/88/708879.jpg"
+      },
+      {
+        "login" : "mcp",
+        "password" : "password",
+        "handle" : "Master Control Protocol",
+        "favorites" : [1],    
+        "avatarUrl" : "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914"
       }
     ]
   }
