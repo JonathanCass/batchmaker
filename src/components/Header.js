@@ -50,7 +50,7 @@ class Header extends React.Component {
         <div style={styles.headerRight}>
         	<Link to="/RecipeForm/" ><i style={styles.icon} className="material-icons">note_add</i></Link>
         	<i style={styles.icon} className="material-icons">settings</i>
-        	<i style={styles.icon} className="material-icons">face</i>
+        	<Link to="/User/"><i style={styles.icon} className="material-icons">face</i></Link>
         </div>
       </div>
     )
