@@ -165,7 +165,7 @@ class RecipeForm extends React.Component {
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
       		<form><div style={styles.infoHeader}>Standard Recipe Information</div>
-      		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.props.user} </span></div>
+      		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.props.recipes[0] && this.props.users[this.props.user].handle} </span></div>
       			<img src={this.state.photoUrl} alt="ADD VISUAL" style={styles.addPhoto}/><input type="text" name="photoUrl" onChange={this.handleChange} style={styles.addUrl} placeholder="Add Url of an Image"></input>
       			<input type="text" style={styles.recipeName} name="name"  onChange={this.handleChange} placeholder="Recipe Name"></input>
       			<div>

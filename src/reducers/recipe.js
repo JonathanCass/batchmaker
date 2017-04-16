@@ -10,7 +10,7 @@ export default function(state = initialState, action){
 		case 'GET_DATA' :
 			return{...state, recipes: [...action.data.recipes], steps: [...action.data.steps], allocations: [...action.data.allocations], users: [...action.data.users]}
 		case 'LOGIN' :
-			return{user: action.login}
+			return{...state, user: action.login}
 		default :
 			return state
 	}
