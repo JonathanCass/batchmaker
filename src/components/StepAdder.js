@@ -115,6 +115,7 @@ class StepAdder extends React.Component {
 				<option value="pint">Pint</option>
 				<option value="quart">Quart</option>
 				<option value="gallon">Gallon</option>
+				<option value="">unitless</option>
 			</select>
 			<input type="text" onChange={this.handleChange} name="what" style={styles.ingredient} placeholder="Ingredient"></input>
 			<button onClick={this.addIngredient} style={styles.addIngredient}>+</button>

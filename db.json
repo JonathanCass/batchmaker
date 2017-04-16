@@ -3,42 +3,68 @@
     "recipes": [
       {
         "id": 1,
-        "name": "Example Recipe",
-        "by": 5,
-        "photoUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
+        "name": "Pancakes",
+        "by": 1,
+        "photoUrl": "http://flapjacks.com/wp-content/uploads/2014/07/pancakes_tallStack.png",
         "type": "breakfast",
-        "prepTime": 140,
-        "cookTime": 55,
-        "cookTemp": 450,
-        "servingAmount": 2,
-        "servingType": "bowls",
+        "prepTime": 10,
+        "cookTime": 20,
+        "cookTemp": 400,
+        "servingAmount": 12,
+        "servingType": "pancakes",
         "public": true
       },
       {
         "id": 2,
-        "name": "Example Recipe 2",
-        "by": 5,
-        "photoUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
+        "name": "Hotdogs",
+        "by": 2,
+        "photoUrl": "http://www.bakepol.pl/midcom-serveattachmentguid-1e1c51cc95f7c54c51c11e1b441998b4d9e8b1f8b1f/hot_dog-002.jpg",
         "type": "lunch",
-        "prepTime": 60,
-        "cookTime": 110,
+        "prepTime": 5,
+        "cookTime": 10,
         "cookTemp": 450,
-        "servingAmount": 6,
-        "servingType": "blobs",
+        "servingAmount": 8,
+        "servingType": "hotdogs",
         "public": true
       },
       {
         "id": 3,
-        "name": "Square Burger",
-        "by": 2,
+        "name": "Steak",
+        "by": 3,
         "photoUrl": "http://www.funkyspacemonkey.com/wp-content/uploads/2012/03/food-iphone-app-icons-11-FSMdotCOM.jpg",
         "type": "dinner",
         "prepTime": "20",
-        "cookTime": "10",
-        "cookTemp": "450",
-        "servingAmount": "10",
-        "servingType": "Burgers",
+        "cookTime": "15",
+        "cookTemp": "500",
+        "servingAmount": "6",
+        "servingType": "Steaks",
         "public": "true"
+      },
+      {
+        "id": 4,
+        "name": "Cake",
+        "by": 4,
+        "photoUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
+        "type": "lunch",
+        "prepTime": 60,
+        "cookTime": 60,
+        "cookTemp": 450,
+        "servingAmount": 20,
+        "servingType": "pieces",
+        "public": true
+      },
+      {
+        "id": 5,
+        "name": "Soylent Green",
+        "by": 5,
+        "photoUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
+        "type": "lunch",
+        "prepTime": 1,
+        "cookTime": 120,
+        "cookTemp": 550,
+        "servingAmount": 20,
+        "servingType": "cubes",
+        "public": true
       }
     ],
     "steps": [
@@ -46,25 +72,25 @@
         "id": 1,
         "order": 1,
         "recipeId": 1,
-        "directions": "Roast this mixture!"
+        "directions": "Combine the eggs, flour and milk in a bowl and mix. Pour a quarter cup of the mix onto a hot griddle."
       },
       {
         "id": 2,
         "order": 2,
         "recipeId": 1,
-        "directions": "Mix the ashes meatbag!"
+        "directions": "When the pancake is a golden brown use a spatula to lift it off the gridle and plate it. Apply butter to the surface of the warm pancake and apply the desired amount of syrup."
       },
       {
         "id": 3,
         "order": 1,
         "recipeId": 2,
-        "directions": "Torch this mess!"
+        "directions": "Grill hotdogs until plump."
       },
       {
         "id": 4,
         "order": 2,
         "recipeId": 2,
-        "directions": "Chop and stir mortal!"
+        "directions": "Grab hotdogs with tongs and place into buns. Apply mustard and ketchup to taste."
       },
       {
         "id": 5,
@@ -77,6 +103,31 @@
         "order": 1,
         "recipeId": 3,
         "directions": "Place Ketchup Lettuce Cheese and pickles on the burgers and serve them up."
+      },
+
+      {
+        "id": 7,
+        "order": 1,
+        "recipeId": 4,
+        "directions": "Shape ground beef into patties and cook for 10 minutes."
+      },
+      {
+        "id": 8,
+        "order": 2,
+        "recipeId": 4,
+        "directions": "Place Ketchup Lettuce Cheese and pickles on the burgers and serve them up."
+      },
+      {
+        "id": 9,
+        "order": 1,
+        "recipeId": 5,
+        "directions": "Shape ground beef into patties and cook for 10 minutes."
+      },
+      {
+        "id": 10,
+        "order": 3,
+        "recipeId": 5,
+        "directions": "Place Ketchup Lettuce Cheese and pickles on the burgers and serve them up."
       }
     ],
     "allocations": [
@@ -85,72 +136,72 @@
         "recipeId": 1,
         "stepId": 1,
         "numberOf": 4,
-        "unitOf": "Cups",
-        "what": "Pureed Chicken Flesh"
+        "unitOf": "cups",
+        "what": "All Purpose Flour"
       },
       {
         "id": 2,
         "recipeId": 1,
-        "stepId": 2,
-        "numberOf": 3,
-        "unitOf": "Tbsp",
-        "what": "Salt"
+        "stepId": 1,
+        "numberOf": 1,
+        "unitOf": "",
+        "what": "Eggs"
       },
       {
         "id": 3,
-        "recipeId": 2,
-        "stepId": 3,
+        "recipeId": 1,
+        "stepId": 1,
         "numberOf": 1,
-        "unitOf": "Pound",
-        "what": "Potatoes"
+        "unitOf": "cups",
+        "what": "Milk"
       },
       {
         "id": 4,
+        "recipeId": 1,
+        "stepId": 2,
+        "numberOf": 10,
+        "unitOf": "fl oz",
+        "what": "Syrup"
+      },
+      {
+        "id": 5,
+        "recipeId": 1,
+        "stepId": 2,
+        "numberOf": "2",
+        "unitOf": "tbsps",
+        "what": "butter"
+      },
+      {
+        "id": 6,
+        "recipeId": 2,
+        "stepId": 3,
+        "numberOf": "8",
+        "unitOf": "",
+        "what": "Hotdogs"
+      },
+      {
+        "id": 7,
+        "recipeId": 2,
+        "stepId": 4,
+        "numberOf": "8",
+        "unitOf": "",
+        "what": "Buns"
+      },
+      {
+        "id": 8,
         "recipeId": 2,
         "stepId": 4,
         "numberOf": 10,
         "unitOf": "fl oz",
-        "what": "Lemon Juice"
-      },
-      {
-        "id": 5,
-        "recipeId": 3,
-        "stepId": 5,
-        "numberOf": "2",
-        "unitOf": "pound",
-        "what": "Ground Beef"
-      },
-      {
-        "id": 6,
-        "recipeId": 3,
-        "stepId": 6,
-        "numberOf": "1",
-        "unitOf": "cup",
         "what": "Ketchup"
       },
       {
-        "id": 7,
-        "recipeId": 3,
-        "stepId": 6,
-        "numberOf": "1",
-        "unitOf": "pound",
-        "what": "Lettuce"
-      },
-      {
-        "id": 8,
-        "recipeId": 3,
-        "stepId": 6,
-        "numberOf": 0,
-        "unitOf": "cup",
-        "what": "Shredded Cheese"
-      },
-      {
         "id": 9,
-        "recipeId": 3,
-        "stepId": 6,
-        "numberOf": "2",
-        "unitOf": "pint",
-        "what": "Pickles"
+        "recipeId": 2,
+        "stepId": 4,
+        "numberOf": "10",
+        "unitOf": "fl oz",
+        "what": "Mustard"
       }
     ],
     "users": [
