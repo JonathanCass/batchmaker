@@ -64,6 +64,12 @@ const styles={
 		height: 10,
 		color: 'white'
 	},
+	displayNone:{
+		display: 'none'
+	},
+	linkRow:{
+		color:'white'
+	}
 }
 class AllRecipesGrid extends React.Component {
   /*constructor(props) {
@@ -76,15 +82,16 @@ class AllRecipesGrid extends React.Component {
     return (
       <div style={styles.gridContainer}>
         <div style={styles.gridProper}>
-        	<div style={styles.catHeader}>This User's Methods<button style={styles.viewAll}>View All</button></div>
+        	<div style={styles.catHeader}> {this.props.recipes[0] && this.props.users[this.props.user].handle}'s Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
-        			<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
+        			<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id} style={ Number(recipe.by) === Number(this.props.user) ? styles.linkRow : styles.displayNone }>
         				<div style={styles.recipeAndName}>
         					<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
         				</div>
         			</Link>
-        		))}        	</div>
+        		))}        	
+        	</div>
         	<div style={styles.catHeader}>Open Source Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
         		{this.props.recipes.map(recipe=>(
@@ -104,7 +111,7 @@ class AllRecipesGrid extends React.Component {
 	        			</div>
 	        		</Link>	
         		))}        	</div>
-        	<div style={styles.catHeader}>Favorite Methods<button style={styles.viewAll}>View All</button></div>
+        	<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorite Methods<button style={styles.viewAll}>View All</button></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
 					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
@@ -120,7 +127,7 @@ class AllRecipesGrid extends React.Component {
 }
 
 function mapStateToProps(appState){
-	return { recipes : appState.recipes}
+	return { recipes : appState.recipes, user: appState.user, users: appState.users}
 }
 
 export default connect(mapStateToProps)(AllRecipesGrid)

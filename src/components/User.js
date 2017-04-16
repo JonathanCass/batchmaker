@@ -91,6 +91,7 @@ class User extends React.Component {
   		data.batchmaker.users.forEach(function(user){
   			if(user.login === this.state.login && user.password === this.state.password){
   				login(user.id)
+  				
   				alert("Succesfully Logged In As " + user.handle)
   			}
   		}.bind(this))
