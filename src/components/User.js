@@ -52,7 +52,7 @@ class User extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	login: "", password: "", avatarUrl:"", handle:"", loginFailed: true
+    	login: "", password: "", avatarUrl:"", handle:""
     }
   }
   handleChange = (e) => {
@@ -64,20 +64,12 @@ class User extends React.Component {
   		e.preventDefault()
   		data.batchmaker.users.forEach(function(user){
   			if(user.login === this.state.login && user.password === this.state.password){
-
   				alert("Succesfully Logged In As " + user.handle)
-  				this.setState({
-  					loginFailed: false
-  				})
   			}
   		}.bind(this))
-  		if(this.state.loginFailed){
-  			alert("Login Failed, Incorrect password or login id.")
-  		}
         this.setState({
         	login: "",
-        	password:"",
-        	loginFailed: true
+        	password:""
         })
   	}
   	handleCreate = (e) => {
@@ -93,8 +85,8 @@ class User extends React.Component {
       		<div style={styles.category}>Existing Users Log In Below</div>
       		<form>
       			<div>
-      				<span style={styles.label}>Log In</span><input type="text" style={styles.input} name="login" onChange={this.handleChange} ></input>
-      				<span style={styles.label}>Password</span><input type="password" style={styles.input} name="password" onChange={this.handleChange} ></input>
+      				<span style={styles.label}>Log In</span><input type="text" style={styles.input} name="login" value={this.state.login} onChange={this.handleChange} ></input>
+      				<span style={styles.label}>Password</span><input type="password" style={styles.input} name="password" value={this.state.password} onChange={this.handleChange} ></input>
       				<button style={styles.submit} onClick={this.handleLogin}>Log In</button>
       			</div>
       		</form>
