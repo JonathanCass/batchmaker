@@ -118,7 +118,7 @@ class RecipeForm extends React.Component {
 		var stepObj = {
       		"id": this.state.stepIdIndex,
       		"order": order,
-     	 	"recipeId": this.state.recipeId,
+     	 	"recipeId": this.state.recipeIdIndex,
     	  	"directions": this.state.directions  
 		}
 		

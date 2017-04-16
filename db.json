@@ -29,15 +29,15 @@
       },
       {
         "id": 3,
-        "name": "1",
-        "by": "1",
-        "photoUrl": "1",
-        "type": "breakfast",
-        "prepTime": "1",
-        "cookTime": "1",
-        "cookTemp": "1",
-        "servingAmount": "1",
-        "servingType": "1",
+        "name": "Square Burger",
+        "by": "Human 5150",
+        "photoUrl": "http://www.funkyspacemonkey.com/wp-content/uploads/2012/03/food-iphone-app-icons-11-FSMdotCOM.jpg",
+        "type": "dinner",
+        "prepTime": "20",
+        "cookTime": "10",
+        "cookTemp": "450",
+        "servingAmount": "10",
+        "servingType": "Burgers",
         "public": "true"
       }
     ],
@@ -69,7 +69,14 @@
       {
         "id": 5,
         "order": 1,
-        "directions": "1"
+        "recipeId": 3,
+        "directions": "Shape ground beef into patties and cook for 10 minutes."
+      },
+      {
+        "id": 6,
+        "order": 1,
+        "recipeId": 3,
+        "directions": "Place Ketchup Lettuce Cheese and pickles on the burgers and serve them up."
       }
     ],
     "allocations": [
@@ -109,9 +116,41 @@
         "id": 5,
         "recipeId": 3,
         "stepId": 5,
+        "numberOf": "2",
+        "unitOf": "pound",
+        "what": "Ground Beef"
+      },
+      {
+        "id": 6,
+        "recipeId": 3,
+        "stepId": 6,
         "numberOf": "1",
         "unitOf": "cup",
-        "what": "1"
+        "what": "Ketchup"
+      },
+      {
+        "id": 7,
+        "recipeId": 3,
+        "stepId": 6,
+        "numberOf": "1",
+        "unitOf": "pound",
+        "what": "Lettuce"
+      },
+      {
+        "id": 8,
+        "recipeId": 3,
+        "stepId": 6,
+        "numberOf": 0,
+        "unitOf": "cup",
+        "what": "Shredded Cheese"
+      },
+      {
+        "id": 9,
+        "recipeId": 3,
+        "stepId": 6,
+        "numberOf": "2",
+        "unitOf": "pint",
+        "what": "Pickles"
       }
     ]
   }

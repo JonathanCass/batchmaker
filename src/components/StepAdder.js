@@ -74,7 +74,11 @@ class StepAdder extends React.Component {
 		
 		this.setState({
 			ingredientArray : [...this.state.ingredientArray, ingredientObj],
-        	ingredientIdIndex : this.state.ingredientIdIndex + 1
+        	ingredientIdIndex : this.state.ingredientIdIndex + 1,
+        	numberOf:0,
+        	unitOf:'',
+        	what:''
+
         })
   	}
   	addRecipe = (e) => {
