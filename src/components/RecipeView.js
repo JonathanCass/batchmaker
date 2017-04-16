@@ -162,11 +162,12 @@ class RecipeView extends React.Component {
   	getData()
   }
   render() {
+  	console.log("This.props", this.props)
     return (
       <div style={styles.recipeContainer}>
         <div style={styles.recipeProper}>
         	<div style={styles.recipteTitle}>{this.props.recipes[0] && this.props.recipes[this.state.id].name}</div>
-        	<div style={styles.recipeBy}> by {this.props.recipes[0] && this.props.recipes[this.state.id].by}</div>
+        	<div style={styles.recipeBy}> by {this.props.recipes[0] && this.props.users[this.props.recipes[this.state.id].by].handle}</div>
         	<img style={styles.recipeImage} src={this.props.recipes[0] && this.props.recipes[this.state.id].photoUrl} alt=""/>
         	
         	<div style={styles.typeTimeTemp}>
@@ -204,7 +205,7 @@ class RecipeView extends React.Component {
 }
 
 function mapStateToProps(appState){
-	return { recipes : appState.recipes, allocations: appState.allocations}
+	return { recipes : appState.recipes, allocations: appState.allocations, users: appState.users, user: appState.user}
 }
 
 export default connect(mapStateToProps)(RecipeView)

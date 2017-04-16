@@ -4,7 +4,7 @@
       {
         "id": 1,
         "name": "Example Recipe",
-        "by": "Master Control Protocol",
+        "by": 5,
         "photoUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
         "type": "breakfast",
         "prepTime": 140,
@@ -17,7 +17,7 @@
       {
         "id": 2,
         "name": "Example Recipe 2",
-        "by": "Master Control Protocol",
+        "by": 5,
         "photoUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
         "type": "lunch",
         "prepTime": 60,
@@ -30,7 +30,7 @@
       {
         "id": 3,
         "name": "Square Burger",
-        "by": "Human 5150",
+        "by": 2,
         "photoUrl": "http://www.funkyspacemonkey.com/wp-content/uploads/2012/03/food-iphone-app-icons-11-FSMdotCOM.jpg",
         "type": "dinner",
         "prepTime": "20",

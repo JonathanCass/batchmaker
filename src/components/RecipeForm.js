@@ -108,7 +108,7 @@ class RecipeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	name:'', by: data.batchmaker.users[this.props.user].handle ,photoUrl: "" ,type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length + 1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
+    	name:'', by: data.batchmaker.users[this.props.user].id ,photoUrl: "" ,type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length + 1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
     	}
   	}
   	componentWillMount(){
