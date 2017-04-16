@@ -37,7 +37,7 @@ const styles ={
 		height: 60,
 		float:'left'
 	},
-	recipeBy:{
+	recipeName:{
 		width: 480,
 		height: 60,
 	},
@@ -92,13 +92,23 @@ const styles ={
 		width: 220,
 		height: 50,
 		display: 'block'
+	},
+	user:{
+		width: 640,
+		heigt: 150,
+		margin: ' 0 0 0 20px',
+		fontSize: 26,
+		color: '#03A9F4'
+	},
+	userName:{
+		color:'#FF5722'
 	}
 }
 class RecipeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	name:'', by:'',photoUrl:'',type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length + 1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
+    	name:'', by: data.batchmaker.users[this.props.user].handle ,photoUrl: "" ,type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length + 1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
     	}
   	}
   	componentWillMount(){
@@ -154,9 +164,9 @@ class RecipeForm extends React.Component {
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
       		<form><div style={styles.infoHeader}>Standard Recipe Information</div>
+      		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.state.by}</span></div>
       			<img src={this.state.photoUrl} alt="ADD VISUAL" style={styles.addPhoto}/><input type="text" name="photoUrl" onChange={this.handleChange} style={styles.addUrl} placeholder="Add Url of an Image"></input>
-      			<input type="text" style={styles.recipeBy} name="name" onChange={this.handleChange} placeholder="Recipe Name"></input>
-      			<input type="text" style={styles.recipeBy} name="by" onChange={this.handleChange} placeholder="By"></input>
+      			<input type="text" style={styles.recipeName} name="name"  onChange={this.handleChange} placeholder="Recipe Name"></input>
       			<div>
       				<input type="radio" name="public" onChange={this.handleChange} value={true}></input><span style={styles.radioButtons}>Unrestricted Access </span>
       				<input type="radio" name="public" onChange={this.handleChange} value={false}></input><span style={styles.radioButtons}>This User Access Only </span>
@@ -191,7 +201,7 @@ class RecipeForm extends React.Component {
 }
 
 function mapStateToProps(appState){
-	return { steps : appState.steps, recipes: appState.recipes}
+	return { steps : appState.steps, recipes: appState.recipes, user: appState.user}
 }
 
 export default connect(mapStateToProps)(RecipeForm)
