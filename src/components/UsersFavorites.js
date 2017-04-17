@@ -43,6 +43,7 @@ const styles={
 		height: 160,
 		display: 'inline-block',
 		marginRight: 12,
+		marginBottom: 60
 	},
 	recipe:{
 		borderRadius: 5,
@@ -77,7 +78,7 @@ class UsersFavorites extends React.Component {
         	<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorites</div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
-					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
+					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id} style={ recipe.public === true  ? styles.linkRow : styles.displayNone }>
 	        			<div style={styles.recipeAndName}>
 	        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
 	        			</div>

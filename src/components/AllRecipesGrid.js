@@ -42,8 +42,9 @@ const styles={
 	},
 	row:{
 		width: 650,
-		height: 170,
-		marginBottom: 50
+		height: 178,
+		marginBottom: 50,
+		overflow: 'hidden'
 	},
 	recipeAndName:{
 		borderRadius: 5,

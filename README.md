@@ -11,7 +11,8 @@ Recipe viewer with 4 categories. User's private recipes, Public recipes, User's 
 When adding ingredients previously added ingredients are displayed and can be removed before commiting the step.  
 Ability to log in. Logging in requires correct login and password. Default login is set as guest. Confirmation upon login displays  
 current user's handle and avatar.  
-When creating a new recipe the by field is automatically filled.  
+When creating a new recipe the by field is automatically filled. on
+Recipes set to private are only viewable by their creators. HINT Login as login ID: mcp PASSWORD: password. The Master Control Protocol has an interesting recipe the humans are not alowwed to access.
 
 Soon to be added.
 

@@ -52,6 +52,19 @@
         "servingAmount": 20,
         "servingType": "Pieces",
         "public": true
+      },
+      {
+        "id": 5,
+        "name": "Soylent Green",
+        "by": 5,
+        "photoUrl": "http://img.21food.com/20110609/product/1306201150503.jpg",
+        "type": "dinner",
+        "prepTime": "1",
+        "cookTime": "10",
+        "cookTemp": "600",
+        "servingAmount": "400",
+        "servingType": "Cubes",
+        "public": "false"
       }
     ],
     "steps": [
@@ -114,6 +127,12 @@
         "order": 4,
         "recipeId": 4,
         "directions": "Pour mixture into the cake pan and bake. Remove from oven let cool and apply icing."
+      },
+      {
+        "id": 11,
+        "order": 1,
+        "recipeId": 5,
+        "directions": "Put deceased human into the human recycler. Machine will automatically place 10 cubes into 40 sealed packages."
       }
     ],
     "allocations": [
@@ -268,6 +287,14 @@
         "numberOf": 4,
         "unitOf": "",
         "what": "Egg Yolks"
+      },
+      {
+        "id": 18,
+        "recipeId": 5,
+        "stepId": 11,
+        "numberOf": "160",
+        "unitOf": "pounds",
+        "what": "Human"
       }
     ],
     "users": [
