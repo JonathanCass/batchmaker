@@ -75,7 +75,9 @@ const styles={
 		color: '#D50000'
 	},
 	input:{
-		width: 140
+		width: 140,
+		fontSize: 14,
+		padding: 5
 	}
 }
 class User extends React.Component {

@@ -121,19 +121,32 @@ const styles ={
 		fontSize:20
 	},
 	adjustInput:{
-		width: 120,
+		width: 162,
 		height: 40,
 		fontSize:14,
 		position: 'relative',
 		top: -2,
-		right: -15
+		right: -15,
+		paddingTop: 5
 	},
 	editRecipe:{
 		width: 160,
-		height: 40,
+		height: 60,
 		fontSize:20,
 		float: 'right',
-		margin: ' 20px 0 0 0 '
+		margin: ' 25px 0 0 0 '
+	},
+	favoriteButton:{
+		width: 71,
+		height: 71,
+		fontSize: 68,
+		float: 'left',
+		color: '#FFFF00',
+		marginTop: 15,
+		background: '#D50000',
+		borderRadius: 25,
+		border: '2px solid white'
+
 	},
 	displayNone:{
 		display: 'none'
@@ -199,6 +212,7 @@ class RecipeView extends React.Component {
         	</div>
         	<Step recipeId={this.props.match.params.recipeId} adjustDisplay={this.state.adjustDisplay}/>
         	<button style={styles.editRecipe}>Edit This Recipe</button>
+        	<i style={styles.favoriteButton} className="material-icons">grade</i>
         </div>
       </div>
     )
