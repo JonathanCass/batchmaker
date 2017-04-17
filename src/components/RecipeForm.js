@@ -45,7 +45,7 @@ const styles ={
 		width: 220,
 		height: 50,
 		display: 'block',
-		margin: '10px 10px 10px 20px'
+		margin: '10px 10px 40px 20px'
 	},
 	prepTimeTemp:{
 		width: 120,
@@ -64,8 +64,8 @@ const styles ={
 		height: 50
 	},
 	saveRecipe:{
-		width: 330,
-		height: 50
+		width: 640,
+		height: 60
 	},
 	infoHeader:{
 		width: 660,
@@ -86,12 +86,16 @@ const styles ={
 	directions:{
 		width: 640,
 		height: 150,
-		borderRadius: 5
+		borderRadius: 5,
+		marginTop: 40
 	},
 	addStep:{
 		width: 220,
 		height: 50,
-		display: 'block'
+		display: 'block',
+		float: 'right',
+		position: 'relative',
+		top: -10
 	},
 	user:{
 		width: 640,
@@ -102,6 +106,41 @@ const styles ={
 	},
 	userName:{
 		color:'#FF5722'
+	},
+	addImageLabel:{
+		color: '#03A9F4',
+		margin: '10px 0 0 10px',
+		position: 'relative',
+		top: 100
+	},
+	addNameLabel:{
+		color: '#03A9F4',
+		margin: '10px 0 0 10px',
+		position: 'relative',
+		top: 196,
+		right: 156	
+	},
+	addTimesLabel:{
+		color: '#03A9F4',
+		position: 'relative',
+		right: 40,
+		marginLeft: 50,
+		fontSize: 17
+	},
+	addAmountLabel:{
+		color: '#03A9F4',
+		marginLeft: 10,
+		fontSize: 17
+	},
+	addIngredientLabel:{
+		color: '#03A9F4',
+		marginLeft: 138,
+		fontSize: 17
+	},
+	addDirectionsLabel:{
+		color: '#03A9F4',
+		marginLeft: 10,
+		fontSize: 17	
 	}
 }
 class RecipeForm extends React.Component {
@@ -132,7 +171,6 @@ class RecipeForm extends React.Component {
 			stepArray : [...this.state.stepArray, stepObj],
         	stepIdIndex : this.state.stepIdIndex + 1,
         	order: this.state.order + 1
-
         })
 		
   	}
@@ -164,8 +202,8 @@ class RecipeForm extends React.Component {
       	<div style={styles.formProper}>
       		<form><div style={styles.infoHeader}>Standard Recipe Information</div>
       		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.props.recipes[0] && this.props.users[this.props.user].handle} </span></div>
-      			<img src={this.state.photoUrl} alt="ADD VISUAL" style={styles.addPhoto}/><input type="text" name="photoUrl" onChange={this.handleChange} style={styles.addUrl} placeholder="Add Url of an Image"></input>
-      			<input type="text" style={styles.recipeName} name="name"  onChange={this.handleChange} placeholder="Recipe Name"></input>
+      			<img src={this.state.photoUrl} alt="ADD VISUAL" style={styles.addPhoto}/><span style={styles.addImageLabel}>Add Url of image</span><span style={styles.addNameLabel}>Input Name of Recipe</span><input type="text" name="photoUrl" onChange={this.handleChange} style={styles.addUrl}></input>
+      			<input type="text" style={styles.recipeName} name="name" onChange={this.handleChange}></input>
       			<div>
       				<input type="radio" name="public" onChange={this.handleChange} value={true}></input><span style={styles.radioButtons}>Unrestricted Access </span>
       				<input type="radio" name="public" onChange={this.handleChange} value={false}></input><span style={styles.radioButtons}>This User Access Only </span>
@@ -177,19 +215,22 @@ class RecipeForm extends React.Component {
 				  <option value="dinner">Dinner</option>
 				  <option value="dessert">Dessert</option>
 				</select>
+				<span style={styles.addTimesLabel}>PrepTime</span><span style={styles.addTimesLabel}>CookTime</span><span style={styles.addTimesLabel}>CookTemp</span>
 				<div>
-					<input type="text" name="prepTime" onChange={this.handleChange} style={styles.prepTimeTemp} placeholder="Prep Time"></input>
-					<input type="text" name="cookTime" onChange={this.handleChange} style={styles.prepTimeTemp} placeholder="Cook Time"></input>
-					<input type="text" name="cookTemp" onChange={this.handleChange} style={styles.prepTimeTemp} placeholder="Cook Temp"></input>
+					<input type="text" name="prepTime" onChange={this.handleChange} style={styles.prepTimeTemp} value={this.state.prepTime}></input>
+					<input type="text" name="cookTime" onChange={this.handleChange} style={styles.prepTimeTemp} value={this.state.cookTime}></input>
+					<input type="text" name="cookTemp" onChange={this.handleChange} style={styles.prepTimeTemp} value={this.state.cookTemp}></input>
 					<select style={styles.degrees}>
 						<option value="f">F°</option>
 						<option value="c">C°</option>
 					</select>
 				</div>
-				<span style={styles.producesLabel}>Recipe produces</span><input type="text" name="servingAmount" onChange={this.handleChange} style={styles.amount} placeholder="Amount"></input>
-      			<input type="text" name="servingType" onChange={this.handleChange} style={styles.measurement} placeholder="Unit of measurement to be applied to result"></input>
+				<span style={styles.producesLabel}>Results In</span><input type="text" name="servingAmount" onChange={this.handleChange} style={styles.amount} value={this.state.servingAmount}></input><span style={styles.producesLabel}>of </span>
+      			<input type="text" name="servingType" onChange={this.handleChange} style={styles.measurement}></input>
       			<StepAdder recipeObject={this.state.recipeObject} stepArray={this.state.stepArray} confirmButton={this.state.confirmButton} recipeIdIndex={this.state.recipeIdIndex} ingredientIdIndex={this.state.ingredientIdIndex} stepIdIndex={this.state.stepIdIndex} order={this.state.order}/>
-      			<textarea onChange={this.handleChange} style={styles.directions} name="directions" placeholder="Input procedure for this production phase."></textarea>
+      			<span style={styles.addAmountLabel}>Amount</span><span style={styles.addIngredientLabel}>Ingredient</span>
+      			<textarea onChange={this.handleChange} style={styles.directions} name="directions" value={this.state.directions}></textarea>
+        		<span style={styles.addDirectionsLabel}>Input procedure for thie production phase</span>
         		<button style={styles.addStep} onClick={this.addStep}>Add This Step</button>
       			<button style={styles.saveRecipe} onClick={this.addRecipe}>Input this Food Method</button>
       		</form>

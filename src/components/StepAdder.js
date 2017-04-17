@@ -106,7 +106,7 @@ class StepAdder extends React.Component {
 	      			<button value={this.state.ingedientIdIndex} onClick={this.removeIngredient} style={styles.addIngredient}>-</button>
 	      		</div>
 	    	))}
-        	<input type="text" onChange={this.handleChange} name="numberOf" style={styles.amount} placeholder="Amount"></input>
+        	<input type="text" onChange={this.handleChange} name="numberOf" style={styles.amount} value={this.state.numberOf}></input>
         	<select onChange={this.handleChange} name="unitOf" style={styles.unit}>
 				<option value="">Unit</option>
 				<option value="tsp">Tsp</option>
@@ -119,7 +119,7 @@ class StepAdder extends React.Component {
 				<option value="gallon">Gallon</option>
 				<option value="">unitless</option>
 			</select>
-			<input type="text" onChange={this.handleChange} name="what" style={styles.ingredient} placeholder="Ingredient"></input>
+			<input type="text" onChange={this.handleChange} name="what" style={styles.ingredient} value={this.state.what}></input>
 			<button onClick={this.addIngredient} style={styles.addIngredient}>+</button>
 			<button onClick={this.addRecipe} style={this.props.confirmButton === true ? styles.confirmButton : styles.displayNone  }>Confirm Recipe</button>
       </div>

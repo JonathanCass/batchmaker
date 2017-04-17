@@ -21,3 +21,16 @@ select {
 a{
 	text-decoration: none;
 }
+input, select{
+	font-family: 'Orbitron';
+	font-size: 26px;
+	color: #FF5722;
+	padding-left: 10px;
+}
+textarea{
+	font-family: 'Orbitron';
+	font-size: 26px;
+	color: #FF5722;
+	padding-left: 10px;
+	padding-top: 10px;
+}
