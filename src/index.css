@@ -34,3 +34,8 @@ textarea{
 	padding-left: 10px;
 	padding-top: 10px;
 }
+button{
+	font-size: 18px;
+	background: #D50000;
+	color: white;
+}

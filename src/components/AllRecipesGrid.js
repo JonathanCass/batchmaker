@@ -33,12 +33,10 @@ const styles={
 		justifyContent: 'space-between'
 	},
 	viewAll:{
-		height:40,
-		width: 60,
+		height:35,
+		width: 120,
 		position: 'relative',
-		top: -7,
-		background: '#D50000',
-		color: 'white'
+		top: -5,
 	},
 	row:{
 		width: 650,

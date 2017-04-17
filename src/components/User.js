@@ -40,7 +40,7 @@ const styles={
 	},
 	label:{
 		color: '#02A4EC',
-		width: 115,
+		width: 110,
 		display:'inline-block',
 		textAlign: 'right'
 	},
@@ -68,10 +68,14 @@ const styles={
 		background: 'white',
 		borderRadius: 15,
 		border: '2px solid #009688',
-		float: 'left'
+		float: 'left',
+		marginLeft: 55
 	},
 	userHandle:{
 		color: '#D50000'
+	},
+	input:{
+		width: 140
 	}
 }
 class User extends React.Component {
