@@ -1,7 +1,6 @@
 import React from 'react'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
 import data from '../../db.json'
 
 const styles={
@@ -65,6 +64,11 @@ const styles={
 	},
 	linkRow:{
 		color:'white'
+	},
+	line:{
+		color: '#D50000',
+		fontSize: 24,
+		marginTop: 30
 	}
 }
 
@@ -82,27 +86,27 @@ class PopularRecipes extends React.Component {
   displayFavorites = () => {
   	var newArray = []
 
-    data.batchmaker.recipes.forEach(function(recipe, i) {
-    	newArray[i] = recipe.favoritedBy.length
-	})
-	
+  	for( let i=data.batchmaker.users.length ; i > 0; i--){
+  		data.batchmaker.recipes.forEach(function(recipe) {
+  			if(recipe.favoritedBy.length === i && recipe.public === true){
+  				newArray.push(recipe.name + " by " + data.batchmaker.users[recipe.by].handle + " has " + i + " favorites.")
+  			}
+  		})
+  	}
 	this.setState({
 		popularArray: newArray
 	})
   }
   render() {
-  	console.log(this.state.popularArray)
     return (
       <div style={styles.gridContainer}>
         <div style={styles.gridProper}>
         	<div style={styles.catHeader}>Popular Methods</div>
         	<div style={styles.row}>
-				{this.props.recipes.map(recipe=>(
-					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id} style={ recipe.public === true  ? styles.linkRow : styles.displayNone }>
-		       			<div style={styles.recipeAndName}>
-		     				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
-		        		</div>
-		        	</Link>	
+				{this.state.popularArray.map(line=>(
+					<div key={Math.random()}>
+						<div style={styles.line}>{line}</div>
+					</div>
 	        	))}
         	</div>
         </div>

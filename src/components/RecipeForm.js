@@ -195,8 +195,6 @@ class RecipeForm extends React.Component {
   		})
   	}
   render() {
-  	console.log("this.props on RecipeForm " , this.props)
-  	console.log("this.state on RecipeFOrm " , this.state)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>

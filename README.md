@@ -16,7 +16,7 @@ Recipe viewer with 4 categories.
 1: All current User's recipes including their own access restricted recipes.  
 2: All recipes tagged for unrestricted access.  
 3: User's favortie recipes, including restricted access recipes based on the assumption they had access at some point.  
-4: Most popular recipes listed by number of favorites.  
+4: Most popular recipes listed by number of favorites. Does not display recipes with restricted access here to prevent displaying if creator favortied their own recipe.   
 
 User Features.  
 Logging in requires correct login and password. 

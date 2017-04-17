@@ -94,8 +94,6 @@ class StepAdder extends React.Component {
   		addRecipe(this.props.recipeObject, this.props.stepArray, this.state.ingredientArray)
   	}
   render() {
-  	console.log("this.props on StepAdder " , this.props)
-  	console.log("this.state on StepAdder " , this.state)
     return (	
       	<div style={styles.stepContainer}>
       		{this.state.ingredientArray.map(item=>(
