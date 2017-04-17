@@ -25,7 +25,7 @@ const styles={
 		height: 50,
 		lineHeight: '50px',
 		border: '2px solid #009688',
-		borderWidth: ' 0 0 2px 0',
+		borderWidth: ' 2px 0 2px 0',
 		paddingBottom: 10,
 		fontSize: 24,
 		margin : " 10px 0 20px 0",
@@ -36,7 +36,9 @@ const styles={
 		height:40,
 		width: 60,
 		position: 'relative',
-		top: -10,
+		top: -7,
+		background: '#D50000',
+		color: 'white'
 	},
 	row:{
 		width: 650,
@@ -82,7 +84,7 @@ class AllRecipesGrid extends React.Component {
     return (
       <div style={styles.gridContainer}>
         <div style={styles.gridProper}>
-        	<div style={styles.catHeader}> {this.props.recipes[0] && this.props.users[this.props.user].handle}'s Methods<button style={styles.viewAll}>View All</button></div>
+        	<div style={styles.catHeader}> {this.props.recipes[0] && this.props.users[this.props.user].handle}'s Methods<Link to="/UsersRecipes/"><button style={styles.viewAll}>View All</button></Link></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
         			<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id} style={ Number(recipe.by) === Number(this.props.user) ? styles.linkRow : styles.displayNone }>
@@ -92,7 +94,7 @@ class AllRecipesGrid extends React.Component {
         			</Link>
         		))}        	
         	</div>
-        	<div style={styles.catHeader}>Open Source Methods<button style={styles.viewAll}>View All</button></div>
+        	<div style={styles.catHeader}>Open Source Methods<Link to="/PublicRecipes/"><button style={styles.viewAll}>View All</button></Link></div>
         	<div style={styles.row}>
         		{this.props.recipes.map(recipe=>(
         			<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
@@ -102,7 +104,7 @@ class AllRecipesGrid extends React.Component {
 	        		</Link>	
         		))}
         	</div>
-        	<div style={styles.catHeader}>Popular Methods<button style={styles.viewAll}>View All</button></div>
+        	<div style={styles.catHeader}>Popular Methods<Link to="/PopularRecipes/"><button style={styles.viewAll}>View All</button></Link></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
 					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
@@ -110,8 +112,9 @@ class AllRecipesGrid extends React.Component {
 	        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
 	        			</div>
 	        		</Link>	
-        		))}        	</div>
-        	<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorite Methods<button style={styles.viewAll}>View All</button></div>
+        		))}        	
+        	</div>
+        	<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorite Methods<Link to="/PublicRecipes/"><button style={styles.viewAll}>View All</button></Link></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
 					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>

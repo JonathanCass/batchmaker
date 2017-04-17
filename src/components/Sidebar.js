@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 
 const styles = {
@@ -23,17 +24,20 @@ const styles = {
   	list:{
   		listStyle: 'none',
   		padding: 30,
- 	}
+ 	  },
+    catLinks:{
+      color: 'white'
+    }
 }
 
 const Sidebar = () => (
   <div style={styles.sidebarContainer}>
   	<ul style={styles.list}>
-        <li style={styles.sidebarEntry} > This User's Methods </li>
-        <li style={styles.sidebarEntry} > OpenSource Methods </li>
-        <li style={styles.sidebarEntry} > Popular Methods </li>
-        <li style={styles.sidebarEntry} > Favorite Methods </li>
-        <li style={styles.sidebarEntry} > Nutrient Repository </li>
+        <li style={styles.sidebarEntry}><Link style={styles.catLinks} to="/UsersRecipes/"> This User's Methods </Link></li>
+        <li style={styles.sidebarEntry}><Link style={styles.catLinks} to="/PublicRecipes/"> OpenSource Methods </Link></li>
+        <li style={styles.sidebarEntry}><Link style={styles.catLinks} to="/PopularRecipes/"> Popular Methods </Link></li>
+        <li style={styles.sidebarEntry}><Link style={styles.catLinks} to="/UsersFavorites/"> Favorite Methods </Link></li>
+        <li style={styles.sidebarEntry}> Nutrient Repository </li>
     </ul>
   </div>
 )
