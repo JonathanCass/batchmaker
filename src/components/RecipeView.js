@@ -3,6 +3,7 @@ import Step from './Step'
 import {getData} from '../api/recipe'
 import {addFavorite} from '../api/recipe'
 import {connect} from 'react-redux'
+import data from '../../db.json'
 
 const styles ={
 	recipeContainer:{
@@ -222,7 +223,7 @@ class RecipeView extends React.Component {
 			    </div>
         	</div>
         	<Step recipeId={this.props.match.params.recipeId} adjustDisplay={this.state.adjustDisplay}/>
-        	<button style={styles.editRecipe}>Edit This Recipe</button>
+        	<button style={this.props.user === data.batchmaker.recipes[Number(this.props.match.params.recipeId)-1].by ? styles.editRecipe : styles.displayNone}>Edit This Recipe</button>
         	<i style={styles.favoriteButton} className="material-icons" onClick={this.addFavorite}>grade</i>
         </div>
       </div>
