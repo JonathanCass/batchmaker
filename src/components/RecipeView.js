@@ -172,11 +172,17 @@ class RecipeView extends React.Component {
   			adjustRed: this.state.adjustParam
   		})
   	}
+  	addFavorite = (e) => {
+  		var newArray = this.props.users
+  		if(newArray[this.props.user].favorites.indexOf(Number(this.props.match.params.recipeId)) === -1){
+  			newArray[this.props.user].favorites = [...newArray[this.props.user].favorites ,Number(this.props.match.params.recipeId)]
+  		}
+  		console.log("newArray of users inside button", newArray)
+  	}
   componentWillMount(){
   	getData()
   }
   render() {
-  	console.log("This.props", this.props)
     return (
       <div style={styles.recipeContainer}>
         <div style={styles.recipeProper}>
@@ -212,7 +218,7 @@ class RecipeView extends React.Component {
         	</div>
         	<Step recipeId={this.props.match.params.recipeId} adjustDisplay={this.state.adjustDisplay}/>
         	<button style={styles.editRecipe}>Edit This Recipe</button>
-        	<i style={styles.favoriteButton} className="material-icons">grade</i>
+        	<i style={styles.favoriteButton} className="material-icons" onClick={this.addFavorite}>grade</i>
         </div>
       </div>
     )

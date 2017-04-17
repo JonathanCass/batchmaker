@@ -304,7 +304,7 @@
         "password": "guest",
         "handle": "Guest",
         "favorites": [
-        1,2,3,4,5 
+        1,3,5 
         ],
         "avatarUrl": "http://flatmet.com/resources/v2/images/guest.png"
       },

@@ -17,11 +17,13 @@ Recipes set to private are only viewable by their creators. HINT Login as login 
 Soon to be added.
 
 Ability to add a new user.  
-Ability on settings tab to change user's avatar and handle and bio.  
-User's will have favorite recipes.  
+Ability on settings tab to change user's avatar and handle and bio.   
 Add a tab to see all users with their bios and avatars and favorites recipes.
 Checks to prevent inputting zeros or empty strings into a recipe. 
 Allow users to add personal notes, simple array added to recipe object indexed at user id with notes.
- 
+
+Code popular recipes page to rank recipes by number of favorites starting at lengh of users index and working backwards. Need to check for public as well. 
+
+Add some tooltips to different links. 
 
  

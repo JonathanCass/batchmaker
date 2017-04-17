@@ -39,3 +39,6 @@ button{
 	background: #D50000;
 	color: white;
 }
+.material-icons:hover{
+	cursor: pointer;
+}
