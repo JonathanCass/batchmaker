@@ -67,9 +67,6 @@ const styles={
 }
 
 class UsersRecipes extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   componentWillMount(){
   	getData()
   }
