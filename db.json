@@ -39,6 +39,19 @@
         "servingAmount": 4,
         "servingType": "Steaks",
         "public": true
+      },
+      {
+        "id": 4,
+        "name": "Cake",
+        "by": 4,
+        "photoUrl": "http://pngimg.com/uploads/cake/cake_PNG13130.png",
+        "type": "Dessert",
+        "prepTime": 50,
+        "cookTime": 200,
+        "cookTemp": 420,
+        "servingAmount": 20,
+        "servingType": "Pieces",
+        "public": true
       }
     ],
     "steps": [
@@ -78,30 +91,29 @@
         "recipeId": 3,
         "directions": "Plate the steaks and season with salt and pepper to tase."
       },
-
       {
         "id": 7,
         "order": 1,
         "recipeId": 4,
-        "directions": "Shape ground beef into patties and cook for 10 minutes."
+        "directions": "Mix flour, baking powder and sugar into a large mixing bowl."
       },
       {
         "id": 8,
         "order": 2,
         "recipeId": 4,
-        "directions": "Place Ketchup Lettuce Cheese and pickles on the burgers and serve them up."
+        "directions": "Cream the butter and milk together."
       },
       {
         "id": 9,
-        "order": 1,
-        "recipeId": 5,
-        "directions": "Shape ground beef into patties and cook for 10 minutes."
+        "order": 3,
+        "recipeId": 4,
+        "directions": "Combine the wet ingredients with the dry and beat in the eggs."
       },
       {
         "id": 10,
-        "order": 3,
-        "recipeId": 5,
-        "directions": "Place Ketchup Lettuce Cheese and pickles on the burgers and serve them up."
+        "order": 4,
+        "recipeId": 4,
+        "directions": "Pour mixture into the cake pan and bake. Remove from oven let cool and apply icing."
       }
     ],
     "allocations": [
@@ -182,7 +194,7 @@
         "recipeId": 3,
         "stepId": 5,
         "numberOf": "3",
-        "unitOf": "pound",
+        "unitOf": "pounds",
         "what": "Strip Steak"
       },
       {
@@ -208,6 +220,54 @@
         "numberOf": "3",
         "unitOf": "Black Pepper",
         "what": "Mustard"
+      },
+      {
+        "id": 14,
+        "recipeId": 4,
+        "stepId": 7,
+        "numberOf": 3,
+        "unitOf": "cups",
+        "what": "Cake Flour"
+      },
+      {
+        "id": 15,
+        "recipeId": 4,
+        "stepId": 7,
+        "numberOf": 2,
+        "unitOf": "tsp",
+        "what": "Baking Powder"
+      },
+      {
+        "id": 16,
+        "recipeId": 4,
+        "stepId": 7,
+        "numberOf": 2,
+        "unitOf": "cups",
+        "what": "White Sugar"
+      },
+      {
+        "id": 17,
+        "recipeId": 4,
+        "stepId": 8,
+        "numberOf": 1,
+        "unitOf": "cups",
+        "what": "Butter"
+      },
+      {
+        "id": 16,
+        "recipeId": 4,
+        "stepId": 8,
+        "numberOf": 1,
+        "unitOf": "cups",
+        "what": "Milk"
+      },
+      {
+        "id": 17,
+        "recipeId": 4,
+        "stepId": 9,
+        "numberOf": 4,
+        "unitOf": "",
+        "what": "Egg Yolks"
       }
     ],
     "users": [
@@ -216,7 +276,7 @@
         "login" : "guest",
         "password" : "guest",
         "handle" : "Guest",
-        "favorites" : [1],    
+        "favorites" : [4],    
         "avatarUrl" : "http://flatmet.com/resources/v2/images/guest.png"
       },
       {
@@ -224,7 +284,7 @@
         "login" : "breakfastbob",
         "password" : "pancakes",
         "handle" : "Breakfast Bob",
-        "favorites" : [1],     
+        "favorites" : [4],     
         "avatarUrl" : "https://s-media-cache-ak0.pinimg.com/originals/62/c8/95/62c89571b351af4ca702a283fa150403.png"
       },
       {
@@ -232,7 +292,7 @@
         "login" : "lunchlarry",
         "password" : "hotdogs",
         "handle" : "Lunch Larry",
-        "favorites" : [1],    
+        "favorites" : [4],    
         "avatarUrl" : "https://f271.https.cdn.softlayer.net/80F271/dal05.objectstorage.softlayer.net/v1/AUTH_b4a3a2ca-226e-4f3c-aef2-b5275f5900cc/cdn/preview/retrodiner/images/hotdog.jpg"
       },
       {
@@ -240,7 +300,7 @@
         "login" : "dinnerdebra",
         "password" : "steak",
         "handle" : "Dinner Debra",
-        "favorites" : [1],    
+        "favorites" : [4],    
         "avatarUrl" : "http://t03.deviantart.net/D97l_P2ug00gu1iZyEaar8tJEKA=/fit-in/700x350/filters:fixed_height(100,100):origin()/pre11/298d/th/pre/i/2016/224/4/9/grilled_thick_n__juicy_steak_by_mrangrydog-dadp1oh.png"
       },
       {
@@ -248,7 +308,7 @@
         "login" : "dessertdave",
         "password" : "cake",
         "handle" : "Dessert Dave",
-        "favorites" : [1],    
+        "favorites" : [4],    
         "avatarUrl" : "http://images.media-allrecipes.com/userphotos/250x250/00/70/88/708879.jpg"
       },
       {
@@ -256,7 +316,7 @@
         "login" : "mcp",
         "password" : "password",
         "handle" : "Master Control Protocol",
-        "favorites" : [1],    
+        "favorites" : [5],    
         "avatarUrl" : "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914"
       }
     ]

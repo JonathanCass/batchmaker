@@ -109,11 +109,11 @@ class StepAdder extends React.Component {
 				<option value="">Unit</option>
 				<option value="tsp">Tsp</option>
 				<option value="tbsp">Tbsp</option>
-				<option value="cup">Cup</option>
-				<option value="pound">Pound</option>
+				<option value="cups">Cup</option>
+				<option value="pounds">Pound</option>
 				<option value="floz">fl oz</option>
-				<option value="pint">Pint</option>
-				<option value="quart">Quart</option>
+				<option value="pints">Pint</option>
+				<option value="quarts">Quart</option>
 				<option value="gallon">Gallon</option>
 				<option value="">unitless</option>
 			</select>

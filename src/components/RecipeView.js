@@ -36,10 +36,11 @@ const styles ={
 	},
 	recipeImage:{
 		margin: '30px 100px',
-		width: 440,
-		height: 300,
-		background: 'grey',
-		borderRadius: 20
+		width: 460,
+		height: 320,
+		padding: 20,
+		borderRadius: 20,
+		background: 'radial-gradient(circle, pink, purple)',
 	},
 	typeTimeTemp:{
 		width: 160,
