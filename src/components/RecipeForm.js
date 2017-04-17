@@ -108,7 +108,7 @@ class RecipeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	name:'', handle: this.props.user, by: this.props.user ,photoUrl: "" ,type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length + 1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
+    	name:'', handle: this.props.user, by: this.props.user ,photoUrl: "" ,order: 1, type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length +1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
     	}
   	}
   	componentWillMount(){
@@ -121,20 +121,17 @@ class RecipeForm extends React.Component {
   	}
   	addStep = (e) => {
   		e.preventDefault()
-		var order = 1		
-		if(this.props.steps[this.props.steps.length-1].recipeId > this.props.recipes.length){
-			order = (Number(this.props.steps[this.props.steps.length-1].order) + 1)
-		}
 		var stepObj = {
       		"id": this.state.stepIdIndex,
-      		"order": order,
+      		"order": this.state.order,
      	 	"recipeId": this.state.recipeIdIndex,
     	  	"directions": this.state.directions  
 		}
 		
 		this.setState({
 			stepArray : [...this.state.stepArray, stepObj],
-        	stepIdIndex : this.state.stepIdIndex + 1
+        	stepIdIndex : this.state.stepIdIndex + 1,
+        	order: this.state.order + 1
 
         })
 		
@@ -161,6 +158,7 @@ class RecipeForm extends React.Component {
   	}
   render() {
   	console.log("this.props on RecipeForm " , this.props)
+  	console.log("this.state on RecipeFOrm " , this.state)
     return (
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
@@ -190,7 +188,7 @@ class RecipeForm extends React.Component {
 				</div>
 				<span style={styles.producesLabel}>Recipe produces</span><input type="text" name="servingAmount" onChange={this.handleChange} style={styles.amount} placeholder="Amount"></input>
       			<input type="text" name="servingType" onChange={this.handleChange} style={styles.measurement} placeholder="Unit of measurement to be applied to result"></input>
-      			<StepAdder recipeObject={this.state.recipeObject} stepArray={this.state.stepArray} confirmButton={this.state.confirmButton} recipeIdIndex={this.state.recipeIdIndex} ingredientIdIndex={this.state.ingredientIdIndex} stepIdIndex={this.state.stepIdIndex}/>
+      			<StepAdder recipeObject={this.state.recipeObject} stepArray={this.state.stepArray} confirmButton={this.state.confirmButton} recipeIdIndex={this.state.recipeIdIndex} ingredientIdIndex={this.state.ingredientIdIndex} stepIdIndex={this.state.stepIdIndex} order={this.state.order}/>
       			<textarea onChange={this.handleChange} style={styles.directions} name="directions" placeholder="Input procedure for this production phase."></textarea>
         		<button style={styles.addStep} onClick={this.addStep}>Add This Step</button>
       			<button style={styles.saveRecipe} onClick={this.addRecipe}>Input this Food Method</button>

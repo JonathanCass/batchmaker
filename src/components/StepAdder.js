@@ -50,7 +50,7 @@ class StepAdder extends React.Component {
   	constructor(props) {
     	super(props)
     	this.state={
-    		numberOf:0, unitOf:'',what:'',directions:'',ingredientArray:[], stepIdIndex: this.props.stepIdIndex, ingredientIdIndex: this.props.ingredientIdIndex
+    		numberOf:0, unitOf:'',what:'',directions:'',ingredientArray:[], ingredientIdIndex: this.props.ingredientIdIndex
     	}
   	}
   	componentWillMount(){
@@ -94,10 +94,12 @@ class StepAdder extends React.Component {
   		addRecipe(this.props.recipeObject, this.props.stepArray, this.state.ingredientArray)
   	}
   render() {
+  	console.log("this.props on StepAdder " , this.props)
+  	console.log("this.state on StepAdder " , this.state)
     return (	
       	<div style={styles.stepContainer}>
       		{this.state.ingredientArray.map(item=>(
-      			<div key={'allocation'+item.id} style={Number(item.recipeId) === Number(this.props.recipes.length + 1) ? styles.stepDisplay : styles.displayNone }>
+      			<div key={'allocation'+item.id} style={Number(item.recipeId) === Number(this.props.recipes.length + 1) && this.props.stepIdIndex === item.stepId ? styles.stepDisplay : styles.displayNone }>
       				<input style={styles.amount} value={item.numberOf} readOnly></input>
 	      			<input style={styles.unitDisplay} value={item.unitOf} readOnly></input>
 	      			<input style={styles.ingredient} value={item.what} readOnly></input>
