@@ -94,13 +94,17 @@ class User extends React.Component {
   	}
   	handleLogin = (e) => {
   		e.preventDefault()
+  		var flag = true
   		data.batchmaker.users.forEach(function(user){
   			if(user.login === this.state.login && user.password === this.state.password){
   				login(user.id)
-  				
+  				flag = false
   				alert("Succesfully Logged In As " + user.handle)
   			}
   		}.bind(this))
+  		if(flag){
+  			alert("Inccorect Password or Login Id")
+  		}
         this.setState({
         	login: "",
         	password:""
