@@ -1,6 +1,7 @@
 import React from 'react'
 import Step from './Step'
 import {getData} from '../api/recipe'
+import {addFavorite} from '../api/recipe'
 import {connect} from 'react-redux'
 
 const styles ={
@@ -177,7 +178,7 @@ class RecipeView extends React.Component {
   		if(newArray[this.props.user].favorites.indexOf(Number(this.props.match.params.recipeId)) === -1){
   			newArray[this.props.user].favorites = [...newArray[this.props.user].favorites ,Number(this.props.match.params.recipeId)]
   		}
-  		console.log("newArray of users inside button", newArray)
+  		addFavorite(newArray)
   	}
   componentWillMount(){
   	getData()

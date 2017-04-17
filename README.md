@@ -5,14 +5,22 @@ Subsequently allow for the user to scale these entered recipes.
 
 Features:  
 
-Can add new recipe.  
-
-Recipe viewer with 4 categories. User's private recipes, Public recipes, User's favortie recipes and most popular recipes.  
+When creating a new recipe the by field is automatically filled based on currently logged in user.    
 When adding ingredients previously added ingredients ( for the current step and only the current step ) are displayed and can be removed before commiting the step.  
-Ability to log in. Logging in requires correct login and password. Default login is set as guest. Confirmation upon login displays  
-current user's handle and avatar.  
-When creating a new recipe the by field is automatically filled. on
-Recipes set to private are only viewable by their creators. HINT Login as login ID: mcp PASSWORD: password. The Master Control Protocol has an interesting recipe the humans are not alowwed to access.
+Recipes set to private are only viewable by their creators. 
+HINT Login as ID: mcp PASSWORD: password. 
+The Master Control Protocol has an interesting recipe the humans are not alowwed to access.  
+  
+Recipe viewer with 4 categories.  
+1: All current User's recipes including their own access restricted recipes.  
+2: All recipes tagged for unrestricted access.  
+3: User's favortie recipes, including restricted access recipes based on the assumption they had access at some point.  
+4: Most popular recipes listed by number of favorites.  
+
+User Features.  
+Logging in requires correct login and password. 
+Default login is set as guest. 
+Confirmation upon login displays current user's handle and avatar.  
 
 Soon to be added.
 
