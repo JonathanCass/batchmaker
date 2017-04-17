@@ -12,7 +12,10 @@
         "cookTemp": 400,
         "servingAmount": 12,
         "servingType": "pancakes",
-        "public": true
+        "public": true,
+        "favoritedBy": [
+          0
+        ]
       },
       {
         "id": 2,
@@ -25,7 +28,8 @@
         "cookTemp": 450,
         "servingAmount": 8,
         "servingType": "hotdogs",
-        "public": true
+        "public": true,
+        "favoritedBy": []
       },
       {
         "id": 3,
@@ -38,7 +42,10 @@
         "cookTemp": 500,
         "servingAmount": 4,
         "servingType": "Steaks",
-        "public": true
+        "public": true,
+        "favoritedBy": [
+          0
+        ]
       },
       {
         "id": 4,
@@ -51,7 +58,13 @@
         "cookTemp": 420,
         "servingAmount": 20,
         "servingType": "Pieces",
-        "public": true
+        "public": true,
+        "favoritedBy": [
+          1,
+          2,
+          3,
+          4
+        ]
       },
       {
         "id": 5,
@@ -64,7 +77,11 @@
         "cookTemp": "600",
         "servingAmount": "400",
         "servingType": "Cubes",
-        "public": "false"
+        "public": "false",
+        "favoritedBy": [
+          5,
+          0
+        ]
       }
     ],
     "steps": [
@@ -305,9 +322,8 @@
         "handle": "Guest",
         "favorites": [
           1,
-          5,
-          4,
-          2
+          3,
+          5
         ],
         "avatarUrl": "http://flatmet.com/resources/v2/images/guest.png"
       },

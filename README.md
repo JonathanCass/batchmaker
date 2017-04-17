@@ -5,6 +5,7 @@ Subsequently allow for the user to scale these entered recipes.
 
 Features:  
 
+Creating Recipes.  
 When creating a new recipe the by field is automatically filled based on currently logged in user.    
 When adding ingredients previously added ingredients ( for the current step and only the current step ) are displayed and can be removed before commiting the step.  
 Recipes set to private are only viewable by their creators. 

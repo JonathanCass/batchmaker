@@ -174,11 +174,15 @@ class RecipeView extends React.Component {
   		})
   	}
   	addFavorite = (e) => {
-  		var newArray = this.props.users
-  		if(newArray[this.props.user].favorites.indexOf(Number(this.props.match.params.recipeId)) === -1){
-  			newArray[this.props.user].favorites = [...newArray[this.props.user].favorites ,Number(this.props.match.params.recipeId)]
+  		var newUsersArray = this.props.users
+  		if(newUsersArray[this.props.user].favorites.indexOf(Number(this.props.match.params.recipeId)) === -1){
+  			newUsersArray[this.props.user].favorites = [...newUsersArray[this.props.user].favorites ,Number(this.props.match.params.recipeId)]
   		}
-  		addFavorite(newArray)
+  		var newRecipesArray = this.props.recipes
+  		if(newRecipesArray[Number(this.props.match.params.recipeId)-1].favoritedBy.indexOf(Number(this.props.user)) === -1){
+  			newRecipesArray[Number(this.props.match.params.recipeId)-1].favoritedBy = [...newRecipesArray[Number(this.props.match.params.recipeId)-1].favoritedBy ,Number(this.props.user)]
+  		}
+  		addFavorite(newUsersArray, newRecipesArray)
   	}
   componentWillMount(){
   	getData()

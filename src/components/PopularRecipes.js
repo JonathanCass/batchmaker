@@ -77,13 +77,14 @@ class PopularRecipes extends React.Component {
         <div style={styles.gridProper}>
         	<div style={styles.catHeader}>Popular Methods</div>
         	<div style={styles.row}>
+				
 				{this.props.recipes.map(recipe=>(
 					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id} style={ recipe.public === true  ? styles.linkRow : styles.displayNone }>
 	        			<div style={styles.recipeAndName}>
 	        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
 	        			</div>
 	        		</Link>	
-        		))}        	
+        		))}       	
         	</div>
         </div>
       </div>
