@@ -299,52 +299,64 @@
     ],
     "users": [
       {
-        "id" : 0,
-        "login" : "guest",
-        "password" : "guest",
-        "handle" : "Guest",
-        "favorites" : [4],    
-        "avatarUrl" : "http://flatmet.com/resources/v2/images/guest.png"
+        "id": 0,
+        "login": "guest",
+        "password": "guest",
+        "handle": "Guest",
+        "favorites": [
+          4
+        ],
+        "avatarUrl": "http://flatmet.com/resources/v2/images/guest.png"
       },
       {
-        "id" : 1,
-        "login" : "breakfastbob",
-        "password" : "pancakes",
-        "handle" : "Breakfast Bob",
-        "favorites" : [4],     
-        "avatarUrl" : "https://s-media-cache-ak0.pinimg.com/originals/62/c8/95/62c89571b351af4ca702a283fa150403.png"
+        "id": 1,
+        "login": "breakfastbob",
+        "password": "pancakes",
+        "handle": "Breakfast Bob",
+        "favorites": [
+          4
+        ],
+        "avatarUrl": "https://s-media-cache-ak0.pinimg.com/originals/62/c8/95/62c89571b351af4ca702a283fa150403.png"
       },
       {
-        "id" : 2,
-        "login" : "lunchlarry",
-        "password" : "hotdogs",
-        "handle" : "Lunch Larry",
-        "favorites" : [4],    
-        "avatarUrl" : "https://f271.https.cdn.softlayer.net/80F271/dal05.objectstorage.softlayer.net/v1/AUTH_b4a3a2ca-226e-4f3c-aef2-b5275f5900cc/cdn/preview/retrodiner/images/hotdog.jpg"
+        "id": 2,
+        "login": "lunchlarry",
+        "password": "hotdogs",
+        "handle": "Lunch Larry",
+        "favorites": [
+          4
+        ],
+        "avatarUrl": "https://f271.https.cdn.softlayer.net/80F271/dal05.objectstorage.softlayer.net/v1/AUTH_b4a3a2ca-226e-4f3c-aef2-b5275f5900cc/cdn/preview/retrodiner/images/hotdog.jpg"
       },
       {
-        "id" : 3,
-        "login" : "dinnerdebra",
-        "password" : "steak",
-        "handle" : "Dinner Debra",
-        "favorites" : [4],    
-        "avatarUrl" : "http://t03.deviantart.net/D97l_P2ug00gu1iZyEaar8tJEKA=/fit-in/700x350/filters:fixed_height(100,100):origin()/pre11/298d/th/pre/i/2016/224/4/9/grilled_thick_n__juicy_steak_by_mrangrydog-dadp1oh.png"
+        "id": 3,
+        "login": "dinnerdebra",
+        "password": "steak",
+        "handle": "Dinner Debra",
+        "favorites": [
+          4
+        ],
+        "avatarUrl": "http://t03.deviantart.net/D97l_P2ug00gu1iZyEaar8tJEKA=/fit-in/700x350/filters:fixed_height(100,100):origin()/pre11/298d/th/pre/i/2016/224/4/9/grilled_thick_n__juicy_steak_by_mrangrydog-dadp1oh.png"
       },
       {
-        "id" : 4,
-        "login" : "dessertdave",
-        "password" : "cake",
-        "handle" : "Dessert Dave",
-        "favorites" : [4],    
-        "avatarUrl" : "http://images.media-allrecipes.com/userphotos/250x250/00/70/88/708879.jpg"
+        "id": 4,
+        "login": "dessertdave",
+        "password": "cake",
+        "handle": "Dessert Dave",
+        "favorites": [
+          4
+        ],
+        "avatarUrl": "http://images.media-allrecipes.com/userphotos/250x250/00/70/88/708879.jpg"
       },
       {
-        "id" : 5,
-        "login" : "mcp",
-        "password" : "password",
-        "handle" : "Master Control Protocol",
-        "favorites" : [5],    
-        "avatarUrl" : "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914"
+        "id": 5,
+        "login": "mcp",
+        "password": "password",
+        "handle": "Master Control Protocol",
+        "favorites": [
+          5
+        ],
+        "avatarUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914"
       }
     ]
   }
