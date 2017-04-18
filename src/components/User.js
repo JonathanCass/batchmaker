@@ -6,9 +6,10 @@ import {connect} from 'react-redux'
 const styles={
 	userContainer:{
 		height: 1370,
-		width: 1220,
+		width: 1440,
 		background: 'radial-gradient(circle, #ee0979, #ff6a00)',
-		display: 'inline-block',
+		display: 'block',
+		padding: '5px 240px 10px 460px'
 	},
 	userProper:{
 		color: 'white',
@@ -18,7 +19,7 @@ const styles={
 		background: 'black',
 		margin: '40px auto',
 		borderRadius: 20,
-		boxShadow: '15px 15px 10px 0px rgba(211,19,19,1)'
+		boxShadow: '15px 15px 10px 0px rgba(211,19,19,1)',
 	},
 	loginId:{
 		height: 50,
@@ -33,7 +34,18 @@ const styles={
 		border: 'solid 2px #009688',
 		borderWidth: '0 0 2px 0',
 		color: '#FF5722',
-		clear: 'left'
+		display: 'block'
+	},
+	category2:{
+		margin: '0 0 20px 0',
+		height: 70,
+		paddingTop: 20,
+		width: 640,
+		fontSize: 30,
+		border: 'solid 2px #009688',
+		borderWidth: '0 0 2px 0',
+		color: '#FF5722',
+		float: 'right'
 	},
 	title:{
 		fontSize: 50
@@ -43,6 +55,13 @@ const styles={
 		width: 110,
 		display:'inline-block',
 		textAlign: 'right'
+	},
+	label2:{
+		color: '#02A4EC',
+		width: 540,
+		display:'inline-block',
+		textAlign: 'left',
+		marginTop: 20
 	},
 	submit:{
 		height: 40,
@@ -78,6 +97,9 @@ const styles={
 		width: 140,
 		fontSize: 14,
 		padding: 5
+	},
+	newUserBox:{
+		marginLeft: 50
 	}
 }
 class User extends React.Component {
@@ -132,17 +154,15 @@ class User extends React.Component {
       				</div>
       			</div>
       		</form>
-      		<div style={styles.category}>New users create an account below}</div>
-      			<div>
-      				<span style={styles.label}>Log In </span><input type="text" style={styles.input} name="login" onChange={this.handleChange} ></input>
-      				<span style={styles.label}>Password</span><input type="password" style={styles.input} name="password" onChange={this.handleChange} ></input>
-      			</div>
-      			<div>
-      				<span style={styles.label}>Avatar Url</span><input type="text" style={styles.input} name="avatarUrl" onChange={this.handleChange} ></input>
-      				<span style={styles.label}>Handle</span><input type="text" style={styles.input} name="handle" onChange={this.handleChange} ></input>
+      		<div style={styles.category2}>New users create an account below}</div>
+      			<div style={styles.newUserBox}>
+      				<span style={styles.label2}>Log In </span><input type="text" style={styles.input} name="login" onChange={this.handleChange} ></input>
+      				<span style={styles.label2}>Password</span><input type="password" style={styles.input} name="password" onChange={this.handleChange} ></input>
+      				<span style={styles.label2}>Avatar Url</span><input type="text" style={styles.input} name="avatarUrl" onChange={this.handleChange} ></input>
+      				<span style={styles.label2}>Handle</span><input type="text" style={styles.input} name="handle" onChange={this.handleChange} ></input>
       			</div>
       	</div>
-      </div>
+     </div>
     )
   }
 }

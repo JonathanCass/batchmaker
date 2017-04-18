@@ -8,9 +8,10 @@ import data from '../../db.json'
 const styles ={
 	recipeContainer:{
 		height: 1370,
-		width: 1220,
+		width: 1440,
 		background: 'radial-gradient(circle, #ee0979, #ff6a00)',
-		display: 'inline-block',
+		display: 'block',
+		padding: '5px 240px 10px 460px'
 	},
 	recipeProper:{
 		color: 'white',
