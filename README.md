@@ -34,7 +34,7 @@ Default login is set as guest.
 Confirmation upon login displays current user's handle and avatar.  
 Attempting to login with incorrect information provides an alert error.    
 Can create new users. When creating a new user the program will provide error alerts if login id exists or if necessary fields are left blank.  
-User Repository page to view all users with their avatars and bios.
+User Repository page to view all users with their avatars, bios, and created recipes( which link to each recipe's recipe view page).  
 
 Features to be added.  
 
