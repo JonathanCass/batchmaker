@@ -146,9 +146,31 @@ class User extends React.Component {
         })
   	}
   	addUser = (e) => {
-        this.setState({
-        	[e.target.name] : e.target.value
-        })
+  		e.preventDefault()
+  		var newName = this.state.newLogin
+  		var green = true
+  		data.batchmaker.users.forEach(function(user) {
+  			if(user.login === newName){
+  				alert("Login Id exists. Choose a different one.")
+  				green = false
+  			}
+  		})
+  		if(this.state.newLogin === ""|| this.state.newPassword === "" || this.state.handle === ""){
+  			alert("Login / Password / Handle can not be empty strings. No user created.")
+  				green = false
+  		}
+  		if(green){
+
+
+  			this.setState({
+  				newLogin: "", 
+  				newPassword: "", 
+  				avatarUrl: "", 
+  				handle: "",
+  				bio: ""
+  			})
+  		}
+
   	}
   render() {
     return (
