@@ -9,6 +9,7 @@ import PublicRecipes from './PublicRecipes'
 import UsersFavorites from './UsersFavorites'
 import UsersRecipes from './UsersRecipes'
 import RecipeView from './RecipeView'
+import UserList from './UserList'
 import {Provider} from 'react-redux'
 import store from '../store'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
@@ -30,6 +31,7 @@ export default React.createClass({
               <Route path='/PublicRecipes/' component={PublicRecipes} />
               <Route path='/UsersFavorites/' component={UsersFavorites} />
               <Route path='/UsersRecipes/' component={UsersRecipes} />
+              <Route path='/UserList/' component={UserList} />
 		    </div>
 	    </Router>
 	    </Provider>

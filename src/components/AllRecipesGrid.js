@@ -105,7 +105,6 @@ class AllRecipesGrid extends React.Component {
         		))}
         	</div>
         	<div style={styles.catHeader}>Popular Methods<Link to="/PopularRecipes/"><button style={styles.viewAll}>View Page</button></Link></div>
-        	
         	<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorites</div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(

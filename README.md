@@ -34,11 +34,12 @@ Default login is set as guest.
 Confirmation upon login displays current user's handle and avatar.  
 Attempting to login with incorrect information provides an alert error.    
 Can create new users. When creating a new user the program will provide error alerts if login id exists or if necessary fields are left blank.  
+User Repository page to view all users with their avatars and bios.
 
 Features to be added.  
 
 A settings tab to allow user's to change avatar, handle and bio.   
-Add a tab to displaying all users with their bios and avatars.   
+Add users recipe to their user view block, flesh out bios.    
 Allow users to add personal notes to any recipe.
 Add some tooltips.
 
