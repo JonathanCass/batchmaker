@@ -31,18 +31,25 @@ const styles={
 	},
 	userBox:{
 		margin: '30px 0 10px 20px',
-		background: 'radial-gradient(circle, green, pink)',
+		background: 'radial-gradient(circle, #000046, #1CB5E0)',
 		padding: 20,
 		borderRadius: 25,
 		width: 300
 	},
 	bioText:{
-		color: 'black'
+		color: 'white',
+		fontSize: 16,
+		fontWeight: 'normal'
 	},
 	userHandle:{
-		color: 'blue',
+		color: '#FF5722',
 		fontWeight: 'bold',
 		fontSize: 22
+	},
+	bioBlock:{
+		color: '#D50000',
+		fontWeight: 'bold',
+		fontSize: 20
 	}
 }
 
@@ -59,7 +66,7 @@ class UserList extends React.Component {
       			<div key={Math.random()} style={styles.userBox}>
       				<div style={styles.userHandle}>{user.handle} </div>
       				<img src={user.avatarUrl} style={styles.avatar} alt={user.id} />
-      				<div>About {user.handle} : <span style={styles.bioText}> {user.bio} </span> </div>
+      				<div style={styles.bioBlock}>About {user.handle} : <span style={styles.bioText}> {user.bio} </span> </div>
       			</div>
       		))}
         </div>
