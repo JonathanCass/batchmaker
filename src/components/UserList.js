@@ -50,6 +50,16 @@ const styles={
 		color: '#D50000',
 		fontWeight: 'bold',
 		fontSize: 20
+	},
+	displayNone:{
+		display: 'none'
+	},
+	recipeName:{
+		color: 'white'
+	},
+	createdHeader:{
+		margin: '10px 0 10px 0',
+		color: 'orange'
 	}
 }
 
@@ -67,7 +77,11 @@ class UserList extends React.Component {
       				<div style={styles.userHandle}>{user.handle} </div>
       				<img src={user.avatarUrl} style={styles.avatar} alt={user.id} />
       				<div style={styles.bioBlock}>About {user.handle} : <span style={styles.bioText}> {user.bio} </span> </div>
-      			</div>
+							<div style={styles.createdHeader}>Created Recipe's</div>
+							{data.batchmaker.recipes.map(recipe=>(
+								<span style={recipe.by === user.id ?  styles.recipeName : styles.displayNone}> <div> {recipe.name}</div> </span>
+							))}
+						</div>
       		))}
         </div>
       </div>
