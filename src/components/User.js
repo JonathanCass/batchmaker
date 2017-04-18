@@ -70,6 +70,13 @@ const styles={
 		fontSize: 18,
 		color: 'white',
 	},
+	submit2:{
+		height: 40,
+		width: 200,
+		background: '#D50000',
+		fontSize: 18,
+		color: 'white',
+	},
 	displayNone:{
 		display: 'none'
 	},
@@ -98,6 +105,12 @@ const styles={
 		fontSize: 14,
 		padding: 5
 	},
+	bio:{
+		width: 400,
+		height: 120,
+		marginRight: 100,
+		fontSize: 16
+	},
 	newUserBox:{
 		marginLeft: 50
 	}
@@ -106,7 +119,7 @@ class User extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	login: "", password: "", avatarUrl:"", handle:""
+    	login: "", password: "", newLogin:"", newPassword:"", avatarUrl:"", handle:"",bio:""
     }
   }
   handleChange = (e) => {
@@ -132,7 +145,7 @@ class User extends React.Component {
         	password:""
         })
   	}
-  	handleCreate = (e) => {
+  	addUser = (e) => {
         this.setState({
         	[e.target.name] : e.target.value
         })
@@ -156,10 +169,12 @@ class User extends React.Component {
       		</form>
       		<div style={styles.category2}>New users create an account below}</div>
       			<div style={styles.newUserBox}>
-      				<span style={styles.label2}>Log In </span><input type="text" style={styles.input} name="login" onChange={this.handleChange} ></input>
-      				<span style={styles.label2}>Password</span><input type="password" style={styles.input} name="password" onChange={this.handleChange} ></input>
-      				<span style={styles.label2}>Avatar Url</span><input type="text" style={styles.input} name="avatarUrl" onChange={this.handleChange} ></input>
-      				<span style={styles.label2}>Handle</span><input type="text" style={styles.input} name="handle" onChange={this.handleChange} ></input>
+      				<span style={styles.label2}>Log In </span><input type="text" style={styles.input} name="newLogin" value={this.state.newLogin} onChange={this.handleChange} ></input>
+      				<span style={styles.label2}>Password</span><input type="password" style={styles.input} name="newPassword" value={this.state.newPassword} onChange={this.handleChange} ></input>
+      				<span style={styles.label2}>Avatar Url</span><input type="text" style={styles.input} name="avatarUrl" value={this.state.avatarUrl} onChange={this.handleChange} ></input>
+      				<span style={styles.label2}>Handle</span><input type="text" style={styles.input} name="handle" value={this.state.handle} onChange={this.handleChange} ></input>
+      				<span style={styles.label2}>Short Bio</span><textarea style={styles.bio} name="bio" value={this.state.bio} onChange={this.handleChange}></textarea>
+      				<button style={styles.submit2} onClick={this.addUser}>Create New Account</button>
       			</div>
       	</div>
      </div>
