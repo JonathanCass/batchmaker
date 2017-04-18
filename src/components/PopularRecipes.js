@@ -88,7 +88,7 @@ class PopularRecipes extends React.Component {
 
   	for( let i=data.batchmaker.users.length ; i > 0; i--){
   		data.batchmaker.recipes.forEach(function(recipe) {
-  			if(recipe.favoritedBy.length === i && recipe.public === true){
+  			if(recipe.favoritedBy.length === i && recipe.public === "true"){
   				newArray.push(recipe.name + " by " + data.batchmaker.users[recipe.by].handle + " has " + i + " favorites.")
   			}
   		})

@@ -187,7 +187,8 @@ class RecipeForm extends React.Component {
 	    	"cookTemp": this.state.cookTemp,
 		    "servingAmount": this.state.servingAmount,
 		    "servingType": this.state.servingType,
-		    "public": this.state.public
+		    "public": this.state.public,
+		    "favoritedBy" : []
   		}
   		this.setState({
   			recipeObject : recipeObj,
@@ -223,8 +224,8 @@ class RecipeForm extends React.Component {
 						<option value="c">C°</option>
 					</select>
 				</div>
-				<span style={styles.producesLabel}>Results In</span><input type="text" name="servingAmount" onChange={this.handleChange} style={styles.amount} value={this.state.servingAmount}></input><span style={styles.producesLabel}>of </span>
-      			<input type="text" name="servingType" onChange={this.handleChange} style={styles.measurement}></input>
+				<span style={styles.producesLabel}>Results In</span><input type="text" name="servingAmount" onChange={this.handleChange} style={styles.amount} value={this.state.servingAmount} ></input>
+      			<input type="text" name="servingType" onChange={this.handleChange} style={styles.measurement} placeholder="Serving Type"></input>
       			<StepAdder recipeObject={this.state.recipeObject} stepArray={this.state.stepArray} confirmButton={this.state.confirmButton} recipeIdIndex={this.state.recipeIdIndex} ingredientIdIndex={this.state.ingredientIdIndex} stepIdIndex={this.state.stepIdIndex} order={this.state.order}/>
       			<span style={styles.addAmountLabel}>Amount</span><span style={styles.addIngredientLabel}>Ingredient</span>
       			<textarea onChange={this.handleChange} style={styles.directions} name="directions" value={this.state.directions}></textarea>

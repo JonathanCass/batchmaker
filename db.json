@@ -12,7 +12,7 @@
         "cookTemp": 400,
         "servingAmount": 12,
         "servingType": "pancakes",
-        "public": true,
+        "public": "true",
         "favoritedBy": [
           0
         ]
@@ -28,7 +28,7 @@
         "cookTemp": 450,
         "servingAmount": 8,
         "servingType": "hotdogs",
-        "public": true,
+        "public": "true",
         "favoritedBy": []
       },
       {
@@ -42,7 +42,7 @@
         "cookTemp": 500,
         "servingAmount": 4,
         "servingType": "Steaks",
-        "public": true,
+        "public": "true",
         "favoritedBy": [
           0
         ]
@@ -58,7 +58,7 @@
         "cookTemp": 420,
         "servingAmount": 20,
         "servingType": "Pieces",
-        "public": true,
+        "public": "true",
         "favoritedBy": [
           1,
           2,
@@ -82,6 +82,20 @@
           5,
           0
         ]
+      },
+      {
+        "id": 6,
+        "name": "Scambled Eggs",
+        "by": 1,
+        "photoUrl": "http://www.lowcarbdietworks.com/members/recipes/wp-content/uploads/2011/01/scrambled-eggs.jpg",
+        "type": "breakfast",
+        "prepTime": "5",
+        "cookTime": "10",
+        "cookTemp": "400",
+        "servingAmount": "2",
+        "servingType": "Bowls",
+        "favoritedBy": [],
+        "public": "true"
       }
     ],
     "steps": [
@@ -150,6 +164,24 @@
         "order": 1,
         "recipeId": 5,
         "directions": "Put deceased human into the human recycler. Machine will automatically place 10 cubes into 40 sealed packages."
+      },
+      {
+        "id": 12,
+        "order": 1,
+        "recipeId": 6,
+        "directions": "Beat eggs, milk, salt and pepper in medium bowl until blended."
+      },
+      {
+        "id": 13,
+        "order": 2,
+        "recipeId": 6,
+        "directions": "HEAT butter in large nonstick skillet over medium heat until hot. POUR IN egg mixture. As eggs begin to set, GENTLY PULL the eggs across the pan with a spatula, forming large soft curds"
+      },
+      {
+        "id": 14,
+        "order": 3,
+        "recipeId": 6,
+        "directions": "CONTINUE cooking – pulling, lifting and folding eggs – until thickened and no visible liquid egg remains. Do not stir constantly. REMOVE from heat. SERVE immediately."
       }
     ],
     "allocations": [
@@ -312,6 +344,46 @@
         "numberOf": "160",
         "unitOf": "pounds",
         "what": "Human"
+      },
+      {
+        "id": 21,
+        "recipeId": 6,
+        "stepId": 12,
+        "numberOf": "4",
+        "unitOf": "",
+        "what": "Eggs"
+      },
+      {
+        "id": 22,
+        "recipeId": 6,
+        "stepId": 12,
+        "numberOf": "0.25",
+        "unitOf": "cups",
+        "what": "Milk"
+      },
+      {
+        "id": 23,
+        "recipeId": 6,
+        "stepId": 12,
+        "numberOf": "2",
+        "unitOf": "tsp",
+        "what": "Salt"
+      },
+      {
+        "id": 24,
+        "recipeId": 6,
+        "stepId": 12,
+        "numberOf": "1",
+        "unitOf": "",
+        "what": "Pepper"
+      },
+      {
+        "id": 25,
+        "recipeId": 6,
+        "stepId": 13,
+        "numberOf": "2",
+        "unitOf": "",
+        "what": "Butter"
       }
     ],
     "users": [
@@ -322,8 +394,11 @@
         "handle": "Guest",
         "favorites": [
           1,
+          2,
           3,
-          5
+          4,
+          5,
+          6
         ],
         "avatarUrl": "http://flatmet.com/resources/v2/images/guest.png"
       },
