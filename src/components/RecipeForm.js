@@ -171,30 +171,35 @@ class RecipeForm extends React.Component {
 		this.setState({
 			stepArray : [...this.state.stepArray, stepObj],
         	stepIdIndex : this.state.stepIdIndex + 1,
-        	order: this.state.order + 1
+        	order: this.state.order + 1,
+        	directions: ''
         })
 		
   	}
   	addRecipe = (e) => {
   		e.preventDefault()
-  		var recipeObj = {
-  			"id": this.state.recipeIdIndex,
-		    "name": this.state.name,
-		    "by": this.state.by,
-		    "photoUrl": this.state.photoUrl,
-		    "type": this.state.type,
-		    "prepTime": this.state.prepTime,
-		    "cookTime": this.state.cookTime,
-	    	"cookTemp": this.state.cookTemp,
-		    "servingAmount": this.state.servingAmount,
-		    "servingType": this.state.servingType,
-		    "public": this.state.public,
-		    "favoritedBy" : []
-  		}
-  		this.setState({
-  			recipeObject : recipeObj,
-  			confirmButton : true
-  		})
+  		if(this.state.type === "" || this.state.servingAmount === "" || this.state.servingType === ""){
+  			alert("Invalid input. Empty strings and zeros are not allowed.")
+  		}else{
+	  		var recipeObj = {
+	  			"id": this.state.recipeIdIndex,
+			    "name": this.state.name,
+			    "by": this.state.by,
+			    "photoUrl": this.state.photoUrl,
+			    "type": this.state.type,
+			    "prepTime": this.state.prepTime,
+			    "cookTime": this.state.cookTime,
+		    	"cookTemp": this.state.cookTemp,
+			    "servingAmount": this.state.servingAmount,
+			    "servingType": this.state.servingType,
+			    "public": this.state.public,
+			    "favoritedBy" : []
+	  		}
+	  		this.setState({
+	  			recipeObject : recipeObj,
+	  			confirmButton : true
+	  		})
+	  	}
   	}
   render() {
     return (

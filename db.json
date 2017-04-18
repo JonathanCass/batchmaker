@@ -96,6 +96,20 @@
         "servingType": "Bowls",
         "favoritedBy": [],
         "public": "true"
+      },
+      {
+        "id": 7,
+        "name": "BLT",
+        "by": 2,
+        "photoUrl": "http://assets.bonappetit.com/photos/57d96cae5a14a530086ef6ce/master/w_1200,c_limit/blt-set-free-overlay-bg.jpg",
+        "type": "lunch",
+        "prepTime": "10",
+        "cookTime": "10",
+        "cookTemp": "420",
+        "servingAmount": "4",
+        "servingType": "Sandwiches",
+        "public": "true",
+        "favoritedBy": []
       }
     ],
     "steps": [
@@ -182,6 +196,24 @@
         "order": 3,
         "recipeId": 6,
         "directions": "CONTINUE cooking – pulling, lifting and folding eggs – until thickened and no visible liquid egg remains. Do not stir constantly. REMOVE from heat. SERVE immediately."
+      },
+      {
+        "id": 15,
+        "order": 1,
+        "recipeId": 7,
+        "directions": "Cook bacon until crispy, then drain on paper towels."
+      },
+      {
+        "id": 16,
+        "order": 2,
+        "recipeId": 7,
+        "directions": "Toast the 8 slices of bread."
+      },
+      {
+        "id": 17,
+        "order": 3,
+        "recipeId": 7,
+        "directions": "Spread 1 tablespoon mayo on each slice of toasted bread. (More or less, to taste).\nAdd 1 slice of lettuce to 4 pieces of mayo-spreaded toast.\nAdd 2 slices of tomato on top of lettuce.\nArrange 3 slices of bacon evenly on top of tomato. (Break bacon slices in half to fit, if needed.).\nAdd 1 slice of lettuce on top of bacon.\nPut the remaining 4 pieces of mayo-spreaded toast on top to finish the sandwiches."
       }
     ],
     "allocations": [
@@ -384,6 +416,46 @@
         "numberOf": "2",
         "unitOf": "",
         "what": "Butter"
+      },
+      {
+        "id": 26,
+        "recipeId": 7,
+        "stepId": 15,
+        "numberOf": ".5",
+        "unitOf": "pounds",
+        "what": "bacon"
+      },
+      {
+        "id": 27,
+        "recipeId": 7,
+        "stepId": 16,
+        "numberOf": "8",
+        "unitOf": "",
+        "what": "Bread"
+      },
+      {
+        "id": 28,
+        "recipeId": 7,
+        "stepId": 17,
+        "numberOf": "1",
+        "unitOf": "tbsp",
+        "what": "Mayonnaise"
+      },
+      {
+        "id": 29,
+        "recipeId": 7,
+        "stepId": 17,
+        "numberOf": "2",
+        "unitOf": "",
+        "what": "Slices Lettuce"
+      },
+      {
+        "id": 30,
+        "recipeId": 7,
+        "stepId": 17,
+        "numberOf": "2",
+        "unitOf": "",
+        "what": "Slices Tomato"
       }
     ],
     "users": [
@@ -394,11 +466,8 @@
         "handle": "Guest",
         "favorites": [
           1,
-          2,
           3,
-          4,
-          5,
-          6
+          5
         ],
         "avatarUrl": "http://flatmet.com/resources/v2/images/guest.png"
       },
