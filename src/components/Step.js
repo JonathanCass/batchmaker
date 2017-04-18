@@ -6,9 +6,9 @@ const styles = {
 	stepContainer:{
 		width: 640,
 		height: 276,
-		border: 'solid 2px white',
+		border: 'solid 2px #009688',
 		borderRadius: 5,
-		overflow: 'scroll'
+		overflow: 'scroll',
 	},
 	aStep:{
 		width: 640,
@@ -29,7 +29,7 @@ const styles = {
 		height: 90,
 		paddingLeft: 10,
 		marginTop: 15,
-		float: 'left'
+		float: 'left',
 	},
 	allocations:{
 		marginTop:20,

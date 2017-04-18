@@ -49,7 +49,7 @@ const styles ={
 		width: 160,
 		height: 90,
 		borderRadius: 5,
-		border: 'solid 2px white',
+		border: 'solid 2px #009688',
 		display: 'inline-block',
 		paddingLeft: 10,
 		verticalAlign: 'text-bottom'
@@ -70,13 +70,13 @@ const styles ={
 	ingredientBox:{
 		width: 640,
 		height: 276,
-		border: 'solid 2px white',
+		border: 'solid 2px #009688',
 		borderRadius: 5,
 	},
 	adjustLine:{
 		width: 636,
 		height: 60,
-		border: 'solid 2px white',
+		border: 'solid 2px #009688',
 		borderWidth: ' 0 0 2px 0',
 		lineHeight: '60px',
 		fontSize: 24,
@@ -104,7 +104,7 @@ const styles ={
 		display:'inline-block',
 		color: '#03A9F4',
 		lineHeight:'60px',
-		border: 'solid 1px white',
+		border: 'solid 1px #009688',
 		borderWidth: ' 0 1px 1px 0',
 		paddingRight: 10
 	},
@@ -114,7 +114,7 @@ const styles ={
 		display:'inline-block',
 		color: '#FF5722',
 		lineHeight: '60px',
-		border: 'solid 1px white',
+		border: 'solid 1px #009688',
 		borderWidth: ' 0 0 1px 1px',
 		paddingLeft: 10
 	},
