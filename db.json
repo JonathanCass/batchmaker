@@ -110,6 +110,20 @@
         "servingType": "Sandwiches",
         "public": "true",
         "favoritedBy": []
+      },
+      {
+        "id": 8,
+        "name": "Pasta",
+        "by": 3,
+        "photoUrl": "http://poranopasta.com/wp-content/themes/porano/img/dishes/pasta.png",
+        "type": "dinner",
+        "prepTime": "5",
+        "cookTime": "10",
+        "cookTemp": "412",
+        "servingAmount": "8",
+        "servingType": "Bowls",
+        "public": "true",
+        "favoritedBy": []
       }
     ],
     "steps": [
@@ -214,6 +228,24 @@
         "order": 3,
         "recipeId": 7,
         "directions": "Spread 1 tablespoon mayo on each slice of toasted bread. (More or less, to taste).\nAdd 1 slice of lettuce to 4 pieces of mayo-spreaded toast.\nAdd 2 slices of tomato on top of lettuce.\nArrange 3 slices of bacon evenly on top of tomato. (Break bacon slices in half to fit, if needed.).\nAdd 1 slice of lettuce on top of bacon.\nPut the remaining 4 pieces of mayo-spreaded toast on top to finish the sandwiches."
+      },
+      {
+        "id": 18,
+        "order": 1,
+        "recipeId": 8,
+        "directions": "Dash salt into a pot of water and bring to a boil."
+      },
+      {
+        "id": 19,
+        "order": 2,
+        "recipeId": 8,
+        "directions": "Pour pasta into boiling water. Let boil for 10 minutes stirring occasionally."
+      },
+      {
+        "id": 20,
+        "order": 3,
+        "recipeId": 8,
+        "directions": "Scoop pasta into bowls and quickly spread butter to melt it on the warm pasta. Sprinkle with shredded cheese and serve."
       }
     ],
     "allocations": [
@@ -456,6 +488,46 @@
         "numberOf": "2",
         "unitOf": "",
         "what": "Slices Tomato"
+      },
+      {
+        "id": 31,
+        "recipeId": 8,
+        "stepId": 18,
+        "numberOf": "4",
+        "unitOf": "quarts",
+        "what": "Water"
+      },
+      {
+        "id": 32,
+        "recipeId": 8,
+        "stepId": 18,
+        "numberOf": "4",
+        "unitOf": "tbsp",
+        "what": "Salt"
+      },
+      {
+        "id": 33,
+        "recipeId": 8,
+        "stepId": 19,
+        "numberOf": "2",
+        "unitOf": "pounds",
+        "what": "Pasta"
+      },
+      {
+        "id": 34,
+        "recipeId": 8,
+        "stepId": 20,
+        "numberOf": "2",
+        "unitOf": "tbsp",
+        "what": "Butter"
+      },
+      {
+        "id": 35,
+        "recipeId": 8,
+        "stepId": 20,
+        "numberOf": ".5",
+        "unitOf": "cups",
+        "what": "Shredded Cheese"
       }
     ],
     "users": [
