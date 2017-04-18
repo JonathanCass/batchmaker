@@ -38,8 +38,7 @@ User Repository page to view all users with their avatars, bios, and created rec
 
 Features to be added.  
 
-A settings tab to allow user's to change avatar, handle and bio.   
-Add users recipe to their user view block, flesh out bios.    
+A settings tab to allow user's to change avatar, handle and bio.    
 Allow users to add personal notes to any recipe.
 Add some tooltips.
 
