@@ -124,6 +124,20 @@
         "servingType": "Bowls",
         "public": "true",
         "favoritedBy": []
+      },
+      {
+        "id": 9,
+        "name": "Ice Cream Cone",
+        "by": 4,
+        "photoUrl": "http://assets.marthastewart.com/styles/wmax-520-highdpi/d21/drumstick-2-med108588/drumstick-2-med108588_vert.jpg?itok=h6ZIhT4Q",
+        "type": "dessert",
+        "prepTime": "10",
+        "cookTime": 0,
+        "cookTemp": 0,
+        "servingAmount": "6",
+        "servingType": "Cones",
+        "public": "true",
+        "favoritedBy": []
       }
     ],
     "steps": [
@@ -246,6 +260,24 @@
         "order": 3,
         "recipeId": 8,
         "directions": "Scoop pasta into bowls and quickly spread butter to melt it on the warm pasta. Sprinkle with shredded cheese and serve."
+      },
+      {
+        "id": 21,
+        "order": 1,
+        "recipeId": 9,
+        "directions": "Scoop ice cream into cones."
+      },
+      {
+        "id": 22,
+        "order": 2,
+        "recipeId": 9,
+        "directions": "Drizzle syrup onto ice cream."
+      },
+      {
+        "id": 23,
+        "order": 3,
+        "recipeId": 9,
+        "directions": "Sprinkle nuts into chocolate syrup and serve quickly."
       }
     ],
     "allocations": [
@@ -528,6 +560,38 @@
         "numberOf": ".5",
         "unitOf": "cups",
         "what": "Shredded Cheese"
+      },
+      {
+        "id": 36,
+        "recipeId": 9,
+        "stepId": 21,
+        "numberOf": "6",
+        "unitOf": "",
+        "what": "Cones"
+      },
+      {
+        "id": 37,
+        "recipeId": 9,
+        "stepId": 21,
+        "numberOf": "6",
+        "unitOf": "cups",
+        "what": "Ice Cream"
+      },
+      {
+        "id": 38,
+        "recipeId": 9,
+        "stepId": 22,
+        "numberOf": "6",
+        "unitOf": "floz",
+        "what": "Chocolate Syrup"
+      },
+      {
+        "id": 39,
+        "recipeId": 9,
+        "stepId": 23,
+        "numberOf": ".5",
+        "unitOf": "cups",
+        "what": "Crushed Nuts"
       }
     ],
     "users": [

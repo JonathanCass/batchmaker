@@ -63,23 +63,26 @@ class StepAdder extends React.Component {
   	}
   	addIngredient = (e) => {
   		e.preventDefault()
-  		var ingredientObj = {
-      		"id": this.state.ingredientIdIndex,
-      		"recipeId": this.props.recipeIdIndex,
-     		"stepId": this.props.stepIdIndex,
-     		"numberOf": this.state.numberOf,
-     		"unitOf": this.state.unitOf,
-     		"what": this.state.what  
-		}
-		
-		this.setState({
-			ingredientArray : [...this.state.ingredientArray, ingredientObj],
-        	ingredientIdIndex : this.state.ingredientIdIndex + 1,
-        	numberOf:0,
-        	unitOf:'',
-        	what:''
+  		if(Number(this.state.numberOf) === 0 || this.state.what === "" || isNaN(this.state.numberOf) === true || this.state.numberOf === "" ){
+  			alert("Can not submit an ingredient with a zero amount, a string for amount,  or without a name.")
+  		}else{
+	  		var ingredientObj = {
+	      		"id": this.state.ingredientIdIndex,
+	      		"recipeId": this.props.recipeIdIndex,
+	     		"stepId": this.props.stepIdIndex,
+	     		"numberOf": this.state.numberOf,
+	     		"unitOf": this.state.unitOf,
+	     		"what": this.state.what  
+			}
+			this.setState({
+				ingredientArray : [...this.state.ingredientArray, ingredientObj],
+	        	ingredientIdIndex : this.state.ingredientIdIndex + 1,
+	        	numberOf:0,
+	        	unitOf:'',
+	        	what:''
 
-        })
+	        })
+	     }
   	}
   	removeIngredient = (e) => {
   		e.preventDefault()

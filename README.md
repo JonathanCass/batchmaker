@@ -7,7 +7,8 @@ Features:
 
 Creating Recipes.  
 When creating a new recipe the by field is automatically filled based on currently logged in user.    
-When adding ingredients previously added ingredients ( for the current step and only the current step ) are displayed and can be removed before commiting the step.  
+When adding ingredients previously added ingredients ( for the current step and only the current step ) are displayed and can be removed before commiting the step.
+Returns Alert errors when attempting to submit with zeros or strings in number fields or empty strings in text fields.    
 Recipes set to private are only viewable by their creators. 
 HINT Login as ID: mcp PASSWORD: password. 
 The Master Control Protocol has an interesting recipe the humans are not allowed to access.  
@@ -22,7 +23,8 @@ Recipe Viewer.
 Displays a picture of the item.  
 Credits the user who inputted the recipe.  
 Displays all the ingredients and steps with desriptions.  
-Further breaks down the ingredients into the individual steps.  
+Further breaks down the ingredients into the individual steps. 
+Users can input a new serving amount and hit the adjust button. All ingredient requirements will be updated based upon this new serving amount.  
 Has a functioning button that allows the currently logged in user to favorite a recipe. This button will then also credit that recipe with being favorited by this user.  
 An edit this recipe button will appear only if the currently logged in user is the creator. However the button is not yet functional.  
 
@@ -32,14 +34,14 @@ Default login is set as guest.
 Alert Confirmation upon login displays current user's handle and avatar.  
 Alert Error upon entering incorrect information.  
 
-Soon to be added features.
+Features to be added.  
 
 Ability to add a new user.  
 Ability on settings tab to change user's avatar and handle and bio.   
-Add a tab to see all users with their bios and avatars and favorites recipes.  
-Checks to prevent inputting zeros or empty strings into a recipe.  
+Add a tab to see all users with their bios and avatars and favorites recipes.   
 Allow users to add personal notes, simple array added to recipe object indexed at user id with notes.
-
 Add some tooltips.
 
- 
+Known Bugs.  
+
+User gets logged out upon submitting a new recipe.   

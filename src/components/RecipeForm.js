@@ -178,8 +178,8 @@ class RecipeForm extends React.Component {
   	}
   	addRecipe = (e) => {
   		e.preventDefault()
-  		if(this.state.type === "" || this.state.servingAmount === "" || this.state.servingType === ""){
-  			alert("Invalid input. Empty strings and zeros are not allowed.")
+  		if(this.state.type === "" || this.state.servingAmount === "" || this.state.servingType === "" || isNaN(this.state.servingAmount) === true || Number(this.state.servingAmount) === 0 ){
+  			alert("Invalid input. Empty strings and zeros are not allowed. Must result in a NUMBER of some thing. Must select meal type.")
   		}else{
 	  		var recipeObj = {
 	  			"id": this.state.recipeIdIndex,
