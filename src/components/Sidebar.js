@@ -37,7 +37,7 @@ const Sidebar = () => (
         <li style={styles.sidebarEntry}><Link style={styles.catLinks} to="/PublicRecipes/"> OpenSource Methods </Link></li>
         <li style={styles.sidebarEntry}><Link style={styles.catLinks} to="/PopularRecipes/"> Popular Methods </Link></li>
         <li style={styles.sidebarEntry}><Link style={styles.catLinks} to="/UsersFavorites/"> Favorite Methods </Link></li>
-        <li style={styles.sidebarEntry}> Nutrient Repository </li>
+        <li style={styles.sidebarEntry}> User Repository </li>
     </ul>
   </div>
 )

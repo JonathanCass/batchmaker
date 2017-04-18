@@ -31,15 +31,15 @@ An edit this recipe button will appear only if the currently logged in user is t
 User Features.  
 Logging in requires correct login and password. 
 Default login is set as guest. 
-Alert Confirmation upon login displays current user's handle and avatar.  
-Alert Error upon entering incorrect information.  
+Confirmation upon login displaying current user's handle and avatar.  
+Attempting to login with incorrect information provides an alert error.    
+Can create new users. When creating a new user the program will provide error alerts if login id exists or if necessary fields are left blank.  
 
 Features to be added.  
 
-Ability to add a new user.  
-Ability on settings tab to change user's avatar and handle and bio.   
-Add a tab to see all users with their bios and avatars and favorites recipes.   
-Allow users to add personal notes, simple array added to recipe object indexed at user id with notes.
+Ability on settings tab to change user's avatar, handle and bio.   
+Add a tab to see all users with their bios and avatars.   
+Allow users to add personal notes to any recipe, simple array added to recipe object indexed at user id with notes.
 Add some tooltips.
 
 Known Bugs.  

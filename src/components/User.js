@@ -1,5 +1,6 @@
 import React from 'react'
 import data from '../../db.json'
+import {createUser} from '../api/recipe'
 import {login} from '../api/recipe'
 import {connect} from 'react-redux'
 
@@ -160,8 +161,16 @@ class User extends React.Component {
   				green = false
   		}
   		if(green){
-
-
+  			var userObj={
+        			"id": data.batchmaker.users.length,
+        			"login": this.state.newLogin,
+        			"password": this.state.newPassword,
+        			"handle": this.state.handle,
+        			"favorites": [],
+        			"avatarUrl": this.state.avatarUrl,
+        			"bio": this.state.bio
+  			}
+  			createUser(userObj)
   			this.setState({
   				newLogin: "", 
   				newPassword: "", 

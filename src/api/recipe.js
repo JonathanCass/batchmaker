@@ -18,6 +18,14 @@ export function addRecipe(recipeObject, stepArray, ingredientArray){
       users: [...data.batchmaker.users] 
     })
 }
+export function createUser(userObject){
+	axios.post('http://localhost:3001/batchmaker',{
+	  recipes: [...data.batchmaker.recipes],
+      steps: [...data.batchmaker.steps],
+      allocations: [...data.batchmaker.allocations],		
+      users: [...data.batchmaker.users, userObject]
+    })
+}
 export function addFavorite(newUsersArray, newRecipesArray){
 	axios.post('http://localhost:3001/batchmaker',{
 	  recipes: newRecipesArray,
