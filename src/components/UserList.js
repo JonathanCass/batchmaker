@@ -1,7 +1,7 @@
 import React from 'react'
 import data from '../../db.json'
 import {connect} from 'react-redux'
-//import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const styles={
 	listContainer:{
@@ -12,7 +12,7 @@ const styles={
 		padding: '5px 240px 10px 460px'
 	},
 	listProper:{
-		color: 'white',
+		color: 'black',
 		width: 700,
 		height: 1220,
 		padding: 30,
@@ -31,18 +31,18 @@ const styles={
 	},
 	userBox:{
 		margin: '30px 0 10px 20px',
-		background: 'radial-gradient(circle, #000046, #1CB5E0)',
+		background: 'white',
 		padding: 20,
 		borderRadius: 25,
 		width: 300
 	},
 	bioText:{
-		color: 'white',
+		color: 'black',
 		fontSize: 16,
 		fontWeight: 'normal'
 	},
 	userHandle:{
-		color: '#FF5722',
+		color: '#009688',
 		fontWeight: 'bold',
 		fontSize: 22
 	},
@@ -59,7 +59,12 @@ const styles={
 	},
 	createdHeader:{
 		margin: '10px 0 10px 0',
-		color: 'orange'
+		color: '#FF5722'
+	},
+	recipeLink:{
+		color: '#03A9F4',
+		textDecoration: 'underline',
+		fontWeight: 'bold'
 	}
 }
 
@@ -79,7 +84,7 @@ class UserList extends React.Component {
       				<div style={styles.bioBlock}>About {user.handle} : <span style={styles.bioText}> {user.bio} </span> </div>
 							<div style={styles.createdHeader}>Created Recipe's</div>
 							{data.batchmaker.recipes.map(recipe=>(
-								<span style={recipe.by === user.id ?  styles.recipeName : styles.displayNone}> <div> {recipe.name}</div> </span>
+								<span style={recipe.by === user.id && recipe.public === "true" ?  styles.recipeName : styles.displayNone}> <Link to={'/RecipeView/' + recipe.id} style={styles.recipeLink}> {recipe.name}</Link> </span>
 							))}
 						</div>
       		))}
