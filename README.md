@@ -9,7 +9,7 @@ Creating Recipes.
 When creating a new recipe the by field is automatically filled based on currently logged in user.    
 When adding ingredients previously added ingredients ( for the current step and only the current step ) are displayed and can be removed before commiting the step.
 Returns Alert errors when attempting to submit with zeros or strings in number fields or empty strings in text fields.    
-Recipes set to private are only viewable by their creators. 
+Recipes set to private are only viewable by their creators.
 HINT Login as ID: mcp PASSWORD: password. 
 The Master Control Protocol has an interesting recipe the humans are not allowed to access.  
   
@@ -22,24 +22,24 @@ Recipe view with 4 categories.
 Recipe Viewer.  
 Displays a picture of the item.  
 Credits the user who inputted the recipe.  
-Displays all the ingredients and steps with desriptions.  
-Further breaks down the ingredients into the individual steps. 
+Displays all the ingredients and steps with descriptions.  
+Further breaks down the ingredients into the individual steps.  
 Users can input a new serving amount and hit the adjust button. All ingredient requirements will be updated based upon this new serving amount.  
 Has a functioning button that allows the currently logged in user to favorite a recipe. This button will then also credit that recipe with being favorited by this user.  
-An edit this recipe button will appear only if the currently logged in user is the creator. However the button is not yet functional.  
+An edit this recipe button will appear only if the currently logged in user is the creator. However this button is not yet functional.  
 
 User Features.  
 Logging in requires correct login and password. 
 Default login is set as guest. 
-Confirmation upon login displaying current user's handle and avatar.  
+Confirmation upon login displays current user's handle and avatar.  
 Attempting to login with incorrect information provides an alert error.    
 Can create new users. When creating a new user the program will provide error alerts if login id exists or if necessary fields are left blank.  
 
 Features to be added.  
 
-Ability on settings tab to change user's avatar, handle and bio.   
-Add a tab to see all users with their bios and avatars.   
-Allow users to add personal notes to any recipe, simple array added to recipe object indexed at user id with notes.
+A settings tab to allow user's to change avatar, handle and bio.   
+Add a tab to displaying all users with their bios and avatars.   
+Allow users to add personal notes to any recipe.
 Add some tooltips.
 
 Known Bugs.  
