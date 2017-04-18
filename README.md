@@ -13,7 +13,7 @@ Recipes set to private are only viewable by their creators.
 HINT Login as ID: mcp PASSWORD: password. 
 The Master Control Protocol has an interesting recipe the humans are not allowed to access.  
   
-Recipe view with 4 categories.  
+Recipe view with 4 categories. This is the home page and can also be reached by clicking on the BATCH CONSTRUCTOR title.    
 1: All current User's recipes including their own access restricted recipes.  
 2: All recipes tagged for unrestricted access.  
 3: Current user's favorite recipes, including restricted access recipes based on the assumption they had access at some point.  

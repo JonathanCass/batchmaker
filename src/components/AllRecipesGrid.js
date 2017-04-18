@@ -104,25 +104,20 @@ class AllRecipesGrid extends React.Component {
 	        		</Link>	
         		))}
         	</div>
-        	<div style={styles.catHeader}>Popular Methods<Link to="/PopularRecipes/"><button style={styles.viewAll}>View All</button></Link></div>
+        	<div style={styles.catHeader}>Popular Methods<Link to="/PopularRecipes/"><button style={styles.viewAll}>View Page</button></Link></div>
+        	
+        	<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorites</div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
-					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
-	        			<div style={styles.recipeAndName}>
-	        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
-	        			</div>
-	        		</Link>	
+					this.props.users[this.props.user].favorites.map(favorite=>( 
+						<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id + Math.random()} style={ recipe.id === favorite  ? styles.linkRow : styles.displayNone }>
+		        			<div style={styles.recipeAndName}>
+		        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
+		        			</div>
+		        		</Link>	
+		        	))
         		))}        	
         	</div>
-        	<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorite Methods<Link to="/PublicRecipes/"><button style={styles.viewAll}>View All</button></Link></div>
-        	<div style={styles.row}>
-				{this.props.recipes.map(recipe=>(
-					<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id}>
-	        			<div style={styles.recipeAndName}>
-	        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>
-	        			</div>
-	        		</Link>	
-        		))}        	</div>
         </div>
       </div>
     )
