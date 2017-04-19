@@ -84,7 +84,7 @@ class UserList extends React.Component {
       				<div style={styles.bioBlock}>About {user.handle} : <span style={styles.bioText}> {user.bio} </span> </div>
 							<div style={styles.createdHeader}>Created Recipe's</div>
 							{data.batchmaker.recipes.map(recipe=>(
-								<span style={recipe.by === user.id && recipe.public === "true" ?  styles.recipeName : styles.displayNone}> <Link to={'/RecipeView/' + recipe.id} style={styles.recipeLink}> {recipe.name}</Link> </span>
+								<span key={Math.random()} style={recipe.by === user.id && recipe.public === "true" ?  styles.recipeName : styles.displayNone}> <Link to={'/RecipeView/' + recipe.id} style={styles.recipeLink}> {recipe.name}</Link> </span>
 							))}
 						</div>
       		))}

@@ -113,7 +113,6 @@ class PopularRecipes extends React.Component {
 	})
   }
   render() {
-	  console.log(this.state.popularArray)
     return (
       <div style={styles.gridContainer}>
         <div style={styles.gridProper}>

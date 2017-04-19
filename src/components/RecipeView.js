@@ -213,7 +213,7 @@ class RecipeView extends React.Component {
 	}
   componentWillMount(){
   	getData()
-	if(data.batchmaker.users[this.props.user].notes[this.props.match.params.recipeId] !== undefined){
+	if(data.batchmaker.users[this.props.user].notes[this.props.match.params.recipeId] !== null){
 		this.setState({
 			notes: data.batchmaker.users[this.props.user].notes[this.props.match.params.recipeId]
 		})

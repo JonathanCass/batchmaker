@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {getData} from '../api/recipe'
 
 const styles ={
     introContainer:{
@@ -13,7 +14,7 @@ const styles ={
     title:{
       fontSize: 92,
       margin: "320px 0 0 115px",
-      webkitTextStroke : '3px black',
+      WebkitTextStroke : '3px black',
       color: '#D50000',
     },
     subTitle:{
@@ -21,7 +22,7 @@ const styles ={
       marginLeft: 252,
       borderRadius: 10,
       color: 'white',
-      webkitTextStroke : '2px blue',
+      WebkitTextStroke : '2px blue',
     }
 }
 class IntroPage extends React.Component {
@@ -29,6 +30,9 @@ class IntroPage extends React.Component {
     super(props)
   }
   */
+  componentWillMount(){
+  	getData()
+  }
   render() {
     return (
       <Link to="./AllRecipesGrid/" style={styles.introContainer} className="introPage">

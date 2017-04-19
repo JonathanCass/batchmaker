@@ -2,7 +2,6 @@ import React from 'react'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import data from '../../db.json'
 
 const styles={
 	gridContainer:{
@@ -93,11 +92,11 @@ class AllRecipesGrid extends React.Component {
   }
    displayFavorites = () => {
   	var newArray = []
-
-  	for( let i=data.batchmaker.users.length ; i > 1; i--){
-  		data.batchmaker.recipes.forEach(function(recipe) {
+	var userArray = this.props.users  
+  	for( let i=this.props.users.length ; i > 1; i--){
+  		this.props.recipes.forEach(function(recipe) {
   			if(recipe.favoritedBy.length === i && recipe.public === "true" ){
-  				newArray.push( [recipe.name , recipe.photoUrl, recipe.id, data.batchmaker.users[recipe.by].handle, i] ) // i is the number of favorties the item has
+  				newArray.push( [recipe.name , recipe.photoUrl, recipe.id, userArray[recipe.by].handle, i] ) // i is the number of favorties the item has
   			}
   		})
   	}
@@ -109,7 +108,7 @@ class AllRecipesGrid extends React.Component {
     return (
       <div style={styles.gridContainer}>
         <div style={styles.gridProper}>
-        	<div style={styles.catHeader}> {this.props.recipes[0] && this.props.users[this.props.user].handle}'s Methods<Link to="/UsersRecipes/"><button style={styles.viewAll}>View All</button></Link></div>
+        	<div style={styles.catHeader}> {this.props.users[this.props.user].handle}'s Methods<Link to="/UsersRecipes/"><button style={styles.viewAll}>View All</button></Link></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
         			<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id} style={ Number(recipe.by) === Number(this.props.user) ? styles.linkRow : styles.displayNone }>
@@ -140,7 +139,7 @@ class AllRecipesGrid extends React.Component {
         			</Link>
 	        	))}
         	</div>
-			<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorites</div>
+			<div style={styles.catHeader}>{this.props.users[this.props.user].handle}'s Favorites</div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
 					this.props.users[this.props.user].favorites.map(favorite=>( 
