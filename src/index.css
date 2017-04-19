@@ -42,3 +42,11 @@ button{
 .material-icons:hover{
 	cursor: pointer;
 }
+.introPage{
+	background-image: url('./image.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+	color: white;
+	background-color: black;
+}

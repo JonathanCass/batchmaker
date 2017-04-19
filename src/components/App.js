@@ -10,6 +10,7 @@ import UsersFavorites from './UsersFavorites'
 import UsersRecipes from './UsersRecipes'
 import RecipeView from './RecipeView'
 import UserList from './UserList'
+import IntroPage from './IntroPage'
 import {Provider} from 'react-redux'
 import store from '../store'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
@@ -23,7 +24,8 @@ export default React.createClass({
 		    <div>	
 		      	<Header/>
 		      	<Sidebar/>
-		      	<Route exact={true} path='/' component={AllRecipesGrid} />
+		      	<Route exact={true} path='/' component={IntroPage} />
+							<Route path='/AllRecipesGrid/' component={AllRecipesGrid} />
           		<Route path='/RecipeForm/' component={RecipeForm} />
           		<Route path='/RecipeView/:recipeId' component={RecipeView} />
               <Route path='/User/' component={User} />
