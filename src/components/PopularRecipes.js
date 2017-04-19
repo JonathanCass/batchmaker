@@ -27,27 +27,24 @@ const styles={
 		height: 50,
 		lineHeight: '50px',
 		border: '2px solid #009688',
-		borderWidth: ' 0 0 2px 0',
+		borderWidth: ' 2px 0 2px 0',
 		paddingBottom: 10,
 		fontSize: 24,
 		margin : " 10px 0 20px 0",
+		display: 'flex',
+		justifyContent: 'space-between'
 	},
-	catHeader2:{
-		width: 635,
-		height: 50,
-		lineHeight: '50px',
-		border: '2px solid #009688',
-		borderWidth: ' 0 0 2px 0',
-		paddingBottom: 10,
-		fontSize: 26,
-		margin : " 10px 0 20px 0",
-		display: 'block ',
-		color: '#FF4D0F',
+	viewAll:{
+		height:35,
+		width: 120,
+		position: 'relative',
+		top: -5,
 	},
 	row:{
 		width: 650,
-		height: 170,
-		marginBottom: 50
+		height: 650,
+		marginBottom: 50,
+		overflow: 'hidden'
 	},
 	recipeAndName:{
 		borderRadius: 5,
@@ -55,7 +52,6 @@ const styles={
 		height: 160,
 		display: 'inline-block',
 		marginRight: 12,
-		marginBottom: 60
 	},
 	recipe:{
 		borderRadius: 5,
@@ -66,24 +62,26 @@ const styles={
 	recipeName:{
 		paddingTop: 10,
 		textAlign: 'center',
-		fontSize: 18,
+		fontSize: 14,
 		width: 150,
 		height: 10,
-		color: '#03A9F4'
-	},
-	line:{
-		color: '#D50000',
-		fontSize: 24,
-		marginTop: 30
+		color: 'white'
 	},
 	displayNone:{
 		display: 'none'
 	},
 	linkRow:{
-		width: 650,
-		height: 200,
-		marginBottom: 60,
-		display: 'block'
+		color:'white'
+	},
+	favoritesLabel:{
+		color: '#FF5722',
+		fontSize: 22
+	},
+	recipeLabel:{
+		color: '#03A9F4',
+		fontSize: 20,
+		textAlign: 'center',
+		marginTop: 10
 	}
 }
 
@@ -101,10 +99,10 @@ class PopularRecipes extends React.Component {
   displayFavorites = () => {
   	var newArray = []
 
-  	for( let i=data.batchmaker.users.length ; i > 0; i--){
+  	for( let i=data.batchmaker.users.length ; i > 1; i--){
   		data.batchmaker.recipes.forEach(function(recipe) {
-  			if(recipe.favoritedBy.length === i && recipe.public === "true"){
-  				newArray[i] = [recipe.name , recipe.photoUrl, recipe.id, data.batchmaker.users[recipe.by].handle] // i is the number of favorties the item has
+  			if(recipe.favoritedBy.length === i && recipe.public === "true" ){
+  				newArray.push( [recipe.name , recipe.photoUrl, recipe.id, data.batchmaker.users[recipe.by].handle, i] ) // i is the number of favorties the item has
   			}
   		})
   	}
@@ -120,10 +118,10 @@ class PopularRecipes extends React.Component {
         	<div style={styles.catHeader}>Popular Methods</div>
         	<div style={styles.row}>
 				{this.state.popularArray.map((recipe, i)=>(
-					<Link to={'/RecipeView/' + recipe[2]} key={Math.random()} style={ recipe !== undefined  ? styles.linkRow : styles.displayNone }>
+					<Link to={'/RecipeView/' + recipe[2]} key={Math.random()} style={  styles.linkRow }>
         				<div style={styles.recipeAndName}>
-							<div style={styles.catHeader2} >{i} favorites</div>
-        					<img src={recipe[1]} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe[0]}</div>
+							<div style={styles.favoritesLabel} >{recipe[4]} favorites</div>
+        					<img src={recipe[1]} style={styles.recipe} alt=""/><div style={styles.recipeLabel}>{recipe[0]}</div>
         				</div>
         			</Link>
 	        	))}
