@@ -40,9 +40,10 @@ Users can add their own personal notes to any recipe.
 
 Features to be added.  
 
-Improve the look of the Popular page.
+Improve the look of the Popular page.  
 A settings tab to allow user's to change avatar, handle and bio.    
 Add some tooltips.
+Implement Fahrenheit to Celsius conversion.
 
 Known Bugs.  
 
