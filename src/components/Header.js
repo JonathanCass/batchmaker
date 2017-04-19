@@ -45,7 +45,7 @@ class Header extends React.Component {
         	<div style={styles.headerIntro}> Begin food production, organic.</div>
         </div>
         <div style={styles.appTitle}>
-        	<Link to="/AllRecipesGrid/" style={styles.title}><h1 >BATCH CONSTRUCTOR</h1></Link>
+        	<Link to="/" style={styles.title}><h1 >BATCH CONSTRUCTOR</h1></Link>
         </div>
         <div style={styles.headerRight}>
         	<Link to="/RecipeForm/" ><i style={styles.icon} className="material-icons">note_add</i></Link>
