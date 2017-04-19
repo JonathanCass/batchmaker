@@ -133,11 +133,21 @@ const styles ={
 		paddingTop: 5
 	},
 	editRecipe:{
-		width: 160,
-		height: 60,
-		fontSize:20,
+		width: 130,
+		height: 30,
+		fontSize: 18,
+		margin: ' 15px 0 0 0 '
+	},
+	addEditNote:{
+		width: 130,
+		height: 30,
+		fontSize: 18,
+		margin: ' 10px 0 0 0 '
+	},
+	adjustBlock:{
 		float: 'right',
-		margin: ' 25px 0 0 0 '
+		width: 130,
+		height: 80
 	},
 	favoriteButton:{
 		width: 71,
@@ -149,10 +159,16 @@ const styles ={
 		background: '#D50000',
 		borderRadius: 25,
 		border: '2px solid white'
-
 	},
 	displayNone:{
 		display: 'none'
+	},
+	personalNotes:{
+		width: 400,
+		height: 70,
+		marginTop: 15,
+		marginLeft: 20,
+		fontSize: 14
 	}
 }
 
@@ -224,9 +240,13 @@ class RecipeView extends React.Component {
 			    </div>
         	</div>
         	<Step recipeId={this.props.match.params.recipeId} adjustDisplay={this.state.adjustDisplay}/>
-        	<button style={this.props.user === data.batchmaker.recipes[Number(this.props.match.params.recipeId)-1].by ? styles.editRecipe : styles.displayNone}>Edit This Recipe</button>
-        	<i style={styles.favoriteButton} className="material-icons" onClick={this.addFavorite}>grade</i>
-        </div>
+        	<div style={styles.adjustBlock}>
+				<button style={this.props.user === data.batchmaker.recipes[Number(this.props.match.params.recipeId)-1].by ? styles.editRecipe : styles.displayNone}>Edit Recipe</button>
+				<button style={styles.addEditNote}> Add Note </button>
+			</div>
+			<i style={styles.favoriteButton} className="material-icons" onClick={this.addFavorite}>grade</i>
+			<textarea style={styles.personalNotes} placeholder="Enter personal notes concerning this recipe."></textarea>
+		</div>
       </div>
     )
   }
