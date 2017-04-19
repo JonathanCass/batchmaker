@@ -41,8 +41,8 @@ Users can add their own personal notes to any recipe.
 Features to be added.  
  
 A settings tab to allow user's to change avatar, handle and bio.    
-Add some tooltips.
-Implement Fahrenheit to Celsius conversion.
+Add some tooltips.  
+Implement Fahrenheit to Celsius conversion.  
 
 Known Bugs.  
 
