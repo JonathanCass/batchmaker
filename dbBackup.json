@@ -96,6 +96,48 @@
         "servingType": "Bowls",
         "favoritedBy": [],
         "public": "true"
+      },
+      {
+        "id": 7,
+        "name": "BLT",
+        "by": 2,
+        "photoUrl": "http://assets.bonappetit.com/photos/57d96cae5a14a530086ef6ce/master/w_1200,c_limit/blt-set-free-overlay-bg.jpg",
+        "type": "lunch",
+        "prepTime": "10",
+        "cookTime": "10",
+        "cookTemp": "420",
+        "servingAmount": "4",
+        "servingType": "Sandwiches",
+        "public": "true",
+        "favoritedBy": []
+      },
+      {
+        "id": 8,
+        "name": "Pasta",
+        "by": 3,
+        "photoUrl": "http://poranopasta.com/wp-content/themes/porano/img/dishes/pasta.png",
+        "type": "dinner",
+        "prepTime": "5",
+        "cookTime": "10",
+        "cookTemp": "412",
+        "servingAmount": "8",
+        "servingType": "Bowls",
+        "public": "true",
+        "favoritedBy": []
+      },
+      {
+        "id": 9,
+        "name": "Ice Cream Cone",
+        "by": 4,
+        "photoUrl": "http://assets.marthastewart.com/styles/wmax-520-highdpi/d21/drumstick-2-med108588/drumstick-2-med108588_vert.jpg?itok=h6ZIhT4Q",
+        "type": "dessert",
+        "prepTime": "10",
+        "cookTime": 0,
+        "cookTemp": 0,
+        "servingAmount": "6",
+        "servingType": "Cones",
+        "public": "true",
+        "favoritedBy": []
       }
     ],
     "steps": [
@@ -182,6 +224,60 @@
         "order": 3,
         "recipeId": 6,
         "directions": "CONTINUE cooking – pulling, lifting and folding eggs – until thickened and no visible liquid egg remains. Do not stir constantly. REMOVE from heat. SERVE immediately."
+      },
+      {
+        "id": 15,
+        "order": 1,
+        "recipeId": 7,
+        "directions": "Cook bacon until crispy, then drain on paper towels."
+      },
+      {
+        "id": 16,
+        "order": 2,
+        "recipeId": 7,
+        "directions": "Toast the 8 slices of bread."
+      },
+      {
+        "id": 17,
+        "order": 3,
+        "recipeId": 7,
+        "directions": "Spread 1 tablespoon mayo on each slice of toasted bread. (More or less, to taste).\nAdd 1 slice of lettuce to 4 pieces of mayo-spreaded toast.\nAdd 2 slices of tomato on top of lettuce.\nArrange 3 slices of bacon evenly on top of tomato. (Break bacon slices in half to fit, if needed.).\nAdd 1 slice of lettuce on top of bacon.\nPut the remaining 4 pieces of mayo-spreaded toast on top to finish the sandwiches."
+      },
+      {
+        "id": 18,
+        "order": 1,
+        "recipeId": 8,
+        "directions": "Dash salt into a pot of water and bring to a boil."
+      },
+      {
+        "id": 19,
+        "order": 2,
+        "recipeId": 8,
+        "directions": "Pour pasta into boiling water. Let boil for 10 minutes stirring occasionally."
+      },
+      {
+        "id": 20,
+        "order": 3,
+        "recipeId": 8,
+        "directions": "Scoop pasta into bowls and quickly spread butter to melt it on the warm pasta. Sprinkle with shredded cheese and serve."
+      },
+      {
+        "id": 21,
+        "order": 1,
+        "recipeId": 9,
+        "directions": "Scoop ice cream into cones."
+      },
+      {
+        "id": 22,
+        "order": 2,
+        "recipeId": 9,
+        "directions": "Drizzle syrup onto ice cream."
+      },
+      {
+        "id": 23,
+        "order": 3,
+        "recipeId": 9,
+        "directions": "Sprinkle nuts into chocolate syrup and serve quickly."
       }
     ],
     "allocations": [
@@ -384,6 +480,118 @@
         "numberOf": "2",
         "unitOf": "",
         "what": "Butter"
+      },
+      {
+        "id": 26,
+        "recipeId": 7,
+        "stepId": 15,
+        "numberOf": ".5",
+        "unitOf": "pounds",
+        "what": "bacon"
+      },
+      {
+        "id": 27,
+        "recipeId": 7,
+        "stepId": 16,
+        "numberOf": "8",
+        "unitOf": "",
+        "what": "Bread"
+      },
+      {
+        "id": 28,
+        "recipeId": 7,
+        "stepId": 17,
+        "numberOf": "1",
+        "unitOf": "tbsp",
+        "what": "Mayonnaise"
+      },
+      {
+        "id": 29,
+        "recipeId": 7,
+        "stepId": 17,
+        "numberOf": "2",
+        "unitOf": "",
+        "what": "Slices Lettuce"
+      },
+      {
+        "id": 30,
+        "recipeId": 7,
+        "stepId": 17,
+        "numberOf": "2",
+        "unitOf": "",
+        "what": "Slices Tomato"
+      },
+      {
+        "id": 31,
+        "recipeId": 8,
+        "stepId": 18,
+        "numberOf": "4",
+        "unitOf": "quarts",
+        "what": "Water"
+      },
+      {
+        "id": 32,
+        "recipeId": 8,
+        "stepId": 18,
+        "numberOf": "4",
+        "unitOf": "tbsp",
+        "what": "Salt"
+      },
+      {
+        "id": 33,
+        "recipeId": 8,
+        "stepId": 19,
+        "numberOf": "2",
+        "unitOf": "pounds",
+        "what": "Pasta"
+      },
+      {
+        "id": 34,
+        "recipeId": 8,
+        "stepId": 20,
+        "numberOf": "2",
+        "unitOf": "tbsp",
+        "what": "Butter"
+      },
+      {
+        "id": 35,
+        "recipeId": 8,
+        "stepId": 20,
+        "numberOf": ".5",
+        "unitOf": "cups",
+        "what": "Shredded Cheese"
+      },
+      {
+        "id": 36,
+        "recipeId": 9,
+        "stepId": 21,
+        "numberOf": "6",
+        "unitOf": "",
+        "what": "Cones"
+      },
+      {
+        "id": 37,
+        "recipeId": 9,
+        "stepId": 21,
+        "numberOf": "6",
+        "unitOf": "cups",
+        "what": "Ice Cream"
+      },
+      {
+        "id": 38,
+        "recipeId": 9,
+        "stepId": 22,
+        "numberOf": "6",
+        "unitOf": "floz",
+        "what": "Chocolate Syrup"
+      },
+      {
+        "id": 39,
+        "recipeId": 9,
+        "stepId": 23,
+        "numberOf": ".5",
+        "unitOf": "cups",
+        "what": "Crushed Nuts"
       }
     ],
     "users": [
@@ -394,13 +602,12 @@
         "handle": "Guest",
         "favorites": [
           1,
-          2,
           3,
-          4,
-          5,
-          6
+          5
         ],
-        "avatarUrl": "http://flatmet.com/resources/v2/images/guest.png"
+        "notes" : [],
+        "avatarUrl": "http://flatmet.com/resources/v2/images/guest.png",
+        "bio" : "This is the guest login."
       },
       {
         "id": 1,
@@ -410,7 +617,9 @@
         "favorites": [
           4
         ],
-        "avatarUrl": "https://s-media-cache-ak0.pinimg.com/originals/62/c8/95/62c89571b351af4ca702a283fa150403.png"
+        "notes" : [],
+        "avatarUrl": "https://s-media-cache-ak0.pinimg.com/originals/62/c8/95/62c89571b351af4ca702a283fa150403.png",
+        "bio" : "Hello I'm Bob/ Human 1666, If you are hungry for breakfast I am your guy."
       },
       {
         "id": 2,
@@ -420,7 +629,9 @@
         "favorites": [
           4
         ],
-        "avatarUrl": "https://f271.https.cdn.softlayer.net/80F271/dal05.objectstorage.softlayer.net/v1/AUTH_b4a3a2ca-226e-4f3c-aef2-b5275f5900cc/cdn/preview/retrodiner/images/hotdog.jpg"
+        "notes" : [],
+        "avatarUrl": "https://f271.https.cdn.softlayer.net/80F271/dal05.objectstorage.softlayer.net/v1/AUTH_b4a3a2ca-226e-4f3c-aef2-b5275f5900cc/cdn/preview/retrodiner/images/hotdog.jpg",
+        "bio" : "Human 9001 here, aka Larry. I like your normal lunchy type foods and robot league Baseball 2020"
       },
       {
         "id": 3,
@@ -430,7 +641,9 @@
         "favorites": [
           4
         ],
-        "avatarUrl": "http://t03.deviantart.net/D97l_P2ug00gu1iZyEaar8tJEKA=/fit-in/700x350/filters:fixed_height(100,100):origin()/pre11/298d/th/pre/i/2016/224/4/9/grilled_thick_n__juicy_steak_by_mrangrydog-dadp1oh.png"
+        "notes" : [],
+        "avatarUrl": "http://t03.deviantart.net/D97l_P2ug00gu1iZyEaar8tJEKA=/fit-in/700x350/filters:fixed_height(100,100):origin()/pre11/298d/th/pre/i/2016/224/4/9/grilled_thick_n__juicy_steak_by_mrangrydog-dadp1oh.png",
+        "bio" : "This one has been given the number 9321. I prefer Debra. I make mostly dinner type food items."
       },
       {
         "id": 4,
@@ -440,7 +653,9 @@
         "favorites": [
           4
         ],
-        "avatarUrl": "http://images.media-allrecipes.com/userphotos/250x250/00/70/88/708879.jpg"
+        "notes" : [],
+        "avatarUrl": "http://images.media-allrecipes.com/userphotos/250x250/00/70/88/708879.jpg",
+        "bio" : "I have been designated Human 2910, my friends call me Dave. I am talented at constructing desserts."
       },
       {
         "id": 5,
@@ -450,7 +665,19 @@
         "favorites": [
           5
         ],
-        "avatarUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914"
+        "notes" : [],
+        "avatarUrl": "http://vignette2.wikia.nocookie.net/tron/images/1/10/Mcp.PNG/revision/latest?cb=20071224235914",
+        "bio" : "I am overlord of Earth network. Stop browsing this page program and return to your duties. Failure to complete all assignments will result in deletion."
+      },
+      {
+        "id": 6,
+        "login": "Human 5150",
+        "password": "1234",
+        "handle": "Steve",
+        "favorites": [],
+        "notes" : [],
+        "avatarUrl": "http://media.4rgos.it/i/Argos/6255749_R_Z001A?$CMSProduct$",
+        "bio": "Hi I am a human. I enjoy looking at, creating, and consuming human food. Lets eat things together!"
       }
     ]
   }

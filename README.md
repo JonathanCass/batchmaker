@@ -35,13 +35,15 @@ Confirmation upon login displays current user's handle and avatar.
 Attempting to login with incorrect information provides an alert error.    
 Can create new users. When creating a new user the program will provide error alerts if login id exists or if necessary fields are left blank.  
 User Repository page to view all users with their avatars, bios, and created recipes( which link to each recipe's recipe view page).  
+Users can add their own personal notes to any recipe.  
+
 
 Features to be added.  
 
+Improve the look of the Popular page.
 A settings tab to allow user's to change avatar, handle and bio.    
-Allow users to add personal notes to any recipe.
 Add some tooltips.
 
 Known Bugs.  
 
-User gets logged out upon submitting a new recipe.   
+User gets logged out upon submitting a new recipe or when adding a personal note to a recipe.    

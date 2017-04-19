@@ -34,6 +34,14 @@ export function addFavorite(newUsersArray, newRecipesArray){
       users: newUsersArray 
     })
 }
+export function postNote(newUserArray){
+	axios.post('http://localhost:3001/batchmaker',{		
+      recipes: [...data.batchmaker.recipes],
+      steps: [...data.batchmaker.steps],
+      allocations: [...data.batchmaker.allocations],		
+      users: newUserArray 
+    })
+}
 export function login(login){
 	store.dispatch({
 		type: 'LOGIN',

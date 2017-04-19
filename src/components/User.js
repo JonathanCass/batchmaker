@@ -167,6 +167,7 @@ class User extends React.Component {
         			"password": this.state.newPassword,
         			"handle": this.state.handle,
         			"favorites": [],
+					"notes" : [],
         			"avatarUrl": this.state.avatarUrl,
         			"bio": this.state.bio
   			}

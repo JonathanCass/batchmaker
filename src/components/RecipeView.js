@@ -4,6 +4,7 @@ import {getData} from '../api/recipe'
 import {addFavorite} from '../api/recipe'
 import {connect} from 'react-redux'
 import data from '../../db.json'
+import {postNote} from '../api/recipe'
 
 const styles ={
 	recipeContainer:{
@@ -176,7 +177,7 @@ class RecipeView extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
-    	id : Number(this.props.match.params.recipeId) - 1, adjustParam: 1, adjustDisplay: 1, adjustRed: 0
+    	id : Number(this.props.match.params.recipeId) - 1, adjustParam: 1, adjustDisplay: 1, adjustRed: 0, notes: ""
     }
   }
   handleChange = (e) => {
@@ -202,8 +203,21 @@ class RecipeView extends React.Component {
   		}
   		addFavorite(newUsersArray, newRecipesArray)
   	}
+	addNote = (e) => {
+		e.preventDefault()
+		
+		var newUserArray = data.batchmaker.users
+		newUserArray[this.props.user].notes[this.props.match.params.recipeId] = this.state.notes
+		console.log("newUserArray", newUserArray)
+		postNote(newUserArray)
+	}
   componentWillMount(){
   	getData()
+	if(data.batchmaker.users[this.props.user].notes[this.props.match.params.recipeId] !== undefined){
+		this.setState({
+			notes: data.batchmaker.users[this.props.user].notes[this.props.match.params.recipeId]
+		})
+	}
   }
   render() {
     return (
@@ -242,10 +256,10 @@ class RecipeView extends React.Component {
         	<Step recipeId={this.props.match.params.recipeId} adjustDisplay={this.state.adjustDisplay}/>
         	<div style={styles.adjustBlock}>
 				<button style={this.props.user === data.batchmaker.recipes[Number(this.props.match.params.recipeId)-1].by ? styles.editRecipe : styles.displayNone}>Edit Recipe</button>
-				<button style={styles.addEditNote}> Add Note </button>
+				<button style={styles.addEditNote} onClick={this.addNote} > Add Note </button>
 			</div>
 			<i style={styles.favoriteButton} className="material-icons" onClick={this.addFavorite}>grade</i>
-			<textarea style={styles.personalNotes} placeholder="Enter personal notes concerning this recipe."></textarea>
+			<textarea style={styles.personalNotes} name="notes" onChange={this.handleChange} value={this.state.notes} placeholder="Enter personal notes concerning this recipe."></textarea>
 		</div>
       </div>
     )
