@@ -2,6 +2,7 @@ import React from 'react'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import data from '../../db.json'
 
 const styles={
 	gridContainer:{
@@ -29,7 +30,7 @@ const styles={
 		borderWidth: ' 2px 0 2px 0',
 		paddingBottom: 10,
 		fontSize: 24,
-		margin : " 10px 0 20px 0",
+		margin : " 0 0 20px 0",
 		display: 'flex',
 		justifyContent: 'space-between'
 	},
@@ -71,14 +72,38 @@ const styles={
 	},
 	linkRow:{
 		color:'white'
-	}
+	},
+	favoritesLabel:{
+		color: '#FF5722',
+		fontSize: 20,
+		textAlign: 'center',
+		marginTop: 10
+	},
 }
 class AllRecipesGrid extends React.Component {
-  /*constructor(props) {
+  constructor(props) {
     super(props)
-  }*/
+    this.state={
+    	popularArray: []   //each index will have recipe ids and  the index + 1 is how many favorited it
+    }
+  }
   componentWillMount(){
   	getData()
+	this.displayFavorites()
+  }
+   displayFavorites = () => {
+  	var newArray = []
+
+  	for( let i=data.batchmaker.users.length ; i > 1; i--){
+  		data.batchmaker.recipes.forEach(function(recipe) {
+  			if(recipe.favoritedBy.length === i && recipe.public === "true" ){
+  				newArray.push( [recipe.name , recipe.photoUrl, recipe.id, data.batchmaker.users[recipe.by].handle, i] ) // i is the number of favorties the item has
+  			}
+  		})
+  	}
+	this.setState({
+		popularArray: newArray
+	})
   }
   render() {
     return (
@@ -105,7 +130,17 @@ class AllRecipesGrid extends React.Component {
         		))}
         	</div>
         	<div style={styles.catHeader}>Popular Methods<Link to="/PopularRecipes/"><button style={styles.viewAll}>View Page</button></Link></div>
-        	<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorites</div>
+			<div style={styles.row}>
+				{this.state.popularArray.map((recipe, i)=>(
+					<Link to={'/RecipeView/' + recipe[2]} key={Math.random()} style={  styles.linkRow }>
+        				<div style={styles.recipeAndName}>
+							<div style={styles.favoritesLabel} >{recipe[4]} favorites</div>
+        					<img src={recipe[1]} style={styles.recipe} alt=""/>
+        				</div>
+        			</Link>
+	        	))}
+        	</div>
+			<div style={styles.catHeader}>{this.props.recipes[0] && this.props.users[this.props.user].handle}'s Favorites</div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
 					this.props.users[this.props.user].favorites.map(favorite=>( 

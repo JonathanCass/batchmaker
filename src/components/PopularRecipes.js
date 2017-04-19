@@ -75,13 +75,15 @@ const styles={
 	},
 	favoritesLabel:{
 		color: '#FF5722',
-		fontSize: 22
+		fontSize: 22,
+		marginTop: 20
 	},
 	recipeLabel:{
 		color: '#03A9F4',
-		fontSize: 20,
+		fontSize: 14,
 		textAlign: 'center',
-		marginTop: 10
+		marginTop: 10,
+		marginBottom: 20
 	}
 }
 

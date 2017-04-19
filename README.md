@@ -17,7 +17,7 @@ Recipe view with 4 categories. This is the home page and can also be reached by 
 1: All current User's recipes including their own access restricted recipes.  
 2: All recipes tagged for unrestricted access.  
 3: Current user's favorite recipes, including restricted access recipes based on the assumption they had access at some point.  
-4: Most popular recipes listed by number of favorites. Does not display recipes with restricted access, prevents displaying if creator favorited their own secret recipe.   
+4: Most popular recipes listed in descending order of favorites. Does not display recipes with restricted access, prevents displaying if creator favorited their own secret recipe.   
 
 Recipe Viewer.  
 Displays a picture of the item.  
@@ -39,8 +39,7 @@ Users can add their own personal notes to any recipe.
 
 
 Features to be added.  
-
-Improve the look of the Popular page.  
+ 
 A settings tab to allow user's to change avatar, handle and bio.    
 Add some tooltips.
 Implement Fahrenheit to Celsius conversion.
