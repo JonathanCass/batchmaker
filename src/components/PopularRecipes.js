@@ -1,7 +1,6 @@
 import React from 'react'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
-import data from '../../db.json'
 import {Link} from 'react-router-dom'
 
 const styles={
@@ -101,12 +100,12 @@ class PopularRecipes extends React.Component {
   displayFavorites = () => {
   	var newArray = []
 
-  	for( let i=data.batchmaker.users.length ; i > 1; i--){
-  		data.batchmaker.recipes.forEach(function(recipe) {
+  	for( let i=this.props.users.length ; i > 1; i--){
+  		this.props.recipes.forEach(function(recipe) {
   			if(recipe.favoritedBy.length === i && recipe.public === "true" ){
-  				newArray.push( [recipe.name , recipe.photoUrl, recipe.id, data.batchmaker.users[recipe.by].handle, i] ) // i is the number of favorties the item has
+  				newArray.push( [recipe.name , recipe.photoUrl, recipe.id, this.props.users[recipe.by].handle, i] ) // i is the number of favorties the item has
   			}
-  		})
+  		}.bind(this))
   	}
 	this.setState({
 		popularArray: newArray

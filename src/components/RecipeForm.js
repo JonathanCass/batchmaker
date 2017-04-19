@@ -2,7 +2,6 @@ import React from 'react'
 import StepAdder from './StepAdder'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
-import data from '../../db.json'
 
 const styles ={
 	formContainer:{
@@ -148,7 +147,7 @@ class RecipeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	name:'', handle: this.props.user, by: this.props.user ,photoUrl: "" ,order: 1, type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: data.batchmaker.allocations.length +1, stepIdIndex: data.batchmaker.steps.length + 1, recipeIdIndex: data.batchmaker.recipes.length + 1, confirmButton: false
+    	name:'', handle: this.props.user, by: this.props.user ,photoUrl: "" ,order: 1, type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: this.props.allocations.length +1, stepIdIndex: this.props.steps.length + 1, recipeIdIndex: this.props.recipes.length + 1, confirmButton: false
     	}
   	}
   	componentWillMount(){
@@ -206,7 +205,7 @@ class RecipeForm extends React.Component {
       <div style={styles.formContainer}>
       	<div style={styles.formProper}>
       		<form><div style={styles.infoHeader}>Standard Recipe Information</div>
-      		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.props.recipes[0] && this.props.users[this.props.user].handle} </span></div>
+      		<div style={styles.user}>Logged In As <span style={styles.userName}> {this.props.users[this.props.user].handle} </span></div>
       			<img src={this.state.photoUrl} alt="ADD VISUAL" style={styles.addPhoto}/><span style={styles.addImageLabel}>Add Url of image</span><span style={styles.addNameLabel}>Input Name of Recipe</span><input type="text" name="photoUrl" onChange={this.handleChange} style={styles.addUrl}></input>
       			<input type="text" style={styles.recipeName} name="name" onChange={this.handleChange}></input>
       			<div>
@@ -246,7 +245,7 @@ class RecipeForm extends React.Component {
 }
 
 function mapStateToProps(appState){
-	return { steps : appState.steps, recipes: appState.recipes, users: appState.users, user: appState.user}
+	return { steps : appState.steps, recipes: appState.recipes, users: appState.users, user: appState.user, allocations: appState.allocations}
 }
 
 export default connect(mapStateToProps)(RecipeForm)

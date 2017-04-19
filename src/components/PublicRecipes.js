@@ -1,5 +1,4 @@
 import React from 'react'
-import data from '../../db.json'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
@@ -59,7 +58,7 @@ const styles={
 		fontSize: 14,
 		width: 150,
 		height: 10,
-		color: 'white',
+		color: '#03A9F4',
 	},
 	displayNone:{
 		display: 'none'
@@ -79,7 +78,7 @@ class PublicRecipes extends React.Component {
         <div style={styles.gridProper}>
         	<div style={styles.catHeader}>OpenSource Methods</div>
         	<div style={styles.row}>
-				{data.batchmaker.recipes.map(recipe=>(
+				{this.props.recipes.map(recipe=>(
 						<Link to={'/RecipeView/' + recipe.id} key={'recipe' + recipe.id + Math.random()} style={ recipe.public === "true"  ? styles.linkRow : styles.displayNone }>
 	        			<div style={styles.recipeAndName}>
 	        				<img src={recipe.photoUrl} style={styles.recipe} alt=""/><div style={styles.recipeName}>{recipe.name}</div>

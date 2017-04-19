@@ -1,5 +1,4 @@
 import React from 'react'
-import data from '../../db.json'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
@@ -77,13 +76,13 @@ class UserList extends React.Component {
     return (
       <div style={styles.listContainer}>
       	<div style={styles.listProper}>
-      		{data.batchmaker.users.map(user=>(
+      		{this.props.users.map(user=>(
       			<div key={Math.random()} style={styles.userBox}>
       				<div style={styles.userHandle}>{user.handle} </div>
       				<img src={user.avatarUrl} style={styles.avatar} alt={user.id} />
       				<div style={styles.bioBlock}>About {user.handle} : <span style={styles.bioText}> {user.bio} </span> </div>
 							<div style={styles.createdHeader}>Created Recipe's</div>
-							{data.batchmaker.recipes.map(recipe=>(
+							{this.props.recipes.map(recipe=>(
 								<span key={Math.random()} style={recipe.by === user.id && recipe.public === "true" ?  styles.recipeName : styles.displayNone}> <Link to={'/RecipeView/' + recipe.id} style={styles.recipeLink}> {recipe.name}</Link> </span>
 							))}
 						</div>

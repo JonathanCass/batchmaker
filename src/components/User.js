@@ -1,5 +1,5 @@
 import React from 'react'
-import data from '../../db.json'
+import {getData} from '../api/recipe'
 import {createUser} from '../api/recipe'
 import {login} from '../api/recipe'
 import {connect} from 'react-redux'
@@ -131,7 +131,7 @@ class User extends React.Component {
   	handleLogin = (e) => {
   		e.preventDefault()
   		var flag = true
-  		data.batchmaker.users.forEach(function(user){
+  		this.props.users.forEach(function(user){
   			if(user.login === this.state.login && user.password === this.state.password){
   				login(user.id)
   				flag = false
@@ -150,7 +150,7 @@ class User extends React.Component {
   		e.preventDefault()
   		var newName = this.state.newLogin
   		var green = true
-  		data.batchmaker.users.forEach(function(user) {
+  		this.props.users.forEach(function(user) {
   			if(user.login === newName){
   				alert("Login Id exists. Choose a different one.")
   				green = false
@@ -162,7 +162,7 @@ class User extends React.Component {
   		}
   		if(green){
   			var userObj={
-        			"id": data.batchmaker.users.length,
+        			"id": this.props.users.length,
         			"login": this.state.newLogin,
         			"password": this.state.newPassword,
         			"handle": this.state.handle,
@@ -182,6 +182,9 @@ class User extends React.Component {
   		}
 
   	}
+	componentWillMount(){
+  		getData()
+  	}
   render() {
     return (
       <div style={styles.userContainer}>
@@ -194,8 +197,8 @@ class User extends React.Component {
       				<span style={styles.label}>Password</span><input type="password" style={styles.input} name="password" value={this.state.password} onChange={this.handleChange} ></input>
       				<button style={styles.submit} onClick={this.handleLogin}>Log In</button>
       				<div>
-      				    <img style={styles.avatar} src={data.batchmaker.users[this.props.user].avatarUrl} alt={data.batchmaker.users[this.props.user].handle} />
-      					<div style={ this.props.user === -1 ? styles.displayNone : styles.loggedIn}>Logged in as <span style={styles.userHandle}>{data.batchmaker.users[this.props.user].handle}</span></div>
+      				    <img style={styles.avatar} src={this.props.users[this.props.user].avatarUrl} alt={this.props.users[this.props.user].handle} />
+      					<div style={ this.props.user === -1 ? styles.displayNone : styles.loggedIn}>Logged in as <span style={styles.userHandle}>{this.props.users[this.props.user].handle}</span></div>
       				</div>
       			</div>
       		</form>
@@ -215,7 +218,7 @@ class User extends React.Component {
 }
 
 function mapStateToProps(appState){
-	return { user : appState.user}
+	return { user : appState.user, users : appState.users}
 }
 
 export default connect(mapStateToProps)(User)

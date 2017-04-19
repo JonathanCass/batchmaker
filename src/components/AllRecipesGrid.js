@@ -64,7 +64,7 @@ const styles={
 		fontSize: 14,
 		width: 150,
 		height: 10,
-		color: 'white'
+		color: '#03A9F4'
 	},
 	displayNone:{
 		display: 'none'
@@ -92,13 +92,12 @@ class AllRecipesGrid extends React.Component {
   }
    displayFavorites = () => {
   	var newArray = []
-	var userArray = this.props.users  
   	for( let i=this.props.users.length ; i > 1; i--){
   		this.props.recipes.forEach(function(recipe) {
   			if(recipe.favoritedBy.length === i && recipe.public === "true" ){
-  				newArray.push( [recipe.name , recipe.photoUrl, recipe.id, userArray[recipe.by].handle, i] ) // i is the number of favorties the item has
+  				newArray.push( [recipe.name , recipe.photoUrl, recipe.id, this.props.users[recipe.by].handle, i] ) // i is the number of favorties the item has
   			}
-  		})
+  		}.bind(this))
   	}
 	this.setState({
 		popularArray: newArray
@@ -139,7 +138,7 @@ class AllRecipesGrid extends React.Component {
         			</Link>
 	        	))}
         	</div>
-			<div style={styles.catHeader}>{this.props.users[this.props.user].handle}'s Favorites</div>
+			<div style={styles.catHeader}>{this.props.users[this.props.user].handle}'s Favorites<Link to="/UsersFavorites/"><button style={styles.viewAll}>View All</button></Link></div>
         	<div style={styles.row}>
 				{this.props.recipes.map(recipe=>(
 					this.props.users[this.props.user].favorites.map(favorite=>( 

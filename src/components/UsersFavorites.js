@@ -58,7 +58,7 @@ const styles={
 		fontSize: 14,
 		width: 150,
 		height: 10,
-		color: 'white'
+		color: '#03A9F4'
 	},
 	displayNone:{
 		display: 'none'

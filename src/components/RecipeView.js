@@ -3,7 +3,6 @@ import Step from './Step'
 import {getData} from '../api/recipe'
 import {addFavorite} from '../api/recipe'
 import {connect} from 'react-redux'
-import data from '../../db.json'
 import {postNote} from '../api/recipe'
 
 const styles ={
@@ -206,16 +205,16 @@ class RecipeView extends React.Component {
 	addNote = (e) => {
 		e.preventDefault()
 		
-		var newUserArray = data.batchmaker.users
+		var newUserArray = this.props.users
 		newUserArray[this.props.user].notes[this.props.match.params.recipeId] = this.state.notes
 		console.log("newUserArray", newUserArray)
 		postNote(newUserArray)
 	}
   componentWillMount(){
   	getData()
-	if(data.batchmaker.users[this.props.user].notes[this.props.match.params.recipeId] !== null){
+	if(this.props.users[this.props.user].notes[this.props.match.params.recipeId] !== null){
 		this.setState({
-			notes: data.batchmaker.users[this.props.user].notes[this.props.match.params.recipeId]
+			notes: this.props.users[this.props.user].notes[this.props.match.params.recipeId]
 		})
 	}
   }
@@ -223,26 +222,26 @@ class RecipeView extends React.Component {
     return (
       <div style={styles.recipeContainer}>
         <div style={styles.recipeProper}>
-        	<div style={styles.recipteTitle}>{this.props.recipes[0] && this.props.recipes[this.state.id].name}</div>
-        	<div style={styles.recipeBy}> by {this.props.recipes[0] && this.props.users[this.props.recipes[this.state.id].by].handle}</div>
-        	<img style={styles.recipeImage} src={this.props.recipes[0] && this.props.recipes[this.state.id].photoUrl} alt=""/>
+        	<div style={styles.recipteTitle}>{this.props.recipes[this.state.id].name}</div>
+        	<div style={styles.recipeBy}> by {this.props.users[this.props.recipes[this.state.id].by].handle}</div>
+        	<img style={styles.recipeImage} src={this.props.recipes[this.state.id].photoUrl} alt=""/>
         	
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Recipe Type</div><div style={styles.boxValue}>{this.props.recipes[0] && this.props.recipes[this.state.id].type}</div>
+        		<div style={styles.boxLabel}>Recipe Type</div><div style={styles.boxValue}>{this.props.recipes[this.state.id].type}</div>
         	</div>
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Prep Time</div><div style={styles.boxValue}>{parseInt(((this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)/60),10) === 0 ? "" : parseInt(((this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)/60),10) + "Hrs"} {(this.props.recipes[0] && this.props.recipes[this.state.id].prepTime)%60}Mins</div>
+        		<div style={styles.boxLabel}>Prep Time</div><div style={styles.boxValue}>{parseInt(((this.props.recipes[this.state.id].prepTime)/60),10) === 0 ? "" : parseInt(((this.props.recipes[this.state.id].prepTime)/60),10) + "Hrs"} {(this.props.recipes[this.state.id].prepTime)%60}Mins</div>
         	</div>
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Cook Time</div><div style={styles.boxValue}>{parseInt(((this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)/60),10) === 0 ? "" : parseInt(((this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)/60),10) + "Hrs"} {(this.props.recipes[0] && this.props.recipes[this.state.id].cookTime)%60}Mins</div>
+        		<div style={styles.boxLabel}>Cook Time</div><div style={styles.boxValue}>{parseInt(((this.props.recipes[this.state.id].cookTime)/60),10) === 0 ? "" : parseInt(((this.props.recipes[this.state.id].cookTime)/60),10) + "Hrs"} {(this.props.recipes[this.state.id].cookTime)%60}Mins</div>
         	</div>
         	<div style={styles.typeTimeTemp}>
-        		<div style={styles.boxLabel}>Cook Temp</div><div style={styles.boxValue}>{this.props.recipes[0] && this.props.recipes[this.state.id].cookTemp} °F</div>
+        		<div style={styles.boxLabel}>Cook Temp</div><div style={styles.boxValue}>{this.props.recipes[this.state.id].cookTemp} °F</div>
         	</div>
 
         	<div style={styles.ingredientBox}>
         		<div style={styles.adjustLine}>
-        			{this.props.recipes[0] && this.props.recipes[this.state.id].servingAmount * this.state.adjustDisplay + " "} {this.props.recipes[0] && this.props.recipes[this.state.id].servingType}<div><input type="text" name="adjustParam" onChange={this.handleChange} placeholder="New Serving Size" style={styles.adjustInput}></input><button onClick={this.addAdjust} style={styles.adjustButton}>Adjust</button></div>
+        			{this.props.recipes[this.state.id].servingAmount * this.state.adjustDisplay + " "} {this.props.recipes[this.state.id].servingType}<div><input type="text" name="adjustParam" onChange={this.handleChange} placeholder="New Serving Size" style={styles.adjustInput}></input><button onClick={this.addAdjust} style={styles.adjustButton}>Adjust</button></div>
         		</div>
         		<div style={styles.mapBox}>	
 			        {this.props.allocations.map(allocation=>(
@@ -255,7 +254,7 @@ class RecipeView extends React.Component {
         	</div>
         	<Step recipeId={this.props.match.params.recipeId} adjustDisplay={this.state.adjustDisplay}/>
         	<div style={styles.adjustBlock}>
-				<button style={this.props.user === data.batchmaker.recipes[Number(this.props.match.params.recipeId)-1].by ? styles.editRecipe : styles.displayNone}>Edit Recipe</button>
+				<button style={this.props.user === this.props.recipes[Number(this.props.match.params.recipeId)-1].by ? styles.editRecipe : styles.displayNone}>Edit Recipe</button>
 				<button style={styles.addEditNote} onClick={this.addNote} > Add Note </button>
 			</div>
 			<i style={styles.favoriteButton} className="material-icons" onClick={this.addFavorite}>grade</i>
