@@ -27,21 +27,25 @@ export function createUser(userObject){
     })
 }
 export function addFavorite(newUsersArray, newRecipesArray){
-	axios.post('http://localhost:3001/batchmaker',{
-	  recipes: newRecipesArray,
-      steps: [...data.batchmaker.steps],
-      allocations: [...data.batchmaker.allocations],		
+	axios.get('http://localhost:3001/batchmaker').then(res=>{
+    axios.post('http://localhost:3001/batchmaker',{
+	    recipes: newRecipesArray,
+      steps: [...res.data.steps],
+      allocations: [...res.data.allocations],		
       users: newUsersArray 
     })
-}
-export function postNote(newUserArray){
-	axios.post('http://localhost:3001/batchmaker',{		
-      recipes: [...data.batchmaker.recipes],
-      steps: [...data.batchmaker.steps],
-      allocations: [...data.batchmaker.allocations],		
-      users: newUserArray 
+	})
+}	
+export function postNote(newUserArray) {
+	axios.get('http://localhost:3001/batchmaker').then(res=>{
+		axios.post('http://localhost:3001/batchmaker',{				
+      users: newUserArray,
+      recipes: [...res.data.recipes],
+      allocations: [...res.data.allocations],
+      steps: [...res.data.steps]
     })
-}
+	})
+}	
 export function login(login){
 	store.dispatch({
 		type: 'LOGIN',

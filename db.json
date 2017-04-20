@@ -14,7 +14,10 @@
         "servingType": "pancakes",
         "public": "true",
         "favoritedBy": [
-          0,6,2,3
+          0,
+          6,
+          2,
+          3
         ]
       },
       {
@@ -29,7 +32,10 @@
         "servingAmount": 8,
         "servingType": "hotdogs",
         "public": "true",
-        "favoritedBy": [6,4]
+        "favoritedBy": [
+          6,
+          4
+        ]
       },
       {
         "id": 3,
@@ -111,7 +117,11 @@
         "servingAmount": "4",
         "servingType": "Sandwiches",
         "public": "true",
-        "favoritedBy": [1,3,6]
+        "favoritedBy": [
+          1,
+          3,
+          6
+        ]
       },
       {
         "id": 8,
@@ -125,7 +135,10 @@
         "servingAmount": "8",
         "servingType": "Bowls",
         "public": "true",
-        "favoritedBy": [1,2]
+        "favoritedBy": [
+          1,
+          2
+        ]
       },
       {
         "id": 9,
@@ -139,7 +152,11 @@
         "servingAmount": "6",
         "servingType": "Cones",
         "public": "true",
-        "favoritedBy": [1,3,4]
+        "favoritedBy": [
+          1,
+          3,
+          4
+        ]
       }
     ],
     "steps": [
@@ -610,7 +627,7 @@
         "notes": [
           null,
           "The guest likes 20 oz of syrup on their pancakes.",
-          null,
+          "Rooster sauce! Let us stop this refreshing.",
           "The Guest prefers their steak medium well."
         ],
         "avatarUrl": "http://flatmet.com/resources/v2/images/guest.png",
@@ -692,6 +709,16 @@
         "notes": [],
         "avatarUrl": "http://media.4rgos.it/i/Argos/6255749_R_Z001A?$CMSProduct$",
         "bio": "Hi I am a human. I enjoy looking at, creating, and consuming human food. Lets eat things together!"
+      },
+      {
+        "id": 7,
+        "login": "gassy",
+        "password": "bird",
+        "handle": "Gaston",
+        "favorites": [],
+        "notes": [],
+        "avatarUrl": "https://s-media-cache-ak0.pinimg.com/originals/51/11/5e/51115e42829a7315f29eba881177af94.jpg",
+        "bio": "Sup bros. I'm a bird looking for tasty human food, so give it up yo."
       }
     ]
   }
