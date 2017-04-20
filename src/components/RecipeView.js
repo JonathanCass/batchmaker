@@ -195,19 +195,21 @@ class RecipeView extends React.Component {
   		var newUsersArray = this.props.users
   		if(newUsersArray[this.props.user].favorites.indexOf(Number(this.props.match.params.recipeId)) === -1){
   			newUsersArray[this.props.user].favorites = [...newUsersArray[this.props.user].favorites ,Number(this.props.match.params.recipeId)]
-  		}
+  		}else{
+			  alert("Recipe already in favorites.")
+		  }
   		var newRecipesArray = this.props.recipes
   		if(newRecipesArray[Number(this.props.match.params.recipeId)-1].favoritedBy.indexOf(Number(this.props.user)) === -1){
   			newRecipesArray[Number(this.props.match.params.recipeId)-1].favoritedBy = [...newRecipesArray[Number(this.props.match.params.recipeId)-1].favoritedBy ,Number(this.props.user)]
   		}
   		addFavorite(newUsersArray, newRecipesArray)
+			alert("Recipe added to favorites.")
   	}
 	addNote = (e) => {
 		e.preventDefault()
 		
 		var newUserArray = this.props.users
 		newUserArray[this.props.user].notes[this.props.match.params.recipeId] = this.state.notes
-		console.log("newUserArray", newUserArray)
 		postNote(newUserArray)
 	}
   componentWillMount(){

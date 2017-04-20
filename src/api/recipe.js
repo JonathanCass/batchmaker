@@ -1,6 +1,5 @@
 import store from '../store'
 import axios from 'axios'
-import data from '../../db.json'
 
 export function getData() {
 	axios.get('http://localhost:3001/batchmaker').then(res=>{
@@ -11,21 +10,25 @@ export function getData() {
 	})
 }	
 export function addRecipe(recipeObject, stepArray, ingredientArray){
-    axios.post('http://localhost:3001/batchmaker',{
-      recipes: [...data.batchmaker.recipes, recipeObject],
-      steps: [...data.batchmaker.steps, ...stepArray],
-      allocations: [...data.batchmaker.allocations, ...ingredientArray],
-      users: [...data.batchmaker.users] 
+	axios.get('http://localhost:3001/batchmaker').then(res=>{
+		axios.post('http://localhost:3001/batchmaker',{
+      recipes: [...res.data.recipes, recipeObject],
+      steps: [...res.data.steps, ...stepArray],
+      allocations: [...res.data.allocations, ...ingredientArray],
+      users: [...res.data.users] 
     })
+	})
 }
 export function createUser(userObject){
-	axios.post('http://localhost:3001/batchmaker',{
-	  recipes: [...data.batchmaker.recipes],
-      steps: [...data.batchmaker.steps],
-      allocations: [...data.batchmaker.allocations],		
-      users: [...data.batchmaker.users, userObject]
+	axios.get('http://localhost:3001/batchmaker').then(res=>{
+    axios.post('http://localhost:3001/batchmaker',{
+	  recipes: [...res.data.recipes],
+      steps: [...res.data.steps],
+      allocations: [...res.data.allocations],		
+      users: [...res.data.users, userObject]
     })
-}
+	})
+}	
 export function addFavorite(newUsersArray, newRecipesArray){
 	axios.get('http://localhost:3001/batchmaker').then(res=>{
     axios.post('http://localhost:3001/batchmaker',{

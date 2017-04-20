@@ -46,4 +46,6 @@ Implement Fahrenheit to Celsius conversion.
 
 Known Bugs.  
 
-User gets logged out upon submitting a new recipe or when adding a personal note to a recipe.    
+Fixed the refresh bug now its working really well. However the trade off is if you manually refresh the page the application dies.  
+The reason for this is the pages attempt to render lines that require the results from the getData() to the json file before that data is in place and the whole thing just implodes.    
+So dont do that. Start on the front page and navigate around from there.   

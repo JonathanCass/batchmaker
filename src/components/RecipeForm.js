@@ -147,7 +147,7 @@ class RecipeForm extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-    	name:'', handle: this.props.user, by: this.props.user ,photoUrl: "" ,order: 1, type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public:true, directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: this.props.allocations.length +1, stepIdIndex: this.props.steps.length + 1, recipeIdIndex: this.props.recipes.length + 1, confirmButton: false
+    	name:'', handle: this.props.user, by: this.props.user ,photoUrl: "" ,order: 1, type:'',prepTime:0,cookTime:0,cookTemp:0,servingAmount:0,servingType:'',public: "true", directions: '',recipeObject: {}, stepArray:[],ingredientIdIndex: this.props.allocations.length +1, stepIdIndex: this.props.steps.length + 1, recipeIdIndex: this.props.recipes.length + 1, confirmButton: false
     	}
   	}
   	componentWillMount(){
