@@ -2,6 +2,7 @@ import React from 'react'
 import {addRecipe} from '../api/recipe'
 import {getData} from '../api/recipe'
 import {connect} from 'react-redux'
+import {push} from 'react-router-redux'
 
 const styles={
 	stepContainer:{
@@ -80,7 +81,6 @@ class StepAdder extends React.Component {
 	        	numberOf:0,
 	        	unitOf:'',
 	        	what:''
-
 	        })
 	     }
   	}
@@ -95,6 +95,7 @@ class StepAdder extends React.Component {
   	addRecipe = (e) => {
   		e.preventDefault()
   		addRecipe(this.props.recipeObject, this.props.stepArray, this.state.ingredientArray)
+		this.props.history.goBack()  
   	}
   render() {
     return (	

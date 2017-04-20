@@ -177,6 +177,20 @@
           0,
           4
         ]
+      },
+      {
+        "id": 11,
+        "name": "Refined Plutonium",
+        "by": 6,
+        "photoUrl": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMVFRUVFxUXGBcVFRcVFxcXFRcXFxcVFxcYHSggGBolHRUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQGislHyYtLS0tLS0tLSstLS0tLS0tLS4tLS0tLSstLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tK//AABEIAN4A4wMBIgACEQEDEQH/xAAcAAACAwEBAQEAAAAAAAAAAAABAwACBAUGBwj/xAA3EAACAQIEBAMHAwQBBQAAAAAAAQIDEQQSITEFBkFRYXGBBxMiMpGhscHR8EKS4fEUFiMzQ4L/xAAaAQACAwEBAAAAAAAAAAAAAAAAAgEDBQQG/8QALxEAAgIBBAAEAwgDAQAAAAAAAAECEQMEEiExBRMiUUGRoRQjMkJhcYHRYrHwFf/aAAwDAQACEQMRAD8A+HshCEgQAWAAIQhCAIQgQAASBAAEsWSG0qTk7JN+CVyGxlBvoRYOU6lHgteXy0aj/wDlr8mmPK+Lf/on9it5oLuS+ZfHS5X+V/I4NiWPQPlPF2v7iX2/cRV5cxS3oVP7b/gFnxv8y+YPSZV+V/I4xDZU4fUj81Oa84szOJYpJ9FMsco9ooBl7FWiRaAQhAIIQhAAhAgJAhCBAAECECCpCEAkhCAIAJCEAAhRIRbdkrtnuuWeR3NKpXuk9oLf1Kc2eGGNyZ0afS5M8qgjyGB4dVrPLThKT8F+p7DhXs6qSs608q7R1f1PoWB4fTpLLTiopdjp0qZiajxWb4hwbmLwzDjVz5f0PLcP5FwlPeGd956/bY7+G4VSh8sIrySR0Y0xsaZk5NVkn+KTOlOMPwpIyLDpdC6orsbFEmQoeRkeazJKgD3Pgjc6ZR0yPMYLIYJ4SNtUjlY7lrDVPnowfpr9UeilApOmWwzzj0yd98M+f4/2c4eX/jc4Pwd19GeU4ryHiKV3C1ReGkvoz7PKmJnSO/D4nmh27/cqnpcGTuNftwfnTEYeUG4yi4tdGrMUz7xxjgVGvHLUgn2drNeTPmnMvJNWhedP/uU1/dFeK6rxNrTeI48vD4Zl6nw2cFuhyvqeRAFoqaJlhIAgAEgAgBCEAAEIQIAAgSABC9OF2kt2VSPcezzl/PL/AJE18Mflv1l39CnPmjig5M6NLp5Z8igjrclcpqmo1qyvN6pPaK/c9xTgSERkInls+eWWTlI9ZjxwxQ2QXA2ETRATAfBHFJlcmOgh0YiqY+LKGc0mWUQ2CErbKrKuJWRdsCIslC2ijiNbRVsZMZMVKAicUaJCJlsWWxMtQRUh4GuYiZ0RZ0xZ88525OUk69CPxbyguvdrxPmskfoiSPlvtF5eVKfv6a+Cb+JLZSfX1PQeHa1v7qf8GV4lok15sF+/9niABYDZMEhCBAAEIQACQKRfIBKQsNi8Yl4w+pFkqNhoUHKSildtpLzZ9x4BgFQoU6a6RV/Pr9zwXs74J7yu6k1pTWi8ejPqbj0MDxXUbpLGvgeh8Nw+XByfb/0LjoWLWAjHs0rLxY6LERZdMSSsRqzXTkOjIxRmXVUplEolA3ZyZjJGsg+9Qmwr8s1uRS4j31yvvSNjBY2aLgczNKqD3oygMoDXITKRWUxTkWRiWxgGUhMnqGcihdFFyRW5j41gI16M6Uv6k/8AD+pvsSxZGW1poZ0+GfnrFYdwnKD3i2n6CGj1XtB4VKlipSS+Gp8St32a/nc8qz2GHIskFJfE8hqcXlZHEAQ3IWlBUgbEACyNEJK2xbCUc2h0aPC3vLYqnkiuzqw4ZS5Rx03c3UsK7JmzEQpw0snr+OhpwtHPZ28UVTy8WdGPT1Km7PZ+zKk17z0+p7mUTzfI9G0ZPvY9ZkTPLaye7M2bcVsikZLFbDnHxFuJQi1MqyNhsVsSMHOG5VsiYUFFnIGcqVCiaGZwuYu4GFBQx1A5xSLBRFBzFWAKJSGJJksRK4SQCmGJFEdTjcRsRujw/tNUVSp3Sbzfp+D5bWpXeiPqvtRpuVOnbpJ+WzPmdG6fgmek8Mf3CMfXx3TV+xjnhmhMotHVrxzaX2+xkxVFpdH6mlGd9mZkw1yjGANiFhznYw+FmtVG56PBcIrVo3vlK8J4e5yzNtrTTy/n2PacPwGW2Xw+pi6nU112em0mkVW+jzdLk531f+zqYLlpRdm7rqeqp4RtajsPw7UzZ6yT7Z2rFgh0ivBMCqaaR0hmHoJbF6lMzMk90rOeeRORllEVlHuJR+IJjJicoHEcokcBtw+4zMjQxxBJDJj2LAMUSNE2TYtoDQ1gZNhYpF0GxeKIbBsW4gaGuIVANxG4WkWyjIwGKArkK5C4QGqIbDaUCtsqlI8jzvRzRjpfVngsXw+Nr7eaPr3F6GboeE4tScXfJpfpr/o19HmaikhpY45IKR4nFYWLd1JLvf8Am25z6tNp2bTR7DEYKDi5Wf0t5nL/AOLTavfW99fwa+PUKjNzaU8+8J4EPQqFLq7eFyF32h+xR9kj7o9nwfhrpOz1v+T1mEoaaaEp4K71OnRpWPLZs+43cmSMY7YioUtLl6Y5orGn4HK5Wcu6+xtKzDKJahEu0UyfJS3yZHAU4myURDVwUi2MjPlIo2H5AZRtw+4RZFXFD5RKuBKkMpCVEjpjFAkoDWTuF+7A4DMoFANxNgUAxpBUBkYhuIchaiGw1QCoEOQm4TZlo0x6gWyC7iHMXCA+nTJGJopoW7KZzMdejc5uK4dFrY7lePYz1FfdFsZuI+LLJdHjMZwvRqKte/3POVOBSipKS8rf4PpVbDaXObi8NJp6Ghi1TXB27oZezwlPhcbawf3AMxlLGKcssHa7t5EO/dJ/m+pXtguNv0PqEY6+A7MUiFI8+zmkXaA2VsG4otGnDrcZlK4PUfKJVLsok/UZpIXkNLiTILZKkZJxKOBrlAW4k2WKZmcQOBpnErkBSGUzPKJFEe4gUSdw24RkIoGjIRQJ3BvE5C2UY4l1ENwrkLigqA1RLZAsRyFxgyyhcuojMoWK5FMheCLQQyMSUVORkrS1EtMfiJWYhSHLo9FZIRONzUxTQ0WWxdHLnhHch0HS8fsQs8xnR57LNEUwRegqZWilKx0pWK5vETNgUwoZQOvw7Y1uJk4W7xN6gUvsz8rqbFOJXIOcSOJFCbhGUpKJqUSkohQykZ5QK5DQ0VyEUMpGZwZMhoyFXEih94qMCOBoUUVcSaI3ilALgOSBlJojcLUBiiWURkYkpCuQrKWii+QOUmhXIrCBdO24xRI49yRHKzkYmfxMVcvil8TM6Y1HfFelGi/+ijiWzFSQQbEBl/lyEkmeTFuRabT6merLxHSL4qxkpi6kzFUr66DcNQb1ZZsSVsv8varZ6Lgj+E6Zz+ExSidBHHLsxc79bDlJlCgMCkCRJINiMAFOIEi9gkD2JkgIbIrlAmymUtYOQNgQWVUQxiWjEvYmiHIqoloxLpBSGSEbK5QKI0hLRFlVEjgWQKj0YUQecxc/jYn3pnxdX45eZnp3b3LlDg3IYvSjrKegyLMGZI005C7SqUKHX/liFU/FAIoSjwXI2Oc6F3KUnd3cndvxO1Xq2erPm/JfEYU6c7ztaSsu57jCcRp1WpSklZX1dtDY1WBwyydcHdpckZY1J+x2cHh/6mdGK+hjweKhON4STRrpsy8jbfImRtu2dLhs7aHUTOHQnZnZi7o5pdmXqI+qy4SoYsU5y8SMgGySAMqggIJIyIILASS5LhSIAEsXRLFrDitksWSJYIyEsgGEEgYAFYidosZY5/FamlhSzHHdJI4OJo5m2jn+9cdzrMx4qhdaHVCXwZu4pfBkpyuOdVRVzk062T52oq+jb3Zw+McyxacYSbknbLHXRdU+xdHTynKkNkgk+XweoljF3sA+fPmNx0dSKa3Upa+pDq+wz9hfNw+54mrPLSTpbX1vrJNfoasFxa8LVN11WjafijiU6kou60GvFX+ZJeSPRyxJqmedx6hp2nX6fA9zy/zZTpQywjK8U3Z7S833PdcI5lpVVBN2lJX8PqfE+HYiKlaTtF/TwNypK+b3vXZNqyM3U+H45v2NHDrJTirp/Q+/05dU0dfAVNNT4/wbm2GGjGNSeZdUtWux6LhPtBw85JN5fMwc2gzLlK0X5YRnwmj6QFM5EOZMMoqTqxs9NNdexuwXEKVVXpzjLyZwuEly0cEsc49pmpsmYDXYqxRKLlW7EuS6ACBQIlrBQEQUQkSSC6LFEwscUtcJW5YkUlyoWIr4qEPmkl6kDJN9DpOyuzhY2pmbLY/jlHb3kfrucHGcw0YvK27236P1LI4pPpHfptPJctGnG4ynTTc5WS3PMcx81U4QapyvdaOOqfqYeKYpVcz2Wqs/u/I+eY7F5LqCulLVt5k+yS7Gxo9DGT57OrPkWBWb+Jcz1ZpXk0krRX2bb66GDHcRc4QcW80FbN182kJq4yVVRU0t3ZJW07jcKqajJSemrWXdu23gbUccYLhGZLLObfq4ONOTbbe7IaIVIW1TbIdV/oZu3/IkK0XC0ls9PXcz1EraFbhexNUQ5WiQkuxrpVVZtStbo9fQxF6corfUJKyYTaZplPNrfX7WG4bH5NYpX6N6mRVF6C4uzF2JqmW+c07R1o8Yrx+LPZb26b9js8G5pnD4nJp372Tvvc8xQqL+qN0NrtWeWOie5RPBjlw4nTj1OSPqUj6DxL2kYlTjKEouKVldaX7vx/c7XDvatdRzxzSe6jpr132Pj7qZlZ6fglGPaSvY5ZeF6dxpxG+1bpfhTX/dH6EwvP1B4edapZOD+VO7MkPahhZxbjGV1bRqx8Jp1pR3e+lujRoz2s7aaa93c5v/ABsKu7HWXG3e0/QXAeeMNinli3CXVT0V/M9EsTTvbOvqfmHDY2dKayN2Vm/F9jsYTnCcL3bVndI5M3gzu8b4Hj5Mu3R+iKleC3kl6nF4jzbh6cW081vT8nyD/rVSp/G5OWu2r8G2cuPFqVWKVVyjl6a/F2bEx+EyX47LVj06r1X9D7fh+dMNKKfxXfT/ACdHiXHadOiqsWnf5V3Pz3xOvOSTptqnHa1737uxljxGso7zfi23byLl4RF8p/wVy8lSXD/s+44Pni03GpFNXXyvXUPE+dXG/u45r6K2rufBlVmnmk5rruzThONTpu6lJtrqXPwmPaJWbT7rcKPaca5i4hUlfNkSemttO9zh8a5hqSgkqt5qWtr7Jdzz+P4rVrbt2XbYTTeWNv6n+F0O3Ho4xStIWeqXKhdGytxGrZTlUk2tk9vQtieMV5pSlU22SX8ucutUlJ/Fb8C51Xf4dEdKwx9kc0tTJXyzfisbUUVeprK911SZzqTXV6blZ1JW11FWLowSRz5MzlKzVRqpSUm9ui/Aptau/cS0XtoNRVvbRXMQliDFdkuRsCBcAsMmSwGwqQAQCDKQFIALRlZjvfW2Yi5GRQyk10aKsk0uj69hcEk7i7kuRRLnbs0OskrbrxFubZG+pVVASGcn8WWhNl51Fp9xDJcKFU2lRvwtSC169L7Bm9m0jBEbm6CuPJdHLao2Qx0lHL0v0/QtWxrkrLT9TI2BMjYuxnkl1ZrqYq2lrr+IzxlqWjTuNhSjZ3vpov3f1DhB6pMrUq+i7CJzbfYdWimrmeUSYpCzbBUqX3K5wSQGx6KW2SU9LATZJBUiRfiCTJmAwoCCMhGiEkH/2Q==",
+        "type": "lunch",
+        "prepTime": "1000",
+        "cookTime": "3000",
+        "cookTemp": "8000",
+        "servingAmount": "10",
+        "servingType": "Capsules",
+        "public": "true",
+        "favoritedBy": []
       }
     ],
     "steps": [
@@ -335,6 +349,12 @@
         "order": 3,
         "recipeId": 10,
         "directions": "Add the beans, stir well, and cook for about 5 minutes, or until tender. There should be enough sauce to easily coat the meat. If the mixture is very liquid, increase the heat and simmer until reduced. Use a spoon to remove any oil that rises to the top. Season to taste and serve in bowls topped with a handful of coriander leaves, accompanied with steamed rice."
+      },
+      {
+        "id": 27,
+        "order": 1,
+        "recipeId": 11,
+        "directions": "Simply acquire the nuclear waste from a fission power plant and refine out the plutonium pellets. Just like mother used to make. Yum Yum!"
       }
     ],
     "allocations": [
@@ -721,6 +741,14 @@
         "numberOf": "2",
         "unitOf": "tbsp",
         "what": "fresh coriander"
+      },
+      {
+        "id": 49,
+        "recipeId": 11,
+        "stepId": 27,
+        "numberOf": "100",
+        "unitOf": "pounds",
+        "what": "Plutonium Ore"
       }
     ],
     "users": [
