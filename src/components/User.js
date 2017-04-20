@@ -179,6 +179,7 @@ class User extends React.Component {
   				handle: "",
   				bio: ""
   			})
+			getData()
   		}
 
   	}

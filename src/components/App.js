@@ -13,14 +13,15 @@ import UserList from './UserList'
 import IntroPage from './IntroPage'
 import {Provider} from 'react-redux'
 import store from '../store'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, browserHistory} from 'react-router-dom'
+import RecipeAddedScreen from './RecipeAddedScreen'
 
 
 export default React.createClass({
   render() {
     return (
     	<Provider store={store}>
-    	<Router>
+    	<Router history={browserHistory}>
 		    <div>	
 		      	<Header/>
 		      	<Sidebar/>
@@ -34,6 +35,7 @@ export default React.createClass({
               <Route path='/UsersFavorites/' component={UsersFavorites} />
               <Route path='/UsersRecipes/' component={UsersRecipes} />
               <Route path='/UserList/' component={UserList} />
+							<Route path='/RecipeAddedScreen/' component={RecipeAddedScreen} />
 		    </div>
 	    </Router>
 	    </Provider>

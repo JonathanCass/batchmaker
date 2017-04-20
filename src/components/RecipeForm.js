@@ -209,8 +209,8 @@ class RecipeForm extends React.Component {
       			<img src={this.state.photoUrl} alt="ADD VISUAL" style={styles.addPhoto}/><span style={styles.addImageLabel}>Add Url of image</span><span style={styles.addNameLabel}>Input Name of Recipe</span><input type="text" name="photoUrl" onChange={this.handleChange} style={styles.addUrl}></input>
       			<input type="text" style={styles.recipeName} name="name" onChange={this.handleChange}></input>
       			<div>
-      				<input type="radio" name="public" onChange={this.handleChange} value={true}></input><span style={styles.radioButtons}>Unrestricted Access </span>
-      				<input type="radio" name="public" onChange={this.handleChange} value={false}></input><span style={styles.radioButtons}>This User Access Only </span>
+      				<input type="radio" name="public" onChange={this.handleChange} value={"true"}></input><span style={styles.radioButtons}>Unrestricted Access </span>
+      				<input type="radio" name="public" onChange={this.handleChange} value={"false"}></input><span style={styles.radioButtons}>This User Access Only </span>
       			</div>
       			<select name="type" onChange={this.handleChange} style={styles.recipeType}>
 				  <option value="">Recipe Type</option>

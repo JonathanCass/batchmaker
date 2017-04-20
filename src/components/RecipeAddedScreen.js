@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {getData} from '../api/recipe'
+import {connect} from 'react-redux'
 
 const styles ={
     introContainer:{
@@ -13,24 +14,23 @@ const styles ={
     },
     title:{
       fontSize: 92,
-      position: 'fixed',
-      top: 300,
-      left: 120,
       WebkitTextStroke : '3px black',
       color: '#D50000',
-
+      position: 'fixed',
+      left:325,
+      top: 300
     },
     subTitle:{
       fontSize: 52,
-      position: 'fixed',
-      top: 400,
-      left: 240,
       borderRadius: 10,
       color: 'white',
       WebkitTextStroke : '2px blue',
+      position: 'fixed',
+      top: 400,
+      left: 520
     }
 }
-class IntroPage extends React.Component {
+class RecipeAddedScreen extends React.Component {
   /*constructor(props) {
     super(props)
   }
@@ -39,13 +39,18 @@ class IntroPage extends React.Component {
   	getData()
   }
   render() {
+      console.log('this.props.recipes', this.props.recipes)
     return (
-      <Link to="./AllRecipesGrid/" style={styles.introContainer} className="introPage">
-        <div style={styles.title}> BATCH CONSTRUCTOR </div>
-        <div style={styles.subTitle}> Click to Begin Cooking Operations</div>
+      <Link to={'/UsersRecipes/'} style={styles.introContainer} className="introPage">
+        <div style={styles.title}> RECIPE ADDED </div>
+        <div style={styles.subTitle}> Click to Continue</div>
       </Link>
     )
   }
 }
 
-export default IntroPage
+function mapStateToProps(appState){
+	return { recipes : appState.recipes, user: appState.user, users: appState.users}
+}
+
+export default connect(mapStateToProps)(RecipeAddedScreen)
